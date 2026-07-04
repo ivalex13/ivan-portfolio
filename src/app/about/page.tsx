@@ -83,7 +83,10 @@ export default function AboutPage() {
       <section className="border-t border-line">
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-24">
           <Reveal>
-            <h2 className="text-4xl tracking-tight sm:text-5xl">
+            <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
+              <span className="text-glow-2">01</span> — AI toolkit
+            </p>
+            <h2 className="mt-4 text-4xl tracking-tight sm:text-5xl">
               How I <span className="text-outline">work with AI</span>
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-dim">
@@ -112,7 +115,10 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 md:px-10 lg:grid-cols-2">
           <div>
             <Reveal>
-              <h2 className="text-3xl tracking-tight sm:text-4xl">Experience</h2>
+              <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
+                <span className="text-glow-2">02</span> — Background
+              </p>
+              <h2 className="mt-4 text-3xl tracking-tight sm:text-4xl">Experience</h2>
             </Reveal>
             <Stagger className="mt-8 divide-y divide-line border-t border-line" gap={0.06}>
               {experience.map((e, i) => (
@@ -138,7 +144,10 @@ export default function AboutPage() {
 
           <div>
             <Reveal>
-              <h2 className="text-3xl tracking-tight sm:text-4xl">Education</h2>
+              <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
+                <span className="text-glow-2">03</span> — Learning
+              </p>
+              <h2 className="mt-4 text-3xl tracking-tight sm:text-4xl">Education</h2>
             </Reveal>
             <Stagger className="mt-8 divide-y divide-line border-t border-line" gap={0.06}>
               {education.map((e, i) => (
