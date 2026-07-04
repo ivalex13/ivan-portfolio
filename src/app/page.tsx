@@ -243,6 +243,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.1}>
               <ImagePlaceholder
+                src={about.portrait}
                 alt="Portrait of Ivan Aleksić"
                 aspect="tall"
                 note={about.portraitNote}

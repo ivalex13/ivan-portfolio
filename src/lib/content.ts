@@ -489,6 +489,7 @@ export const principles = [
 /* ───────────────────────────── About ───────────────────────────── */
 
 export const about = {
+  portrait: undefined as string | undefined, // set to "/portrait.jpg" after dropping your photo into /public
   paragraphs: [
     "I'm Ivan, an AI product designer with fourteen years of building and scaling SaaS products. I was the first design hire at Instapage, where I owned the product from 0 → 1 and stayed through the growth to $16M ARR, a 10+ person product team, and tens of thousands of customers. Along the way I spent a year and a half as a product manager, which permanently rewired how I design.",
     "What makes me different from most designers “doing AI”: I ship it myself. Sonas, UX Copilot, and AI Design Review are products I designed, built, and operate. That hands-on loop (model behavior, prompts, latency, cost, trust) is the fastest design education I've ever had, and it shows up in every product decision I make.",
