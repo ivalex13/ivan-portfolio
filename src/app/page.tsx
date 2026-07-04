@@ -31,7 +31,7 @@ export default function Home() {
         <div className="relative mx-auto w-full max-w-6xl px-6 md:px-10 pb-24 pt-36">
           <MaskReveal delay={0.1}>
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-              {profile.role} · {profile.location}
+              {profile.role}
             </p>
           </MaskReveal>
 

@@ -169,7 +169,7 @@ export default function Nav() {
                 {profile.availability}
               </p>
               <p className="font-mono text-[12px] tracking-caps uppercase text-ink-faint">
-                {profile.role} · {profile.location}
+                {profile.role}
               </p>
             </motion.div>
           </motion.div>
