@@ -15,6 +15,7 @@ import Marquee from "@/components/Marquee";
 import ScrollHint from "@/components/ScrollHint";
 import Magnetic from "@/components/Magnetic";
 import Spotlight from "@/components/Spotlight";
+import { ImagePlaceholder } from "@/components/study/ImagePlaceholder";
 import { MaskReveal, Reveal, Stagger, StaggerItem } from "@/components/motion";
 
 export default function Home() {
@@ -144,28 +145,40 @@ export default function Home() {
           <Stagger className="mt-14 grid gap-6 md:grid-cols-3" gap={0.1}>
             {products.map((p) => {
               const inner = (
-                <div className="frame group relative flex h-full flex-col justify-between rounded-2xl p-7 transition-colors duration-300 hover:border-line-strong">
+                <div className="frame group relative flex h-full flex-col rounded-2xl p-4 transition-colors duration-300 hover:border-line-strong">
                   <Spotlight />
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-[12px] tracking-caps uppercase text-glow-1">
-                        {p.status}
-                      </span>
-                      <span
-                        aria-hidden
-                        className="text-lg text-ink-faint transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-ink"
-                      >
-                        ↗
-                      </span>
+                  {/* Product visual: drop a graphic matching the product's branding */}
+                  <div className="overflow-hidden rounded-xl">
+                    <div className="transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                      <ImagePlaceholder
+                        src={p.image}
+                        alt={p.imageAlt}
+                        aspect="video"
+                        tint={p.tint}
+                        compact
+                      />
                     </div>
-                    <h3 className="mt-6 text-2xl tracking-tight">{p.name}</h3>
-                    <p className="mt-3 text-base leading-relaxed text-ink-dim">
-                      {p.tagline}
-                    </p>
                   </div>
-                  <p className="mt-8 font-mono text-[12px] tracking-caps uppercase text-ink-faint">
-                    {p.metric}
-                  </p>
+                  <div className="flex flex-1 flex-col justify-between p-3 pt-5">
+                    <div>
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-2xl tracking-tight">{p.name}</h3>
+                        <span
+                          aria-hidden
+                          className="text-lg text-ink-faint transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-ink"
+                        >
+                          ↗
+                        </span>
+                      </div>
+                      <p className="mt-3 text-base leading-relaxed text-ink-dim">
+                        {p.tagline}
+                      </p>
+                    </div>
+                    <div className="mt-8 flex items-center justify-between font-mono text-[12px] tracking-caps uppercase">
+                      <span className="text-glow-1">{p.status}</span>
+                      <span className="text-ink-faint">{p.metric}</span>
+                    </div>
+                  </div>
                 </div>
               );
               return (

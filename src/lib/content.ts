@@ -439,6 +439,9 @@ export const products = [
     href: "/work/sonas",
     external: false,
     metric: "[N] teams researching",
+    tint: "#7ee0c0",
+    image: undefined as string | undefined, // e.g. "/products/sonas.png" in /public
+    imageAlt: "Sonas interface",
   },
   {
     name: "UX Copilot",
@@ -447,6 +450,9 @@ export const products = [
     href: "https://www.figma.com/community", // [confirm plugin URL]
     external: true,
     metric: "~2,000 installs",
+    tint: "#8b9dff",
+    image: undefined as string | undefined, // e.g. "/products/ux-copilot.png"
+    imageAlt: "UX Copilot plugin in Figma",
   },
   {
     name: "AI Design Review",
@@ -455,6 +461,9 @@ export const products = [
     href: "https://www.figma.com/community", // [confirm plugin URL]
     external: true,
     metric: "Figma plugin",
+    tint: "#e08fff",
+    image: undefined as string | undefined, // e.g. "/products/ai-design-review.png"
+    imageAlt: "AI Design Review plugin in Figma",
   },
 ];
 
