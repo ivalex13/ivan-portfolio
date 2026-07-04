@@ -56,7 +56,7 @@ export function ImagePlaceholder({
             {/* iridescent bloom */}
             <div
               aria-hidden
-              className="absolute -inset-x-1/4 -top-1/2 h-full opacity-25 blur-3xl"
+              className="absolute -inset-x-1/4 -top-1/2 h-full opacity-25 blur-3xl transition-opacity duration-700 group-hover:opacity-45"
               style={{
                 background: tint
                   ? `linear-gradient(100deg, ${tint}, transparent 85%)`

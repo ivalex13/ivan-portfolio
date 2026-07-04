@@ -92,6 +92,28 @@ export default function HeroCanvas() {
         ctx.fill();
       }
 
+      // neural threads: faint lines between nearby particles
+      const LINK = 110;
+      ctx.lineWidth = 0.6;
+      for (let i = 0; i < particles.length; i++) {
+        const a = particles[i];
+        for (let j = i + 1; j < particles.length; j++) {
+          const b = particles[j];
+          const dx = a.x - b.x;
+          if (dx > LINK || dx < -LINK) continue;
+          const dy = a.y - b.y;
+          if (dy > LINK || dy < -LINK) continue;
+          const d2 = dx * dx + dy * dy;
+          if (d2 > LINK * LINK) continue;
+          const alpha = 0.11 * (1 - Math.sqrt(d2) / LINK);
+          ctx.strokeStyle = `rgba(${a.c},${alpha})`;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
+      }
+
       raf = requestAnimationFrame(tick);
     };
 
