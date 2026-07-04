@@ -165,9 +165,11 @@ export default function AboutPage() {
             <Reveal delay={0.1}>
               <a
                 href={profile.links.resume}
+                target="_blank"
+                rel="noreferrer"
                 className="mt-10 inline-flex items-center gap-2 rounded-full border border-line-strong px-6 py-3 text-ink transition-colors hover:border-ink"
               >
-                Download resume ↓
+                View resume ↗
               </a>
             </Reveal>
           </div>

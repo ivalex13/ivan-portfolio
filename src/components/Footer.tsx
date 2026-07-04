@@ -41,9 +41,11 @@ export default function Footer() {
             </a>
             <a
               href={profile.links.resume}
+              target="_blank"
+              rel="noreferrer"
               className="rounded-full border border-line-strong px-6 py-3.5 text-base text-ink transition-colors hover:border-ink"
             >
-              Resume ↓
+              Resume ↗
             </a>
           </div>
         </Reveal>

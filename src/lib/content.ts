@@ -21,7 +21,7 @@ export const profile = {
   availability: "Open to Senior / Lead AI Product Design roles",
   links: {
     linkedin: "https://www.linkedin.com/in/ivalex/",
-    resume: "/Ivan_Aleksic_Resume.pdf", // [drop your PDF into /public]
+    resume: "https://drive.google.com/file/d/1ChjIg8PgQZ3s9LIXSxerN3th2rNt6_oj/view?usp=sharing",
     sonas: "https://sonas.app", // [confirm URL]
     uxcopilot: "https://www.figma.com/community", // [confirm plugin URL]
   },
