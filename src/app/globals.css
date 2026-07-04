@@ -1,0 +1,119 @@
+@import "tailwindcss";
+@import "@fontsource/instrument-serif/400.css";
+@import "@fontsource/instrument-serif/400-italic.css";
+
+@theme {
+  /* ---- Palette: near-black canvas, warm ivory ink, iridescent AI glow ---- */
+  --color-canvas: #0a0a0c;
+  --color-raised: #121215;
+  --color-panel: #17171b;
+  --color-line: rgba(244, 243, 238, 0.09);
+  --color-line-strong: rgba(244, 243, 238, 0.18);
+  --color-ink: #f4f3ee;
+  --color-ink-dim: #b9b8bd;
+  --color-ink-faint: #85848c;
+  --color-glow-1: #8b9dff;
+  --color-glow-2: #e08fff;
+  --color-glow-3: #ffb380;
+
+  /* ---- Type ---- */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: "Instrument Serif", Georgia, serif;
+
+  --tracking-caps: 0.14em;
+
+  --animate-marquee: marquee 36s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-canvas);
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-glow-2) 60%, transparent);
+  color: var(--color-canvas);
+}
+
+/* Serif italic accent used inside headlines */
+.accent-serif {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+/* Iridescent text — reserved for AI moments */
+.text-iridescent {
+  background: linear-gradient(
+    100deg,
+    var(--color-glow-1) 0%,
+    var(--color-glow-2) 45%,
+    var(--color-glow-3) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hairline frame used by image placeholders and cards */
+.frame {
+  border: 1px solid var(--color-line);
+  background:
+    radial-gradient(
+      120% 100% at 50% 0%,
+      rgba(139, 157, 255, 0.06) 0%,
+      transparent 55%
+    ),
+    var(--color-raised);
+}
+
+/* Subtle film grain over the whole site */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Keyboard focus */
+:focus-visible {
+  outline: 2px solid var(--color-glow-1);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
