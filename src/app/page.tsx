@@ -6,11 +6,9 @@ import {
   principles,
   products,
   profile,
-  stats,
 } from "@/lib/content";
 import HeroCanvas from "@/components/HeroCanvas";
 import CaseCard from "@/components/CaseCard";
-import CountUp from "@/components/CountUp";
 import Marquee from "@/components/Marquee";
 import ScrollHint from "@/components/ScrollHint";
 import Magnetic from "@/components/Magnetic";
@@ -79,22 +77,6 @@ export default function Home() {
             </div>
           </Reveal>
         </div>
-      </section>
-
-      {/* ─────────────── Proof bar ─────────────── */}
-      <section aria-label="Career highlights" className="border-t border-line">
-        <Stagger className="mx-auto grid max-w-6xl grid-cols-2 gap-x-8 gap-y-12 px-6 py-16 sm:py-20 lg:grid-cols-4">
-          {stats.map((s) => (
-            <StaggerItem key={s.label} className="border-l border-line pl-6">
-              <div className="text-5xl font-medium tracking-tight text-ink tabular-nums sm:text-6xl">
-                <CountUp value={s.value} prefix={s.prefix} suffix={s.suffix} />
-              </div>
-              <p className="mt-3 max-w-[220px] text-sm leading-snug text-ink-faint">
-                {s.label}
-              </p>
-            </StaggerItem>
-          ))}
-        </Stagger>
       </section>
 
       <Marquee items={capabilities} />
