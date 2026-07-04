@@ -29,7 +29,7 @@ export const profile = {
 
 export const stats = [
   { value: 14, suffix: " yrs", label: "designing & scaling SaaS products" },
-  { value: 16, prefix: "$", suffix: "M ARR", label: "grown from $0 as founding designer at Instapage" },
+  { value: 16, prefix: "$", suffix: "M", label: "ARR grown from $0 as founding designer at Instapage" },
   { value: 4, suffix: "×", label: "AI-feature adoption after redesigning GPT-powered workflows" },
   { value: 700, prefix: "~", suffix: "", label: "enterprise accounts using scheduling tools I designed at Zendesk" },
 ];

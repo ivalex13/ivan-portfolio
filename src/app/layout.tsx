@@ -21,12 +21,33 @@ export const metadata: Metadata = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Ivan Aleksić",
+  jobTitle: "AI Product Designer",
+  url: "https://ivanaleksic.com",
+  email: "mailto:ivanaleksic@gmail.com",
+  sameAs: ["https://www.linkedin.com/in/ivanaleksic/"],
+  knowsAbout: [
+    "AI product design",
+    "Enterprise UX",
+    "Design systems",
+    "0-to-1 product design",
+  ],
+  worksFor: { "@type": "Organization", name: "Zendesk" },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="grain">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-canvas"

@@ -32,12 +32,17 @@ export default function Nav() {
     setScrolled(y > 24);
   });
 
-  // close the menu on route change; lock scroll while open
+  // close the menu on route change; lock scroll + close on Escape while open
   useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
     document.documentElement.style.overflow = open ? "hidden" : "";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    if (open) window.addEventListener("keydown", onKey);
     return () => {
       document.documentElement.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
     };
   }, [open]);
 
@@ -69,6 +74,7 @@ export default function Nav() {
               <Link
                 key={l.href}
                 href={l.href}
+                aria-current={pathname === l.href ? "page" : undefined}
                 className={`rounded-full px-3 py-1.5 text-sm transition-colors hover:text-ink ${
                   pathname === l.href ? "text-ink" : "text-ink-dim"
                 }`}
