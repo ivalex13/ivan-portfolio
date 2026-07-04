@@ -71,8 +71,9 @@ export type CaseStudy = {
   title: string;
   accent: string; // emphasized part of the title
   tint: string; // accent hue for this project's visuals (any CSS color)
-  summary: string;
-  tags: string[];
+  summary: string; // shown on the study page hero
+  hook: string; // one calm sentence on the home-page card
+  tags: string[]; // kept for future use; not rendered on cards
   metric: { value: string; label: string }; // headline metric on the card
   meta: { label: string; value: string }[];
   heroStats: { value: string; label: string }[];
@@ -90,6 +91,7 @@ export const caseStudies: CaseStudy[] = [
     tint: "#8b9dff",
     summary:
       "Leading the design response after ~80% of WFM's top adoption blockers traced back to scheduling, defining a long-term AI-assisted vision and shipping the wedge toward it.",
+    hook: "The vision and first shipped steps for AI-assisted scheduling at enterprise scale.",
     tags: ["Enterprise SaaS", "AI decision-support", "Design vision", "Workforce management"],
     metric: { value: "~700", label: "enterprise accounts, up to 1,000 agents each" },
     meta: [
@@ -203,6 +205,7 @@ export const caseStudies: CaseStudy[] = [
     tint: "#e08fff",
     summary:
       "The AI feature existed. People just didn't use it. Rebuilding the workflow around the user's moment of need lifted adoption 4×.",
+    hook: "The redesign that took GPT-4 content generation from ignored to indispensable.",
     tags: ["AI UX", "GPT-4", "Growth", "Marketing SaaS"],
     metric: { value: "4×", label: "AI-feature adoption after the redesign" },
     meta: [
@@ -285,6 +288,7 @@ export const caseStudies: CaseStudy[] = [
     tint: "#7ee0c0",
     summary:
       "My own product, designed and shipped end-to-end: AI personas for running interviews and usability tests when you can't get twenty users in a room.",
+    hook: "My own AI research tool, taken from idea to shipped product solo.",
     tags: ["0 → 1", "Founder", "AI product", "UX research"],
     metric: { value: "0 → 1", label: "designed, built, and shipped solo" },
     meta: [
@@ -362,6 +366,7 @@ export const caseStudies: CaseStudy[] = [
     tint: "#ffb380",
     summary:
       "Thirteen years, one company, every stage: first design hire to Principal. The long arc: landing-page builder from scratch, a design team from 1 to 10+, and a product from zero to tens of thousands of customers.",
+    hook: "Thirteen years at one company, from first design hire to Principal.",
     tags: ["Founding designer", "Design leadership", "Product strategy", "Growth"],
     metric: { value: "$16M", label: "ARR grown from $0" },
     meta: [
