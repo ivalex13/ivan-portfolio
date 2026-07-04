@@ -242,12 +242,14 @@ export default function Home() {
               </a>
             </Reveal>
             <Reveal delay={0.1}>
-              <ImagePlaceholder
-                src={about.portrait}
-                alt="Portrait of Ivan Aleksić"
-                aspect="tall"
-                note={about.portraitNote}
-              />
+              <div className="w-full max-w-xs lg:ml-auto">
+                <ImagePlaceholder
+                  src={about.portrait}
+                  alt="Portrait of Ivan Aleksić"
+                  aspect="tall"
+                  note={about.portraitNote}
+                />
+              </div>
             </Reveal>
           </div>
 
