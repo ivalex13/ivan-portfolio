@@ -7,23 +7,41 @@ export default function StudyBlocks({ blocks }: { blocks: Block[] }) {
     <div className="space-y-10">
       {blocks.map((block, i) => (
         <Reveal key={i} y={20}>
-          <BlockView block={block} />
+          <BlockView
+            block={block}
+            headingIndex={
+              block.type === "heading"
+                ? blocks.slice(0, i + 1).filter((b) => b.type === "heading").length
+                : 0
+            }
+          />
         </Reveal>
       ))}
     </div>
   );
 }
 
-function BlockView({ block }: { block: Block }) {
+function BlockView({
+  block,
+  headingIndex,
+}: {
+  block: Block;
+  headingIndex: number;
+}) {
   switch (block.type) {
     case "heading":
       return (
-        <h2
-          id={block.id}
-          className="scroll-mt-28 pt-8 text-3xl tracking-tight text-ink sm:text-4xl"
-        >
-          {block.text}
-        </h2>
+        <div className="flex items-baseline gap-4 pt-8">
+          <span aria-hidden className="font-mono text-[13px] text-glow-2">
+            {String(headingIndex).padStart(2, "0")}
+          </span>
+          <h2
+            id={block.id}
+            className="scroll-mt-28 text-3xl tracking-tight text-ink sm:text-4xl"
+          >
+            {block.text}
+          </h2>
+        </div>
       );
 
     case "text":
@@ -52,7 +70,7 @@ function BlockView({ block }: { block: Block }) {
         <div className="grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-3">
           {block.stats.map((s, i) => (
             <div key={i} className="bg-raised p-6">
-              <div className="text-3xl font-medium tracking-tight text-ink">
+              <div className="text-3xl font-medium tracking-tight text-ink tabular-nums">
                 {s.value}
               </div>
               <div className="mt-2 text-sm leading-snug text-ink-faint">
@@ -65,9 +83,15 @@ function BlockView({ block }: { block: Block }) {
 
     case "quote":
       return (
-        <blockquote className="max-w-2xl border-l-2 border-glow-2 pl-6">
+        <blockquote className="relative max-w-2xl border-l-2 border-glow-2 py-1 pl-6">
+          <span
+            aria-hidden
+            className="pointer-events-none absolute -top-5 left-4 select-none text-7xl leading-none text-glow-2/30"
+          >
+            &ldquo;
+          </span>
           <p className="text-2xl font-medium leading-snug tracking-tight text-ink sm:text-3xl">
-            &ldquo;{block.text}&rdquo;
+            {block.text}
           </p>
           {block.attribution && (
             <footer className="mt-4 font-mono text-[12px] tracking-caps uppercase text-ink-faint">

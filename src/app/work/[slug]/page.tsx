@@ -45,9 +45,19 @@ export default async function CaseStudyPage({
       {/* ─────────────── Study hero ─────────────── */}
       <header className="mx-auto max-w-6xl px-6 pb-16 pt-36">
         <MaskReveal>
-          <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-            {study.kicker}
-          </p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link
+              href="/#work"
+              className="group/back inline-flex items-center gap-2 font-mono text-[13px] tracking-caps uppercase text-ink-faint transition-colors hover:text-ink"
+            >
+              <span className="transition-transform group-hover/back:-translate-x-0.5">←</span>
+              All work
+            </Link>
+            <span aria-hidden className="h-px w-8 bg-line-strong" />
+            <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
+              {study.kicker}
+            </p>
+          </div>
         </MaskReveal>
 
         <h1 className="mt-6 max-w-4xl text-5xl leading-[1.02] tracking-tight sm:text-7xl">
@@ -84,7 +94,7 @@ export default async function CaseStudyPage({
           <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
             {study.heroStats.map((s, i) => (
               <div key={i} className="bg-raised p-7">
-                <div className="text-4xl font-medium tracking-tight text-ink">
+                <div className="text-4xl font-medium tracking-tight text-ink tabular-nums">
                   {s.value}
                 </div>
                 <div className="mt-2 text-sm leading-snug text-ink-faint">
@@ -150,12 +160,23 @@ export default async function CaseStudyPage({
       <div className="border-t border-line">
         <Link
           href={`/work/${next.slug}`}
-          className="group block"
+          className="group relative block overflow-hidden"
         >
+          <div
+            aria-hidden
+            className="absolute -inset-x-1/4 -bottom-1/2 h-full opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-15"
+            style={{ background: `linear-gradient(100deg, ${next.tint}, transparent 80%)` }}
+          />
           <div className="mx-auto max-w-6xl px-6 py-20">
-            <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-              Next case study
-            </p>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
+                Next case study
+              </p>
+              <span aria-hidden className="h-px w-8 bg-line-strong" />
+              <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
+                {next.kicker}
+              </p>
+            </div>
             <div className="mt-4 flex items-center justify-between gap-6">
               <h2 className="text-3xl tracking-tight transition-colors sm:text-5xl">
                 {next.title}{" "}

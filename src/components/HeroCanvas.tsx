@@ -106,12 +106,26 @@ export default function HeroCanvas() {
     };
 
     resize();
-    tick();
+
+    // only animate while the hero is on screen
+    let running = false;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !running) {
+        running = true;
+        tick();
+      } else if (!entry.isIntersecting && running) {
+        running = false;
+        cancelAnimationFrame(raf);
+      }
+    });
+    observer.observe(canvas);
+
     window.addEventListener("resize", resize);
     window.addEventListener("pointermove", onMove);
     document.addEventListener("pointerleave", onLeave);
 
     return () => {
+      observer.disconnect();
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", onMove);
