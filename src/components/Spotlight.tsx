@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
  * `relative` and `group` classes; it attaches to the parent and lights up
  * on hover.
  */
-export default function Spotlight({ color = "139,157,255" }: { color?: string }) {
+export default function Spotlight({ color = "91,140,255" }: { color?: string }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

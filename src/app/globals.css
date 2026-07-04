@@ -10,9 +10,9 @@
   --color-ink: #f4f3ee;
   --color-ink-dim: #b9b8bd;
   --color-ink-faint: #85848c;
-  --color-glow-1: #8b9dff;
-  --color-glow-2: #e08fff;
-  --color-glow-3: #ffb380;
+  --color-glow-1: #5b8cff;
+  --color-glow-2: #22d3ee;
+  --color-glow-3: #4ade80;
 
   /* ---- Type ---- */
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;

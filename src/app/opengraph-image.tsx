@@ -44,9 +44,9 @@ export default async function OgImage() {
           <svg width="56" height="56" viewBox="0 0 64 64">
             <defs>
               <linearGradient id="g" x1="0" y1="0" x2="64" y2="64">
-                <stop offset="0" stopColor="#8b9dff" />
-                <stop offset="0.5" stopColor="#e08fff" />
-                <stop offset="1" stopColor="#ffb380" />
+                <stop offset="0" stopColor="#5b8cff" />
+                <stop offset="0.5" stopColor="#22d3ee" />
+                <stop offset="1" stopColor="#4ade80" />
               </linearGradient>
             </defs>
             <path
@@ -74,7 +74,7 @@ export default async function OgImage() {
               letterSpacing: -3,
               fontWeight: 500,
               backgroundImage:
-                "linear-gradient(100deg, #8b9dff 0%, #e08fff 45%, #ffb380 100%)",
+                "linear-gradient(100deg, #5b8cff 0%, #22d3ee 45%, #4ade80 100%)",
               backgroundClip: "text",
               color: "transparent",
             }}

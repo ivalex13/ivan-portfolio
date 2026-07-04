@@ -24,7 +24,7 @@ export default function HeroCanvas() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const mouse = { x: -9999, y: -9999 };
 
-    const COLORS = ["139,157,255", "224,143,255", "255,179,128"];
+    const COLORS = ["91,140,255", "34,211,238", "74,222,128"];
 
     type P = { x: number; y: number; vx: number; vy: number; c: string; r: number; life: number };
     let particles: P[] = [];

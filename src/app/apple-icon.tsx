@@ -19,9 +19,9 @@ export default function AppleIcon() {
         <svg width="120" height="120" viewBox="0 0 64 64">
           <defs>
             <linearGradient id="g" x1="0" y1="0" x2="64" y2="64">
-              <stop offset="0" stopColor="#8b9dff" />
-              <stop offset="0.5" stopColor="#e08fff" />
-              <stop offset="1" stopColor="#ffb380" />
+              <stop offset="0" stopColor="#5b8cff" />
+              <stop offset="0.5" stopColor="#22d3ee" />
+              <stop offset="1" stopColor="#4ade80" />
             </linearGradient>
           </defs>
           <path

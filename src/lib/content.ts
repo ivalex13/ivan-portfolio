@@ -88,7 +88,7 @@ export const caseStudies: CaseStudy[] = [
     kicker: "Zendesk · 2024 – 2026",
     title: "Rethinking enterprise scheduling",
     accent: "with AI decision-support",
-    tint: "#8b9dff",
+    tint: "#5b8cff",
     summary:
       "Leading the design response after ~80% of WFM's top adoption blockers traced back to scheduling, defining a long-term AI-assisted vision and shipping the wedge toward it.",
     hook: "The vision and first shipped steps for AI-assisted scheduling at enterprise scale.",
@@ -202,7 +202,7 @@ export const caseStudies: CaseStudy[] = [
     kicker: "Instapage · 2023 – 2024",
     title: "4× adoption:",
     accent: "redesigning GPT-4 content generation",
-    tint: "#e08fff",
+    tint: "#22d3ee",
     summary:
       "The AI feature existed. People just didn't use it. Rebuilding the workflow around the user's moment of need lifted adoption 4×.",
     hook: "The redesign that took GPT-4 content generation from ignored to indispensable.",
@@ -285,7 +285,7 @@ export const caseStudies: CaseStudy[] = [
     kicker: "Founder & designer · 2024 – now",
     title: "Sonas:",
     accent: "AI personas that think like real users",
-    tint: "#7ee0c0",
+    tint: "#3ee6a8",
     summary:
       "My own product, designed and shipped end-to-end: AI personas for running interviews and usability tests when you can't get twenty users in a room.",
     hook: "My own AI research tool, taken from idea to shipped product solo.",
@@ -363,7 +363,7 @@ export const caseStudies: CaseStudy[] = [
     kicker: "Instapage · 2011 – 2024",
     title: "Founding designer:",
     accent: "0 → $16M ARR",
-    tint: "#ffb380",
+    tint: "#4ade80",
     summary:
       "Thirteen years, one company, every stage: first design hire to Principal. The long arc: landing-page builder from scratch, a design team from 1 to 10+, and a product from zero to tens of thousands of customers.",
     hook: "Thirteen years at one company, from first design hire to Principal.",
@@ -439,7 +439,7 @@ export const products = [
     href: "/work/sonas",
     external: false,
     metric: "[N] teams researching",
-    tint: "#7ee0c0",
+    tint: "#3ee6a8",
     image: undefined as string | undefined, // e.g. "/products/sonas.png" in /public
     imageAlt: "Sonas interface",
   },
@@ -450,7 +450,7 @@ export const products = [
     href: "https://www.figma.com/community", // [confirm plugin URL]
     external: true,
     metric: "~2,000 installs",
-    tint: "#8b9dff",
+    tint: "#5b8cff",
     image: undefined as string | undefined, // e.g. "/products/ux-copilot.png"
     imageAlt: "UX Copilot plugin in Figma",
   },
@@ -461,7 +461,7 @@ export const products = [
     href: "https://www.figma.com/community", // [confirm plugin URL]
     external: true,
     metric: "Figma plugin",
-    tint: "#e08fff",
+    tint: "#22d3ee",
     image: undefined as string | undefined, // e.g. "/products/ai-design-review.png"
     imageAlt: "AI Design Review plugin in Figma",
   },
