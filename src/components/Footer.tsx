@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { profile } from "@/lib/content";
 import { Reveal } from "@/components/motion";
+import Magnetic from "@/components/Magnetic";
+import LocalTime from "@/components/LocalTime";
 
 export default function Footer() {
   return (
@@ -20,13 +22,15 @@ export default function Footer() {
         </Reveal>
         <Reveal delay={0.16}>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href={`mailto:${profile.email}`}
-              className="group inline-flex items-center gap-3 rounded-full bg-ink px-7 py-3.5 text-base font-medium text-canvas transition-transform hover:scale-[1.03]"
-            >
-              {profile.email}
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </a>
+            <Magnetic>
+              <a
+                href={`mailto:${profile.email}`}
+                className="group inline-flex items-center gap-3 rounded-full bg-ink px-7 py-3.5 text-base font-medium text-canvas"
+              >
+                {profile.email}
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </a>
+            </Magnetic>
             <a
               href={profile.links.linkedin}
               target="_blank"
@@ -49,7 +53,7 @@ export default function Footer() {
       <div className="border-t border-line">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-6 font-mono text-[12px] tracking-caps uppercase text-ink-faint">
           <span>© {new Date().getFullYear()} Ivan Aleksić</span>
-          <span>{profile.role} · {profile.location}</span>
+          <span className="tabular-nums"><LocalTime /></span>
           <div className="flex gap-5">
             <Link href="/#work" className="transition-colors hover:text-ink">Work</Link>
             <Link href="/about" className="transition-colors hover:text-ink">About</Link>

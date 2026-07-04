@@ -4,6 +4,13 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import type { CaseStudy } from "@/lib/content";
 import { ImagePlaceholder } from "@/components/study/ImagePlaceholder";
+import Spotlight from "@/components/Spotlight";
+
+/** "139,157,255" from "#8b9dff" — Spotlight wants an rgb triplet */
+function hexToRgb(hex: string) {
+  const n = parseInt(hex.slice(1), 16);
+  return `${(n >> 16) & 255},${(n >> 8) & 255},${n & 255}`;
+}
 
 export default function CaseCard({
   study,
@@ -21,8 +28,9 @@ export default function CaseCard({
     >
       <Link
         href={`/work/${study.slug}`}
-        className="group block rounded-2xl frame p-6 transition-colors duration-300 hover:border-line-strong sm:p-8"
+        className="group relative block rounded-2xl frame p-6 transition-colors duration-300 hover:border-line-strong sm:p-8"
       >
+        <Spotlight color={hexToRgb(study.tint)} />
         <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           {/* Text */}
           <div>

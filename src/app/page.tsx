@@ -13,6 +13,8 @@ import CaseCard from "@/components/CaseCard";
 import CountUp from "@/components/CountUp";
 import Marquee from "@/components/Marquee";
 import ScrollHint from "@/components/ScrollHint";
+import Magnetic from "@/components/Magnetic";
+import Spotlight from "@/components/Spotlight";
 import { MaskReveal, Reveal, Stagger, StaggerItem } from "@/components/motion";
 
 export default function Home() {
@@ -28,7 +30,7 @@ export default function Home() {
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-24 pt-36">
           <MaskReveal delay={0.1}>
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-              {profile.name} · {profile.role}
+              {profile.role} · {profile.location}
             </p>
           </MaskReveal>
 
@@ -49,19 +51,23 @@ export default function Home() {
 
           <Reveal delay={0.8}>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a
-                href="#work"
-                className="group inline-flex items-center gap-3 rounded-full bg-ink px-7 py-3.5 font-medium text-canvas transition-transform hover:scale-[1.03]"
-              >
-                View selected work
-                <span className="transition-transform group-hover:translate-y-0.5">↓</span>
-              </a>
-              <a
-                href={`mailto:${profile.email}`}
-                className="rounded-full border border-line-strong px-6 py-3.5 text-ink transition-colors hover:border-ink"
-              >
-                Get in touch
-              </a>
+              <Magnetic>
+                <a
+                  href="#work"
+                  className="group inline-flex items-center gap-3 rounded-full bg-ink px-7 py-3.5 font-medium text-canvas"
+                >
+                  View selected work
+                  <span className="transition-transform group-hover:translate-y-0.5">↓</span>
+                </a>
+              </Magnetic>
+              <Magnetic>
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="inline-block rounded-full border border-line-strong px-6 py-3.5 text-ink transition-colors hover:border-ink"
+                >
+                  Get in touch
+                </a>
+              </Magnetic>
               <span className="ml-1 inline-flex items-center gap-2.5 font-mono text-[12px] tracking-caps uppercase text-ink-faint">
                 <span className="relative flex size-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-glow-3 opacity-60" />
@@ -79,7 +85,7 @@ export default function Home() {
         <Stagger className="mx-auto grid max-w-6xl grid-cols-2 gap-x-8 gap-y-12 px-6 py-16 sm:py-20 lg:grid-cols-4">
           {stats.map((s) => (
             <StaggerItem key={s.label}>
-              <div className="text-5xl font-medium tracking-tight text-ink sm:text-6xl">
+              <div className="text-5xl font-medium tracking-tight text-ink tabular-nums sm:text-6xl">
                 <CountUp value={s.value} prefix={s.prefix} suffix={s.suffix} />
               </div>
               <p className="mt-3 max-w-[220px] text-sm leading-snug text-ink-faint">
@@ -135,7 +141,8 @@ export default function Home() {
           <Stagger className="mt-14 grid gap-6 md:grid-cols-3" gap={0.1}>
             {products.map((p) => {
               const inner = (
-                <div className="frame group flex h-full flex-col justify-between rounded-2xl p-7 transition-colors duration-300 hover:border-line-strong">
+                <div className="frame group relative flex h-full flex-col justify-between rounded-2xl p-7 transition-colors duration-300 hover:border-line-strong">
+                  <Spotlight />
                   <div>
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-[12px] tracking-caps uppercase text-glow-1">
