@@ -32,7 +32,7 @@ const personJsonLd = {
   jobTitle: "AI Product Designer",
   url: "https://ivanaleksic.com",
   email: "mailto:ivanaleksic@gmail.com",
-  sameAs: ["https://www.linkedin.com/in/ivanaleksic/"],
+  sameAs: ["https://www.linkedin.com/in/ivalex/"],
   knowsAbout: [
     "AI product design",
     "Enterprise UX",

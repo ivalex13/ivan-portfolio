@@ -20,7 +20,7 @@ export const profile = {
   sub: "Fourteen years designing and scaling SaaS, from founding designer at Instapage (0 → $16M ARR) to AI-assisted enterprise tools at Zendesk. On the side, I build and ship my own AI products.",
   availability: "Open to Senior / Lead AI Product Design roles",
   links: {
-    linkedin: "https://www.linkedin.com/in/ivanaleksic/", // [confirm URL]
+    linkedin: "https://www.linkedin.com/in/ivalex/",
     resume: "/Ivan_Aleksic_Resume.pdf", // [drop your PDF into /public]
     sonas: "https://sonas.app", // [confirm URL]
     uxcopilot: "https://www.figma.com/community", // [confirm plugin URL]
