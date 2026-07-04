@@ -486,32 +486,63 @@ export const principles = [
   },
 ];
 
+/* ───────────────────────────── About ───────────────────────────── */
+
+export const about = {
+  paragraphs: [
+    "I'm Ivan, an AI product designer with fourteen years of building and scaling SaaS products. I was the first design hire at Instapage, where I owned the product from 0 → 1 and stayed through the growth to $16M ARR, a 10+ person product team, and tens of thousands of customers. Along the way I spent a year and a half as a product manager, which permanently rewired how I design.",
+    "What makes me different from most designers “doing AI”: I ship it myself. Sonas, UX Copilot, and AI Design Review are products I designed, built, and operate. That hands-on loop (model behavior, prompts, latency, cost, trust) is the fastest design education I've ever had, and it shows up in every product decision I make.",
+    "[Add a personal closing paragraph, where you're based, what you're like to work with, what you do off-screen.]",
+  ],
+  portraitNote: "Portrait: a real photo, well lit. It matters more than designers admit.",
+};
+
 /* ───────────────────────────── Experience ───────────────────────────── */
 
 export const experience = [
   {
     company: "Zendesk",
     role: "Senior Product Designer",
-    period: "2024 – 2026",
-    note: "AI-assisted scheduling for enterprise WFM: ~700 accounts, up to 1,000 agents each.",
+    period: "July 2024 – April 2026",
+    bullets: [
+      "Led the design response to WFM's adoption and retention problems after analysis traced ~80% of the top blockers to the scheduling area I owned. Defined a long-term scheduling-configuration vision (AI included) and a short-term roadmap building toward it.",
+      "Designed AI-assisted scheduling concepts, including an internal tool that helps support managers validate schedules quickly, and explored how AI decision-support could work across scheduling more broadly.",
+      "Shipped the first steps of that vision: agent personal-availability settings, Holidays & Closures, and bulk task actions, each closing a specific adoption gap.",
+      "Led a cross-team initiative to overhaul time-off tracking accuracy across Zendesk WFM, used by support and WFM managers (~700 enterprise accounts, up to 1,000 agents each).",
+    ],
   },
   {
     company: "Instapage",
     role: "Principal Product Designer",
-    period: "2020 – 2024",
-    note: "GPT-4 content generation (4× adoption), core dashboard for 20k+ customers, pricing strategy.",
+    period: "January 2020 – July 2024",
+    bullets: [
+      "Redesigned AI-powered content generation (GPT-4), lifting feature adoption 4×.",
+      "Owned the redesign of the core product dashboard used by 20k+ customers, improving feature discovery.",
+      "Led the redesign of Heatmaps analytics, improving usability and adoption for marketing teams.",
+      "Partnered with leadership on pricing and packaging strategy during a key growth phase.",
+      "Mentored designers and helped grow the product design function.",
+    ],
   },
   {
     company: "Instapage",
     role: "Product Manager",
-    period: "2018 – 2019",
-    note: "Owned Integrations, Leads & Experimentation. Launched Zapier integration (1,000+ tools).",
+    period: "May 2018 – December 2019",
+    bullets: [
+      "Owned roadmap for Integrations, Leads, and Experimentation used by thousands of customers.",
+      "Launched Zapier integration (1,000+ tools), significantly expanding the product ecosystem.",
+      "Led redesign and launch of experimentation platform enabling scalable A/B testing workflows.",
+    ],
   },
   {
     company: "Instapage",
-    role: "Founding Designer → Senior PD",
-    period: "2011 – 2018",
-    note: "First design hire. 0 → 1 product, $0 → $16M ARR, team from 1 to 10+.",
+    role: "Founding Product Designer → Senior Product Designer",
+    period: "September 2011 – April 2018",
+    bullets: [
+      "First design hire at Instapage. Owned product strategy, UX, and core architecture from 0 → 1.",
+      "Designed and launched the original landing-page builder, adopted by thousands of businesses.",
+      "Contributed to growth from $0 to $16M ARR through rapid product and customer expansion.",
+      "Helped scale the product team from 1 to 10+ across design and product.",
+    ],
   },
 ];
 

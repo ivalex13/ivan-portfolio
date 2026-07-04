@@ -1,7 +1,9 @@
 import Link from "next/link";
 import {
+  about,
   capabilities,
   caseStudies,
+  education,
   experience,
   principles,
   products,
@@ -210,51 +212,88 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─────────────── Experience ─────────────── */}
-      <section className="border-t border-line">
+      {/* ─────────────── About ─────────────── */}
+      <section id="about" className="scroll-mt-20 border-t border-line">
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 sm:py-32">
-          <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
-            <Reveal>
-              <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-                <span className="text-glow-2">04</span> · Track record
-              </p>
-              <h2 className="mt-4 text-4xl tracking-tight sm:text-5xl">
-                Fourteen years,{" "}
-                <span className="text-outline">every stage</span>
-              </h2>
-              <p className="mt-5 max-w-sm text-base leading-relaxed text-ink-dim">
-                Startup 0→1, hyper-growth, a PM detour, and enterprise scale:
-                the full arc of building SaaS products.
-              </p>
-              <Link
-                href="/about"
-                className="mt-8 inline-flex items-center gap-2 text-ink underline decoration-line-strong underline-offset-8 transition-colors hover:decoration-ink"
-              >
-                More about me →
-              </Link>
-            </Reveal>
+          <Reveal>
+            <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
+              <span className="text-glow-2">04</span> · About
+            </p>
+            <h2 className="mt-4 text-4xl tracking-tight sm:text-6xl">
+              Fourteen years, <span className="text-outline">every stage</span>
+            </h2>
+          </Reveal>
 
-            <Stagger className="divide-y divide-line border-t border-line" gap={0.08}>
-              {experience.map((e, i) => (
-                <StaggerItem key={i}>
-                  <div className="grid gap-2 py-6 sm:grid-cols-[140px_1fr_auto] sm:gap-6">
-                    <span className="font-mono text-[13px] leading-6 text-ink-faint">
-                      {e.period}
-                    </span>
-                    <div>
-                      <div className="text-lg font-medium tracking-tight">
-                        {e.role}
-                        <span className="text-ink-faint"> · {e.company}</span>
-                      </div>
-                      <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-ink-dim">
-                        {e.note}
-                      </p>
-                    </div>
-                  </div>
-                </StaggerItem>
-              ))}
-            </Stagger>
+          {/* Bio + portrait */}
+          <div className="mt-14 grid gap-14 lg:grid-cols-[1.2fr_1fr]">
+            <Reveal>
+              <div className="space-y-6 text-lg leading-[1.75] text-ink-dim">
+                {about.paragraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+              <a
+                href={profile.links.resume}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-10 inline-flex items-center gap-2 rounded-full border border-line-strong px-6 py-3 text-ink transition-colors hover:border-ink"
+              >
+                View resume ↗
+              </a>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <ImagePlaceholder
+                alt="Portrait of Ivan Aleksić"
+                aspect="tall"
+                note={about.portraitNote}
+              />
+            </Reveal>
           </div>
+
+          {/* Experience */}
+          <Stagger className="mt-20 divide-y divide-line border-t border-line" gap={0.08}>
+            {experience.map((e, i) => (
+              <StaggerItem key={i}>
+                <div className="grid gap-3 py-9 lg:grid-cols-[220px_1fr] lg:gap-8">
+                  <span className="font-mono text-[13px] leading-6 text-ink-faint">
+                    {e.period}
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-medium tracking-tight">
+                      {e.role}
+                      <span className="text-ink-faint"> · {e.company}</span>
+                    </h3>
+                    <ul className="mt-4 space-y-2.5">
+                      {e.bullets.map((b, j) => (
+                        <li
+                          key={j}
+                          className="flex gap-3 text-[15px] leading-relaxed text-ink-dim"
+                        >
+                          <span
+                            aria-hidden
+                            className="mt-[9px] size-1 shrink-0 rounded-full bg-ink-faint"
+                          />
+                          <span className="max-w-3xl">{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+
+          {/* Education */}
+          <Reveal>
+            <p className="mt-12 border-t border-line pt-8 font-mono text-[12px] tracking-caps uppercase text-ink-faint">
+              Education
+              {education.map((e) => (
+                <span key={e.name} className="ml-5 text-ink-dim">
+                  {e.name} ({e.year})
+                </span>
+              ))}
+            </p>
+          </Reveal>
         </div>
       </section>
     </>

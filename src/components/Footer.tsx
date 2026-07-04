@@ -62,7 +62,7 @@ export default function Footer() {
           <span className="tabular-nums"><LocalTime /></span>
           <div className="flex gap-5">
             <Link href="/#work" className="transition-colors hover:text-ink">Work</Link>
-            <Link href="/about" className="transition-colors hover:text-ink">About</Link>
+            <Link href="/#about" className="transition-colors hover:text-ink">About</Link>
           </div>
         </div>
       </div>

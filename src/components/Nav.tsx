@@ -13,7 +13,7 @@ import { profile } from "@/lib/content";
 
 const links = [
   { href: "/#work", label: "Work" },
-  { href: "/about", label: "About" },
+  { href: "/#about", label: "About" },
   { href: "/#products", label: "AI Products" },
 ];
 
