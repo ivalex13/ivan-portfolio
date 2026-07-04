@@ -103,6 +103,7 @@ export default async function CaseStudyPage({
             alt={`${study.title} ${study.accent} — cover`}
             aspect="wide"
             note="Full-bleed cover visual — your strongest single image for this project."
+            tint={study.tint}
           />
         </Reveal>
       </div>

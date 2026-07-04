@@ -85,6 +85,7 @@ export default function CaseCard({
                 aspect="video"
                 note="Cover visual — hero shot of this case study"
                 compact
+                tint={study.tint}
               />
             </div>
           </div>

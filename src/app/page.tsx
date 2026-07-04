@@ -12,6 +12,7 @@ import HeroCanvas from "@/components/HeroCanvas";
 import CaseCard from "@/components/CaseCard";
 import CountUp from "@/components/CountUp";
 import Marquee from "@/components/Marquee";
+import ScrollHint from "@/components/ScrollHint";
 import { MaskReveal, Reveal, Stagger, StaggerItem } from "@/components/motion";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       {/* ─────────────── Hero ─────────────── */}
       <section className="relative flex min-h-svh flex-col justify-center overflow-hidden">
         <HeroCanvas />
+        <ScrollHint />
         {/* bottom fade into content */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-canvas" />
 

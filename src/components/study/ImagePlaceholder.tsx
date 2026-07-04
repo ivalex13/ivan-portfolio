@@ -19,6 +19,7 @@ export function ImagePlaceholder({
   aspect = "wide",
   note,
   compact = false,
+  tint,
 }: {
   src?: string;
   alt: string;
@@ -26,6 +27,8 @@ export function ImagePlaceholder({
   aspect?: "wide" | "video" | "square" | "tall";
   note?: string;
   compact?: boolean;
+  /** Accent color for the placeholder bloom; defaults to the site gradient */
+  tint?: string;
 }) {
   return (
     <figure>
@@ -55,8 +58,9 @@ export function ImagePlaceholder({
               aria-hidden
               className="absolute -inset-x-1/4 -top-1/2 h-full opacity-25 blur-3xl"
               style={{
-                background:
-                  "linear-gradient(100deg, var(--color-glow-1), var(--color-glow-2), var(--color-glow-3))",
+                background: tint
+                  ? `linear-gradient(100deg, ${tint}, transparent 85%)`
+                  : "linear-gradient(100deg, var(--color-glow-1), var(--color-glow-2), var(--color-glow-3))",
               }}
             />
             <div className="absolute inset-0 grid place-items-center p-6">

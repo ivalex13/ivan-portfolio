@@ -69,7 +69,8 @@ export type CaseStudy = {
   slug: string;
   kicker: string; // e.g. "Zendesk · 2024–2026"
   title: string;
-  accent: string; // serif-italic part of the title
+  accent: string; // emphasized part of the title
+  tint: string; // accent hue for this project's visuals (any CSS color)
   summary: string;
   tags: string[];
   metric: { value: string; label: string }; // headline metric on the card
@@ -86,6 +87,7 @@ export const caseStudies: CaseStudy[] = [
     kicker: "Zendesk · 2024 – 2026",
     title: "Rethinking enterprise scheduling",
     accent: "with AI decision-support",
+    tint: "#8b9dff",
     summary:
       "Leading the design response after ~80% of WFM's top adoption blockers traced back to scheduling — defining a long-term AI-assisted vision and shipping the wedge toward it.",
     tags: ["Enterprise SaaS", "AI decision-support", "Design vision", "Workforce management"],
@@ -198,6 +200,7 @@ export const caseStudies: CaseStudy[] = [
     kicker: "Instapage · 2023 – 2024",
     title: "4× adoption:",
     accent: "redesigning GPT-4 content generation",
+    tint: "#e08fff",
     summary:
       "The AI feature existed — people just didn't use it. Rebuilding the workflow around the user's moment of need lifted adoption 4×.",
     tags: ["AI UX", "GPT-4", "Growth", "Marketing SaaS"],
@@ -279,6 +282,7 @@ export const caseStudies: CaseStudy[] = [
     kicker: "Founder & designer · 2024 – now",
     title: "Sonas:",
     accent: "AI personas that think like real users",
+    tint: "#7ee0c0",
     summary:
       "My own product, designed and shipped end-to-end — AI personas for running interviews and usability tests when you can't get twenty users in a room.",
     tags: ["0 → 1", "Founder", "AI product", "UX research"],
@@ -355,6 +359,7 @@ export const caseStudies: CaseStudy[] = [
     kicker: "Instapage · 2011 – 2024",
     title: "Founding designer:",
     accent: "0 → $16M ARR",
+    tint: "#ffb380",
     summary:
       "Thirteen years, one company, every stage — first design hire to Principal. The long arc: landing-page builder from scratch, a design team from 1 to 10+, and a product from zero to tens of thousands of customers.",
     tags: ["Founding designer", "Design leadership", "Product strategy", "Growth"],
