@@ -242,7 +242,7 @@ export default function Home() {
               </a>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="w-full max-w-xs lg:ml-auto">
+              <div className="w-full max-w-xs">
                 <ImagePlaceholder
                   src={about.portrait}
                   alt="Portrait of Ivan Aleksić"
