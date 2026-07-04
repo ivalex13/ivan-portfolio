@@ -15,7 +15,7 @@ export default function Footer() {
         <Reveal delay={0.08}>
           <h2 className="mt-6 max-w-3xl text-5xl leading-[1.04] tracking-tight sm:text-7xl">
             Let&rsquo;s build the products{" "}
-            <span className="accent-serif text-iridescent">AI makes possible.</span>
+            <span className="text-iridescent">AI makes possible.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.16}>

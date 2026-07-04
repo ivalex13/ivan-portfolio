@@ -66,7 +66,7 @@ function BlockView({ block }: { block: Block }) {
     case "quote":
       return (
         <blockquote className="max-w-2xl border-l-2 border-glow-2 pl-6">
-          <p className="accent-serif text-2xl leading-snug text-ink sm:text-3xl">
+          <p className="text-2xl font-medium leading-snug tracking-tight text-ink sm:text-3xl">
             &ldquo;{block.text}&rdquo;
           </p>
           {block.attribution && (

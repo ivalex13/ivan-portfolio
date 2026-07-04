@@ -53,7 +53,7 @@ export default async function CaseStudyPage({
         <h1 className="mt-6 max-w-4xl text-5xl leading-[1.02] tracking-tight sm:text-7xl">
           <MaskReveal delay={0.12}>{study.title}</MaskReveal>
           <MaskReveal delay={0.24}>
-            <span className="accent-serif text-iridescent">{study.accent}</span>
+            <span className="text-iridescent">{study.accent}</span>
           </MaskReveal>
         </h1>
 
@@ -158,7 +158,7 @@ export default async function CaseStudyPage({
             <div className="mt-4 flex items-center justify-between gap-6">
               <h2 className="text-3xl tracking-tight transition-colors sm:text-5xl">
                 {next.title}{" "}
-                <span className="accent-serif text-ink-dim transition-colors duration-300 group-hover:text-iridescent">
+                <span className="text-ink-faint transition-colors duration-300 group-hover:text-iridescent">
                   {next.accent}
                 </span>
               </h2>

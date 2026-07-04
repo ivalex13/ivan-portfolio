@@ -29,7 +29,7 @@ export default function AboutPage() {
         <h1 className="mt-6 max-w-4xl text-5xl leading-[1.04] tracking-tight sm:text-7xl">
           <MaskReveal delay={0.12}>Designer since 2011.</MaskReveal>
           <MaskReveal delay={0.24}>
-            <span className="accent-serif text-iridescent">
+            <span className="text-iridescent">
               Builder the whole time.
             </span>
           </MaskReveal>
@@ -83,7 +83,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-6 py-24">
           <Reveal>
             <h2 className="text-4xl tracking-tight sm:text-5xl">
-              How I <span className="accent-serif text-ink-dim">work with AI</span>
+              How I <span className="text-outline">work with AI</span>
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-dim">
               AI is part of my daily practice, not a slide in my deck — from

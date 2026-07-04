@@ -42,8 +42,10 @@ npm run build  # production build
 
 ## Design system
 
-- **Type**: Geist Sans (UI), Geist Mono (labels/meta), Instrument Serif italic
-  (display accents)
+- **Type**: Geist Sans (UI + display), Geist Mono (labels/meta). Display
+  accents use two treatments: `.text-iridescent` (gradient fill, reserved
+  for AI-moment phrases) and `.text-outline` (hollow stroked text for
+  secondary heading words)
 - **Palette**: near-black canvas, warm ivory ink, iridescent gradient
   (`glow-1 → glow-2 → glow-3`) reserved for AI moments
 - Tokens live in `src/app/globals.css` under `@theme`

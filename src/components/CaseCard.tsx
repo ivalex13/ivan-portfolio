@@ -37,7 +37,7 @@ export default function CaseCard({
 
             <h3 className="mt-5 text-3xl leading-[1.08] tracking-tight sm:text-4xl">
               {study.title}{" "}
-              <span className="accent-serif text-ink-dim transition-colors duration-300 group-hover:text-iridescent">
+              <span className="text-ink-faint transition-colors duration-300 group-hover:text-iridescent">
                 {study.accent}
               </span>
             </h3>

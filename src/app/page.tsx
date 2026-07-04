@@ -33,7 +33,7 @@ export default function Home() {
           <h1 className="mt-8 text-[13vw] leading-[0.98] tracking-tight sm:text-7xl md:text-8xl">
             <MaskReveal delay={0.25}>{profile.headline.lead}</MaskReveal>
             <MaskReveal delay={0.4}>
-              <span className="accent-serif text-iridescent">
+              <span className="text-iridescent">
                 {profile.headline.accent}
               </span>
             </MaskReveal>
@@ -96,7 +96,7 @@ export default function Home() {
           <Reveal>
             <div className="flex items-end justify-between">
               <h2 className="text-4xl tracking-tight sm:text-6xl">
-                Selected <span className="accent-serif text-ink-dim">work</span>
+                Selected <span className="text-outline">work</span>
               </h2>
               <span className="hidden font-mono text-[13px] tracking-caps uppercase text-ink-faint sm:block">
                 {caseStudies.length} case studies
@@ -121,7 +121,7 @@ export default function Home() {
             </p>
             <h2 className="mt-4 max-w-2xl text-4xl tracking-tight sm:text-6xl">
               AI products I{" "}
-              <span className="accent-serif text-ink-dim">build &amp; ship</span>
+              <span className="text-outline">build &amp; ship</span>
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-dim">
               Side products I design, build, and operate end-to-end. They keep my
@@ -179,7 +179,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
           <Reveal>
             <h2 className="text-4xl tracking-tight sm:text-6xl">
-              How I <span className="accent-serif text-ink-dim">lead design</span>
+              How I <span className="text-outline">lead design</span>
             </h2>
           </Reveal>
           <Stagger className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-3" gap={0.12}>
@@ -207,7 +207,7 @@ export default function Home() {
             <Reveal>
               <h2 className="text-4xl tracking-tight sm:text-5xl">
                 Fourteen years,{" "}
-                <span className="accent-serif text-ink-dim">every stage</span>
+                <span className="text-outline">every stage</span>
               </h2>
               <p className="mt-5 max-w-sm text-base leading-relaxed text-ink-dim">
                 Startup 0→1, hyper-growth, a PM detour, and enterprise scale —

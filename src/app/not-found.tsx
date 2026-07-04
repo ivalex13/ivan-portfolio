@@ -7,7 +7,7 @@ export default function NotFound() {
         404
       </p>
       <h1 className="mt-5 text-5xl tracking-tight sm:text-7xl">
-        This page <span className="accent-serif text-iridescent">hallucinated.</span>
+        This page <span className="text-iridescent">hallucinated.</span>
       </h1>
       <p className="mt-6 max-w-md text-lg text-ink-dim">
         Unlike my AI products, this link wasn&rsquo;t grounded in anything real.
