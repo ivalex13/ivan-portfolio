@@ -1,9 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0c",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ivanaleksic.com"),

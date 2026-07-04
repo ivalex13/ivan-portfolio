@@ -74,12 +74,14 @@ export default function CaseCard({
                   {study.metric.label}
                 </div>
               </div>
-              <span
-                aria-hidden
-                className="grid size-11 place-items-center rounded-full border border-line-strong text-lg transition-all duration-300 group-hover:border-ink group-hover:bg-ink group-hover:text-canvas"
-              >
-                <span className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  ↗
+              <span aria-hidden className="flex items-center gap-3">
+                <span className="translate-x-2 font-mono text-[11px] tracking-caps uppercase text-ink-faint opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+                  Read case study
+                </span>
+                <span className="grid size-11 shrink-0 place-items-center rounded-full border border-line-strong text-lg transition-all duration-300 group-hover:border-ink group-hover:bg-ink group-hover:text-canvas">
+                  <span className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                    ↗
+                  </span>
                 </span>
               </span>
             </div>
