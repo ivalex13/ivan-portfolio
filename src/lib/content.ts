@@ -11,7 +11,7 @@
 export const profile = {
   name: "Ivan Aleksić",
   role: "AI Product Designer",
-  location: "Europe · Remote",
+  location: "Europe",
   email: "ivanaleksic@gmail.com",
   headline: {
     lead: "I design AI products",
