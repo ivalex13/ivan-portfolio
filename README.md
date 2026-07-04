@@ -1,4 +1,4 @@
-# Ivan Aleksić — Portfolio
+# Ivan Aleksić · Portfolio
 
 Personal portfolio, built with Next.js 15, Tailwind CSS v4, and Motion.
 
@@ -7,9 +7,9 @@ Personal portfolio, built with Next.js 15, Tailwind CSS v4, and Motion.
 **Everything on the site is rendered from one file: [`src/lib/content.ts`](src/lib/content.ts).**
 You never need to touch a component to change copy.
 
-- `profile` — name, headline, sub, email, links, availability line
-- `stats` — the four animated numbers under the hero
-- `caseStudies` — each case study: card copy, meta grid, hero stats, TL;DR,
+- `profile`, name, headline, sub, email, links, availability line
+- `stats`, the four animated numbers under the hero
+- `caseStudies`, each case study: card copy, meta grid, hero stats, TL;DR,
   and the body as a list of typed blocks (`heading`, `text`, `list`, `image`,
   `quote`, `stat-row`, `callout`)
 - `products`, `principles`, `experience`, `education`
@@ -28,7 +28,7 @@ Until `src` is set, blocks render as styled placeholders with drop-in guidance.
 
 ### Adding a case study
 
-Add an object to `caseStudies` in `content.ts` — the card on the home page,
+Add an object to `caseStudies` in `content.ts`, the card on the home page,
 the `/work/<slug>` page, section nav, and next-project footer all generate
 automatically.
 

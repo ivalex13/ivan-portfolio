@@ -110,9 +110,9 @@ export default async function CaseStudyPage({
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         <Reveal>
           <ImagePlaceholder
-            alt={`${study.title} ${study.accent} — cover`}
+            alt={`${study.title} ${study.accent} cover`}
             aspect="wide"
-            note="Full-bleed cover visual — your strongest single image for this project."
+            note="Full-bleed cover visual: your strongest single image for this project."
             tint={study.tint}
           />
         </Reveal>
@@ -126,7 +126,7 @@ export default async function CaseStudyPage({
             className="frame rounded-2xl p-8 sm:p-10"
           >
             <p className="font-mono text-[12px] tracking-caps uppercase text-iridescent">
-              TL;DR — for the 3-minute read
+              TL;DR · the 3-minute read
             </p>
             <div className="mt-6 grid gap-8 md:grid-cols-3">
               {(

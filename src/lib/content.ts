@@ -1,7 +1,7 @@
 /**
  * ─────────────────────────────────────────────────────────────────────────────
  *  SINGLE SOURCE OF CONTENT
- *  Everything on the site is rendered from this file. Edit copy here —
+ *  Everything on the site is rendered from this file. Edit copy here;
  *  no component changes needed. Text in [brackets] marks spots to fill in
  *  with your own detail; replace image placeholders by dropping files into
  *  /public/work/… and setting `src` on the image blocks.
@@ -17,7 +17,7 @@ export const profile = {
     lead: "I design AI products",
     accent: "people actually adopt.",
   },
-  sub: "Fourteen years designing and scaling SaaS — from founding designer at Instapage (0 → $16M ARR) to AI-assisted enterprise tools at Zendesk. On the side, I build and ship my own AI products.",
+  sub: "Fourteen years designing and scaling SaaS, from founding designer at Instapage (0 → $16M ARR) to AI-assisted enterprise tools at Zendesk. On the side, I build and ship my own AI products.",
   availability: "Open to Senior / Lead AI Product Design roles",
   links: {
     linkedin: "https://www.linkedin.com/in/ivanaleksic/", // [confirm URL]
@@ -77,7 +77,7 @@ export type CaseStudy = {
   meta: { label: string; value: string }[];
   heroStats: { value: string; label: string }[];
   tldr: { problem: string; role: string; outcome: string };
-  locked?: boolean; // true → "NDA — details in interview" treatment
+  locked?: boolean; // true → "NDA: details in interview" treatment
   sections: Block[];
 };
 
@@ -89,14 +89,14 @@ export const caseStudies: CaseStudy[] = [
     accent: "with AI decision-support",
     tint: "#8b9dff",
     summary:
-      "Leading the design response after ~80% of WFM's top adoption blockers traced back to scheduling — defining a long-term AI-assisted vision and shipping the wedge toward it.",
+      "Leading the design response after ~80% of WFM's top adoption blockers traced back to scheduling, defining a long-term AI-assisted vision and shipping the wedge toward it.",
     tags: ["Enterprise SaaS", "AI decision-support", "Design vision", "Workforce management"],
     metric: { value: "~700", label: "enterprise accounts, up to 1,000 agents each" },
     meta: [
-      { label: "Role", value: "Senior Product Designer — design lead, scheduling area" },
+      { label: "Role", value: "Senior Product Designer · design lead, scheduling area" },
       { label: "Timeline", value: "July 2024 – April 2026" },
       { label: "Team", value: "[PM, EM, N engineers, researcher…]" },
-      { label: "Platform", value: "Zendesk WFM — web" },
+      { label: "Platform", value: "Zendesk WFM · web" },
     ],
     heroStats: [
       { value: "~80%", label: "of top adoption blockers traced to the scheduling area I owned" },
@@ -105,75 +105,75 @@ export const caseStudies: CaseStudy[] = [
     ],
     tldr: {
       problem:
-        "Zendesk WFM had an adoption and retention problem. Analysis traced roughly 80% of the top blockers to scheduling configuration — the area I owned.",
+        "Zendesk WFM had an adoption and retention problem. Analysis traced roughly 80% of the top blockers to scheduling configuration, the area I owned.",
       role:
         "I led design: defined a long-term, AI-assisted scheduling-configuration vision, aligned a short-term roadmap toward it, and designed the first shipped steps.",
       outcome:
-        "Shipped agent personal-availability settings, Holidays & Closures, and bulk task actions — each closing a specific adoption gap — and set the direction for AI decision-support across scheduling. [Add outcome metrics when available]",
+        "Shipped agent personal-availability settings, Holidays & Closures, and bulk task actions, each closing a specific adoption gap, and set the direction for AI decision-support across scheduling. [Add outcome metrics when available]",
     },
     sections: [
       { type: "heading", id: "context", text: "Context" },
       {
         type: "text",
-        text: "Zendesk WFM helps support organizations forecast demand and schedule agents. Enterprise customers run it at serious scale — up to 1,000 agents in a single account — and scheduling configuration is where the product wins or loses them. [Add 2–3 sentences on how you came to own this area.]",
+        text: "Zendesk WFM helps support organizations forecast demand and schedule agents. Enterprise customers run it at serious scale (up to 1,000 agents in a single account), and scheduling configuration is where the product wins or loses them. [Add 2–3 sentences on how you came to own this area.]",
       },
       {
         type: "image",
         alt: "The scheduling area of Zendesk WFM before the redesign",
         aspect: "wide",
-        note: "Product context shot — the scheduling area as customers saw it. Blur real data if needed.",
+        note: "Product context shot: the scheduling area as customers saw it. Blur real data if needed.",
       },
       { type: "heading", id: "problem", text: "The problem" },
       {
         type: "text",
-        text: "A cross-functional analysis of churn and adoption blockers put a number on the pain: ~80% of the top blockers pointed at scheduling. Managers couldn't express real-world constraints — personal availability, public holidays, one-off closures — so schedules came out wrong, and trust in the product eroded.",
+        text: "A cross-functional analysis of churn and adoption blockers put a number on the pain: ~80% of the top blockers pointed at scheduling. Managers couldn't express real-world constraints (personal availability, public holidays, one-off closures), so schedules came out wrong, and trust in the product eroded.",
       },
       {
         type: "quote",
-        text: "[Drop in a verbatim customer quote from research — the one that made the room go quiet.]",
+        text: "[Drop in a verbatim customer quote from research, the one that made the room go quiet.]",
         attribution: "WFM manager, enterprise customer",
       },
       { type: "heading", id: "vision", text: "Vision first, then the wedge" },
       {
         type: "text",
-        text: "Instead of patching blockers one by one, I defined where scheduling configuration should land long-term — including where AI genuinely helps versus where it adds noise — then worked backwards to a short-term roadmap where every shipped step also closed a known adoption gap.",
+        text: "Instead of patching blockers one by one, I defined where scheduling configuration should land long-term (including where AI genuinely helps versus where it adds noise), then worked backwards to a short-term roadmap where every shipped step also closed a known adoption gap.",
       },
       {
         type: "image",
         alt: "North-star vision framework for scheduling configuration",
         aspect: "video",
-        note: "Vision artifact — the north-star map / storyboard you aligned leadership around.",
+        note: "Vision artifact: the north-star map / storyboard you aligned leadership around.",
       },
       {
         type: "callout",
         title: "AI as decision-support, not autopilot",
-        text: "Schedules are high-stakes: a bad one means missed SLAs and angry agents. I designed AI concepts around validation and explanation — including an internal tool that helps support managers validate schedules quickly — rather than opaque auto-generation. [Expand with 1–2 concrete interaction details.]",
+        text: "Schedules are high-stakes: a bad one means missed SLAs and angry agents. I designed AI concepts around validation and explanation (including an internal tool that helps support managers validate schedules quickly) rather than opaque auto-generation. [Expand with 1–2 concrete interaction details.]",
       },
       {
         type: "image",
         alt: "AI-assisted schedule validation concept",
         aspect: "wide",
-        note: "The money shot — AI validation concept UI. This is the image recruiters will remember.",
+        note: "The money shot: AI validation concept UI. This is the image recruiters will remember.",
       },
       { type: "heading", id: "shipped", text: "What shipped" },
       {
         type: "list",
         items: [
-          "Agent personal-availability settings — schedules finally respect individual working patterns. [Add adoption/usage numbers]",
-          "Holidays & Closures — public holidays and one-off closures modeled as first-class objects. [Add impact]",
-          "Bulk task actions — cut the grind of editing schedules at 1,000-agent scale. [Add time-saved metric]",
+          "Agent personal-availability settings: schedules finally respect individual working patterns. [Add adoption/usage numbers]",
+          "Holidays & Closures: public holidays and one-off closures modeled as first-class objects. [Add impact]",
+          "Bulk task actions: cut the grind of editing schedules at 1,000-agent scale. [Add time-saved metric]",
         ],
       },
       {
         type: "image",
         alt: "Shipped features: availability, Holidays & Closures, bulk actions",
         aspect: "wide",
-        note: "Triptych of the three shipped features — final polished UI.",
+        note: "Triptych of the three shipped features: final polished UI.",
       },
       { type: "heading", id: "leadership", text: "Leading beyond the feature" },
       {
         type: "text",
-        text: "In parallel, I led a cross-team initiative to overhaul time-off tracking accuracy across Zendesk WFM — used by support and WFM managers in ~700 enterprise accounts. [Describe how you drove alignment across teams: rituals, artifacts, decisions you brokered.]",
+        text: "In parallel, I led a cross-team initiative to overhaul time-off tracking accuracy across Zendesk WFM, used by support and WFM managers in ~700 enterprise accounts. [Describe how you drove alignment across teams: rituals, artifacts, decisions you brokered.]",
       },
       { type: "heading", id: "impact", text: "Impact" },
       {
@@ -202,14 +202,14 @@ export const caseStudies: CaseStudy[] = [
     accent: "redesigning GPT-4 content generation",
     tint: "#e08fff",
     summary:
-      "The AI feature existed — people just didn't use it. Rebuilding the workflow around the user's moment of need lifted adoption 4×.",
+      "The AI feature existed. People just didn't use it. Rebuilding the workflow around the user's moment of need lifted adoption 4×.",
     tags: ["AI UX", "GPT-4", "Growth", "Marketing SaaS"],
     metric: { value: "4×", label: "AI-feature adoption after the redesign" },
     meta: [
       { label: "Role", value: "Principal Product Designer" },
       { label: "Timeline", value: "[Month] 2023 – [Month] 2024" },
       { label: "Team", value: "[PM, N engineers…]" },
-      { label: "Platform", value: "Instapage landing-page builder — web" },
+      { label: "Platform", value: "Instapage landing-page builder · web" },
     ],
     heroStats: [
       { value: "4×", label: "feature adoption after redesign" },
@@ -218,7 +218,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     tldr: {
       problem:
-        "Instapage shipped GPT-powered content generation early — but it sat in a side panel, disconnected from how marketers actually write landing pages. Usage flatlined.",
+        "Instapage shipped GPT-powered content generation early, but it sat in a side panel, disconnected from how marketers actually write landing pages. Usage flatlined.",
       role:
         "I owned the redesign end-to-end: research into where generation fit the real workflow, interaction design for prompting without 'prompting', and the rollout with the growth team.",
       outcome: "4× adoption of AI features. [Add retention / content-quality / revenue signals if you have them.]",
@@ -233,12 +233,12 @@ export const caseStudies: CaseStudy[] = [
         type: "image",
         alt: "The original AI content generation UI",
         aspect: "wide",
-        note: "Before — the v1 generation panel. Honest 'before' shots build credibility.",
+        note: "Before: the v1 generation panel. Honest 'before' shots build credibility.",
       },
       { type: "heading", id: "insight", text: "The insight" },
       {
         type: "text",
-        text: "Marketers don't sit down to 'use AI'. They sit down to ship a page. Generation only earns adoption when it appears inside the moment of need — a blank headline, a weak CTA, a variant to test — not as a destination feature. [Back this with the research that got you there.]",
+        text: "Marketers don't sit down to 'use AI'. They sit down to ship a page. Generation only earns adoption when it appears inside the moment of need (a blank headline, a weak CTA, a variant to test), not as a destination feature. [Back this with the research that got you there.]",
       },
       {
         type: "quote",
@@ -248,18 +248,18 @@ export const caseStudies: CaseStudy[] = [
       { type: "heading", id: "design", text: "Designing prompting away" },
       {
         type: "text",
-        text: "The core move: replace the blank prompt box with structured, context-aware generation. The system already knows the industry, the page section, the brand voice — so the UI asks only for what it can't infer. [Walk through 2–3 key interaction decisions with rationale.]",
+        text: "The core move: replace the blank prompt box with structured, context-aware generation. The system already knows the industry, the page section, the brand voice, so the UI asks only for what it can't infer. [Walk through 2–3 key interaction decisions with rationale.]",
       },
       {
         type: "image",
         alt: "Redesigned in-context generation flow",
         aspect: "wide",
-        note: "The redesigned flow — ideally an animated GIF/video of generation in context.",
+        note: "The redesigned flow: ideally an animated GIF/video of generation in context.",
       },
       {
         type: "callout",
         title: "Trust mechanics",
-        text: "[Describe how you handled AI trust: previews, regeneration, editing affordances, tone controls — the details that separate AI designers from designers who added AI.]",
+        text: "[Describe how you handled AI trust: previews, regeneration, editing affordances, tone controls, the details that separate AI designers from designers who added AI.]",
       },
       { type: "heading", id: "impact", text: "Impact" },
       {
@@ -273,7 +273,7 @@ export const caseStudies: CaseStudy[] = [
       { type: "heading", id: "reflections", text: "Reflections" },
       {
         type: "text",
-        text: "[What this taught you about AI adoption — the lesson you now apply everywhere, including at Zendesk.]",
+        text: "[What this taught you about AI adoption, the lesson you now apply everywhere, including at Zendesk.]",
       },
     ],
   },
@@ -284,11 +284,11 @@ export const caseStudies: CaseStudy[] = [
     accent: "AI personas that think like real users",
     tint: "#7ee0c0",
     summary:
-      "My own product, designed and shipped end-to-end — AI personas for running interviews and usability tests when you can't get twenty users in a room.",
+      "My own product, designed and shipped end-to-end: AI personas for running interviews and usability tests when you can't get twenty users in a room.",
     tags: ["0 → 1", "Founder", "AI product", "UX research"],
     metric: { value: "0 → 1", label: "designed, built, and shipped solo" },
     meta: [
-      { label: "Role", value: "Founder — design, product, build" },
+      { label: "Role", value: "Founder · design, product, build" },
       { label: "Timeline", value: "2024 – ongoing" },
       { label: "Team", value: "Solo, AI-assisted" },
       { label: "Platform", value: "Web app" },
@@ -300,38 +300,38 @@ export const caseStudies: CaseStudy[] = [
     ],
     tldr: {
       problem:
-        "Early-stage teams skip research because recruiting is slow and expensive — so they ship on guesswork.",
+        "Early-stage teams skip research because recruiting is slow and expensive, so they ship on guesswork.",
       role:
         "Everything: positioning, UX, UI, prompt architecture, evaluation of persona realism, and the build itself.",
       outcome:
-        "A shipped product in users' hands. Proof that I can take an AI product from idea to production alone — the same muscle I bring to teams. [Add traction numbers]",
+        "A shipped product in users' hands. Proof that I can take an AI product from idea to production alone, the same muscle I bring to teams. [Add traction numbers]",
     },
     sections: [
       { type: "heading", id: "why", text: "Why I built it" },
       {
         type: "text",
-        text: "[The origin story — the moment in your own practice where you needed users and couldn't get them. Founder case studies live or die on authentic motivation.]",
+        text: "[The origin story: the moment in your own practice where you needed users and couldn't get them. Founder case studies live or die on authentic motivation.]",
       },
       {
         type: "image",
-        alt: "Sonas — persona interview interface",
+        alt: "Sonas persona interview interface",
         aspect: "wide",
-        note: "Hero product shot of Sonas — the interview view.",
+        note: "Hero product shot of Sonas: the interview view.",
       },
       { type: "heading", id: "hard-parts", text: "The hard parts" },
       {
         type: "list",
         items: [
-          "Persona fidelity — [how you engineered personas that push back and surprise, instead of agreeable LLM mush]",
-          "Trust boundaries — [how the product communicates what synthetic research is and isn't good for]",
-          "Session design — [how interviews flow, how insights get captured and synthesized]",
+          "Persona fidelity: [how you engineered personas that push back and surprise, instead of agreeable LLM mush]",
+          "Trust boundaries: [how the product communicates what synthetic research is and isn't good for]",
+          "Session design: [how interviews flow, how insights get captured and synthesized]",
         ],
       },
       {
         type: "image",
         alt: "Prompt and persona architecture behind Sonas",
         aspect: "video",
-        note: "A systems diagram — persona architecture / prompt pipeline. Shows technical depth.",
+        note: "A systems diagram: persona architecture / prompt pipeline. Shows technical depth.",
       },
       { type: "heading", id: "design-decisions", text: "Design decisions" },
       {
@@ -361,14 +361,14 @@ export const caseStudies: CaseStudy[] = [
     accent: "0 → $16M ARR",
     tint: "#ffb380",
     summary:
-      "Thirteen years, one company, every stage — first design hire to Principal. The long arc: landing-page builder from scratch, a design team from 1 to 10+, and a product from zero to tens of thousands of customers.",
+      "Thirteen years, one company, every stage: first design hire to Principal. The long arc: landing-page builder from scratch, a design team from 1 to 10+, and a product from zero to tens of thousands of customers.",
     tags: ["Founding designer", "Design leadership", "Product strategy", "Growth"],
     metric: { value: "$16M", label: "ARR grown from $0" },
     meta: [
       { label: "Role", value: "Founding Designer → Senior PD → PM → Principal PD" },
       { label: "Timeline", value: "September 2011 – July 2024" },
       { label: "Team", value: "Design team grown from 1 (me) to 10+" },
-      { label: "Platform", value: "Instapage — web" },
+      { label: "Platform", value: "Instapage · web" },
     ],
     heroStats: [
       { value: "$0 → $16M", label: "ARR across the growth years" },
@@ -377,7 +377,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     tldr: {
       problem:
-        "In 2011, building landing pages meant developers, templates, or pain. Instapage bet on a builder anyone could use — and needed its first designer to define what that meant.",
+        "In 2011, building landing pages meant developers, templates, or pain. Instapage bet on a builder anyone could use, and needed its first designer to define what that meant.",
       role:
         "First design hire. Owned product strategy, UX, and core architecture from 0 → 1, then kept re-earning the seat as the company scaled: senior IC, PM for a year and a half, then Principal.",
       outcome:
@@ -387,23 +387,23 @@ export const caseStudies: CaseStudy[] = [
       { type: "heading", id: "arc", text: "The arc" },
       {
         type: "text",
-        text: "This isn't a single-feature case study — it's the closest thing I have to a career in miniature. Every stage of a SaaS company, seen from the inside: scrappy 0→1, product-market fit, scale, and the org-building that comes with it.",
+        text: "This isn't a single-feature case study; it's the closest thing I have to a career in miniature. Every stage of a SaaS company, seen from the inside: scrappy 0→1, product-market fit, scale, and the org-building that comes with it.",
       },
       {
         type: "image",
         alt: "Evolution of Instapage from 2011 to 2024",
         aspect: "wide",
-        note: "A timeline visual — screenshots of the product across eras. Extremely effective for a longevity story.",
+        note: "A timeline visual: screenshots of the product across eras. Extremely effective for a longevity story.",
       },
       { type: "heading", id: "zero-to-one", text: "0 → 1: the original builder" },
       {
         type: "text",
-        text: "I designed and launched the original landing-page builder — the drag-and-drop core the company was built on, adopted by thousands of businesses. [Add: 1–2 foundational design decisions that survived a decade.]",
+        text: "I designed and launched the original landing-page builder, the drag-and-drop core the company was built on, adopted by thousands of businesses. [Add: 1–2 foundational design decisions that survived a decade.]",
       },
       { type: "heading", id: "pm-detour", text: "The PM detour" },
       {
         type: "text",
-        text: "For a year and a half I switched seats: PM for Integrations, Leads, and Experimentation. I launched the Zapier integration (1,000+ tools) and led the experimentation platform enabling scalable A/B testing. Sitting in the PM chair permanently changed how I design — roadmaps, trade-offs, and business cases stopped being someone else's job.",
+        text: "For a year and a half I switched seats: PM for Integrations, Leads, and Experimentation. I launched the Zapier integration (1,000+ tools) and led the experimentation platform enabling scalable A/B testing. Sitting in the PM chair permanently changed how I design: roadmaps, trade-offs, and business cases stopped being someone else's job.",
       },
       { type: "heading", id: "principal", text: "Principal: multiplying, not just making" },
       {
@@ -418,7 +418,7 @@ export const caseStudies: CaseStudy[] = [
       { type: "heading", id: "reflections", text: "Reflections" },
       {
         type: "text",
-        text: "[Why staying 13 years was a feature, not a bug — and what founding-stage ownership looks like when you bring it into an enterprise org.]",
+        text: "[Why staying 13 years was a feature, not a bug, and what founding-stage ownership looks like when you bring it into an enterprise org.]",
       },
     ],
   },
@@ -429,7 +429,7 @@ export const caseStudies: CaseStudy[] = [
 export const products = [
   {
     name: "Sonas",
-    tagline: "AI personas that think and react like real users — for interviews and usability tests.",
+    tagline: "AI personas that think and react like real users, for interviews and usability tests.",
     status: "Live",
     href: "/work/sonas",
     external: false,
@@ -437,7 +437,7 @@ export const products = [
   },
   {
     name: "UX Copilot",
-    tagline: "AI assistant for UX work inside Figma — copy generation, personas, design feedback.",
+    tagline: "AI assistant for UX work inside Figma: copy generation, personas, design feedback.",
     status: "~2k installs",
     href: "https://www.figma.com/community", // [confirm plugin URL]
     external: true,
@@ -464,12 +464,12 @@ export const principles = [
   {
     n: "02",
     title: "Evidence over opinion",
-    text: "The strongest design argument is a traced number — like the analysis that pinned ~80% of adoption blockers on one area. I build the case before I build the screens.",
+    text: "The strongest design argument is a traced number, like the analysis that pinned ~80% of adoption blockers on one area. I build the case before I build the screens.",
   },
   {
     n: "03",
     title: "AI is a material, not a feature",
-    text: "I ship my own AI products end-to-end, so I design with a builder's understanding of what models can actually do — and where they quietly fail people.",
+    text: "I ship my own AI products end-to-end, so I design with a builder's understanding of what models can actually do, and where they quietly fail people.",
   },
 ];
 
@@ -480,7 +480,7 @@ export const experience = [
     company: "Zendesk",
     role: "Senior Product Designer",
     period: "2024 – 2026",
-    note: "AI-assisted scheduling for enterprise WFM — ~700 accounts, up to 1,000 agents each.",
+    note: "AI-assisted scheduling for enterprise WFM: ~700 accounts, up to 1,000 agents each.",
   },
   {
     company: "Instapage",
@@ -503,6 +503,6 @@ export const experience = [
 ];
 
 export const education = [
-  { name: "Reforge — Mastering Product Management", year: "2022" },
-  { name: "Reforge — Retention + Engagement", year: "2018" },
+  { name: "Reforge · Mastering Product Management", year: "2022" },
+  { name: "Reforge · Retention + Engagement", year: "2018" },
 ];

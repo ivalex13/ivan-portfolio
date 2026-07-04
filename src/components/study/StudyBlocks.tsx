@@ -95,7 +95,7 @@ function BlockView({
           </p>
           {block.attribution && (
             <footer className="mt-4 font-mono text-[12px] tracking-caps uppercase text-ink-faint">
-              — {block.attribution}
+              {block.attribution}
             </footer>
           )}
         </blockquote>

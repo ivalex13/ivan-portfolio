@@ -7,7 +7,7 @@ import Spotlight from "@/components/Spotlight";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "AI Product Designer with 14 years building and scaling SaaS — Instapage, Zendesk, and shipped AI products of my own.",
+    "AI Product Designer with 14 years building and scaling SaaS: Instapage, Zendesk, and shipped AI products of my own.",
 };
 
 const aiStack = [
@@ -40,7 +40,7 @@ export default function AboutPage() {
           <Reveal delay={0.35}>
             <div className="space-y-6 text-lg leading-[1.75] text-ink-dim">
               <p>
-                I&rsquo;m Ivan — an AI product designer with fourteen years of
+                I&rsquo;m Ivan, an AI product designer with fourteen years of
                 building and scaling SaaS products. I was the first design hire
                 at Instapage, where I owned the product from 0 → 1 and stayed
                 through the growth to $16M ARR, a 10+ person product team, and
@@ -50,20 +50,20 @@ export default function AboutPage() {
               </p>
               <p>
                 At Zendesk I led design for the scheduling area of Workforce
-                Management — enterprise tools used across ~700 accounts with up
-                to 1,000 agents each — defining an AI-assisted vision for
+                Management, enterprise tools used across ~700 accounts with up
+                to 1,000 agents each, defining an AI-assisted vision for
                 scheduling and shipping the first steps toward it.
               </p>
               <p>
                 What makes me different from most designers &ldquo;doing
                 AI&rdquo;: I ship it myself. Sonas, UX Copilot, and AI Design
                 Review are products I designed, built, and operate. That
-                hands-on loop — model behavior, prompts, latency, cost, trust —
+                hands-on loop (model behavior, prompts, latency, cost, trust)
                 is the fastest design education I&rsquo;ve ever had, and it
                 shows up in every product decision I make.
               </p>
               <p>
-                [Add a personal closing paragraph — where you&rsquo;re based,
+                [Add a personal closing paragraph, where you&rsquo;re based,
                 what you&rsquo;re like to work with, what you do off-screen.]
               </p>
             </div>
@@ -73,7 +73,7 @@ export default function AboutPage() {
             <ImagePlaceholder
               alt="Portrait of Ivan Aleksić"
               aspect="tall"
-              note="Portrait — a real photo, well lit. It matters more than designers admit."
+              note="Portrait: a real photo, well lit. It matters more than designers admit."
             />
           </Reveal>
         </div>
@@ -84,13 +84,13 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-24">
           <Reveal>
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-              <span className="text-glow-2">01</span> — AI toolkit
+              <span className="text-glow-2">01</span> · AI toolkit
             </p>
             <h2 className="mt-4 text-4xl tracking-tight sm:text-5xl">
               How I <span className="text-outline">work with AI</span>
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-dim">
-              AI is part of my daily practice, not a slide in my deck — from
+              AI is part of my daily practice, not a slide in my deck, from
               research synthesis to shipped product code.
             </p>
           </Reveal>
@@ -116,7 +116,7 @@ export default function AboutPage() {
           <div>
             <Reveal>
               <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-                <span className="text-glow-2">02</span> — Background
+                <span className="text-glow-2">02</span> · Background
               </p>
               <h2 className="mt-4 text-3xl tracking-tight sm:text-4xl">Experience</h2>
             </Reveal>
@@ -145,7 +145,7 @@ export default function AboutPage() {
           <div>
             <Reveal>
               <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-                <span className="text-glow-2">03</span> — Learning
+                <span className="text-glow-2">03</span> · Learning
               </p>
               <h2 className="mt-4 text-3xl tracking-tight sm:text-4xl">Education</h2>
             </Reveal>

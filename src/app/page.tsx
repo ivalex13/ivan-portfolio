@@ -103,7 +103,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 md:px-10 pb-24 pt-24 sm:pt-32">
           <Reveal>
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-              <span className="text-glow-2">01</span> — Case studies
+              <span className="text-glow-2">01</span> · Case studies
             </p>
             <div className="mt-4 flex items-end justify-between">
               <h2 className="text-4xl tracking-tight sm:text-6xl">
@@ -128,16 +128,16 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 sm:py-32">
           <Reveal>
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-              <span className="text-glow-2">02</span> — Built &amp; shipped
+              <span className="text-glow-2">02</span> · Built &amp; shipped
             </p>
             <h2 className="mt-4 max-w-2xl text-4xl tracking-tight sm:text-6xl">
-              Not just designing AI —{" "}
+              Not just designing AI:{" "}
               <span className="text-outline">shipping it</span>
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-dim">
               Products I design, build, and operate end-to-end. They keep my
-              understanding of AI practical — model behavior, prompt design,
-              latency, trust — not theoretical.
+              understanding of AI practical, not theoretical: model behavior,
+              prompt design, latency, trust.
             </p>
           </Reveal>
 
@@ -191,7 +191,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 sm:py-32">
           <Reveal>
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-              <span className="text-glow-2">03</span> — Principles
+              <span className="text-glow-2">03</span> · Principles
             </p>
             <h2 className="mt-4 text-4xl tracking-tight sm:text-6xl">
               How I <span className="text-outline">lead design</span>
@@ -221,14 +221,14 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
             <Reveal>
               <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-                <span className="text-glow-2">04</span> — Track record
+                <span className="text-glow-2">04</span> · Track record
               </p>
               <h2 className="mt-4 text-4xl tracking-tight sm:text-5xl">
                 Fourteen years,{" "}
                 <span className="text-outline">every stage</span>
               </h2>
               <p className="mt-5 max-w-sm text-base leading-relaxed text-ink-dim">
-                Startup 0→1, hyper-growth, a PM detour, and enterprise scale —
+                Startup 0→1, hyper-growth, a PM detour, and enterprise scale:
                 the full arc of building SaaS products.
               </p>
               <Link

@@ -12,15 +12,15 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://ivanaleksic.com"),
   title: {
-    default: "Ivan Aleksić — AI Product Designer",
-    template: "%s — Ivan Aleksić",
+    default: "Ivan Aleksić · AI Product Designer",
+    template: "%s · Ivan Aleksić",
   },
   description:
     "AI Product Designer with 14 years building and scaling SaaS. Founding designer at Instapage ($0 → $16M ARR), AI-assisted enterprise tools at Zendesk, and shipped AI products of my own: Sonas & UX Copilot.",
   openGraph: {
-    title: "Ivan Aleksić — AI Product Designer",
+    title: "Ivan Aleksić · AI Product Designer",
     description:
-      "I design AI products people actually adopt. 14 years scaling SaaS — Instapage, Zendesk, and my own shipped AI products.",
+      "I design AI products people actually adopt. 14 years scaling SaaS: Instapage, Zendesk, and my own shipped AI products.",
     type: "website",
   },
 };

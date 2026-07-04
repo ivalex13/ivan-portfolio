@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-/** Live local time (CET) — a small pulse of "real person" in the footer. */
+/** Live local time (CET), a small pulse of "real person" in the footer. */
 export default function LocalTime() {
   const [time, setTime] = useState<string | null>(null);
 
