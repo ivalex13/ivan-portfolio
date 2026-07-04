@@ -20,7 +20,7 @@ const aiStack = [
 export default function AboutPage() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-6 pb-24 pt-36">
+      <section className="mx-auto max-w-6xl px-6 md:px-10 pb-24 pt-36">
         <MaskReveal>
           <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
             About
@@ -81,7 +81,7 @@ export default function AboutPage() {
 
       {/* AI toolkit */}
       <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-6 py-24">
+        <div className="mx-auto max-w-6xl px-6 md:px-10 py-24">
           <Reveal>
             <h2 className="text-4xl tracking-tight sm:text-5xl">
               How I <span className="text-outline">work with AI</span>
@@ -109,7 +109,7 @@ export default function AboutPage() {
 
       {/* Experience + education */}
       <section className="border-t border-line">
-        <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 md:px-10 lg:grid-cols-2">
           <div>
             <Reveal>
               <h2 className="text-3xl tracking-tight sm:text-4xl">Experience</h2>

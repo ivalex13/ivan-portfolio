@@ -59,7 +59,7 @@ export default function Nav() {
             : "border-b border-transparent"
         }`}
       >
-        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 md:px-10">
           <Link
             href="/"
             className="relative z-[75] font-mono text-[13px] tracking-caps uppercase text-ink transition-colors hover:text-glow-1"

@@ -43,7 +43,7 @@ export default async function CaseStudyPage({
   return (
     <article>
       {/* ─────────────── Study hero ─────────────── */}
-      <header className="mx-auto max-w-6xl px-6 pb-16 pt-36">
+      <header className="mx-auto max-w-6xl px-6 md:px-10 pb-16 pt-36">
         <MaskReveal>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <Link
@@ -107,7 +107,7 @@ export default async function CaseStudyPage({
       </header>
 
       {/* ─────────────── Cover visual ─────────────── */}
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-6 md:px-10">
         <Reveal>
           <ImagePlaceholder
             alt={`${study.title} ${study.accent} — cover`}
@@ -119,7 +119,7 @@ export default async function CaseStudyPage({
       </div>
 
       {/* ─────────────── TL;DR ─────────────── */}
-      <div className="mx-auto max-w-6xl px-6 pt-16">
+      <div className="mx-auto max-w-6xl px-6 md:px-10 pt-16">
         <Reveal>
           <section
             aria-label="TL;DR"
@@ -149,7 +149,7 @@ export default async function CaseStudyPage({
       </div>
 
       {/* ─────────────── Body ─────────────── */}
-      <div className="mx-auto grid max-w-6xl gap-16 px-6 pb-28 pt-16 lg:grid-cols-[200px_1fr]">
+      <div className="mx-auto grid max-w-6xl gap-16 px-6 pb-28 pt-16 md:px-10 lg:grid-cols-[200px_1fr]">
         <StudyNav sections={sections.map((s) => ({ id: s.id, text: s.text }))} />
         <div className="min-w-0">
           <StudyBlocks blocks={study.sections} />
@@ -167,7 +167,7 @@ export default async function CaseStudyPage({
             className="absolute -inset-x-1/4 -bottom-1/2 h-full opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-15"
             style={{ background: `linear-gradient(100deg, ${next.tint}, transparent 80%)` }}
           />
-          <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="mx-auto max-w-6xl px-6 md:px-10 py-20">
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
               <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
                 Next case study

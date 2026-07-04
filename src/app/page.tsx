@@ -27,14 +27,14 @@ export default function Home() {
         {/* bottom fade into content */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-canvas" />
 
-        <div className="relative mx-auto w-full max-w-6xl px-6 pb-24 pt-36">
+        <div className="relative mx-auto w-full max-w-6xl px-6 md:px-10 pb-24 pt-36">
           <MaskReveal delay={0.1}>
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
               {profile.role} · {profile.location}
             </p>
           </MaskReveal>
 
-          <h1 className="mt-8 text-[13vw] leading-[0.98] tracking-tight sm:text-7xl md:text-8xl">
+          <h1 className="mt-8 text-[clamp(3rem,9.2vw,6rem)] leading-[0.98] tracking-tight">
             <MaskReveal delay={0.25}>{profile.headline.lead}</MaskReveal>
             <MaskReveal delay={0.4}>
               <span className="text-iridescent">
@@ -100,7 +100,7 @@ export default function Home() {
 
       {/* ─────────────── Selected work ─────────────── */}
       <section id="work" className="scroll-mt-20">
-        <div className="mx-auto max-w-6xl px-6 pb-24 pt-24 sm:pt-32">
+        <div className="mx-auto max-w-6xl px-6 md:px-10 pb-24 pt-24 sm:pt-32">
           <Reveal>
             <div className="flex items-end justify-between">
               <h2 className="text-4xl tracking-tight sm:text-6xl">
@@ -122,7 +122,7 @@ export default function Home() {
 
       {/* ─────────────── AI products ─────────────── */}
       <section id="products" className="scroll-mt-20 border-t border-line">
-        <div className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+        <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 sm:py-32">
           <Reveal>
             <p className="font-mono text-[13px] tracking-caps uppercase text-iridescent">
               Not just designing AI — shipping it
@@ -185,7 +185,7 @@ export default function Home() {
 
       {/* ─────────────── Principles ─────────────── */}
       <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+        <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 sm:py-32">
           <Reveal>
             <h2 className="text-4xl tracking-tight sm:text-6xl">
               How I <span className="text-outline">lead design</span>
@@ -211,7 +211,7 @@ export default function Home() {
 
       {/* ─────────────── Experience ─────────────── */}
       <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+        <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 sm:py-32">
           <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
             <Reveal>
               <h2 className="text-4xl tracking-tight sm:text-5xl">

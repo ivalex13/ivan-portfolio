@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer id="contact" className="relative border-t border-line">
       {/* Contact CTA */}
-      <div className="mx-auto max-w-6xl px-6 py-28 sm:py-36">
+      <div className="mx-auto max-w-6xl px-6 md:px-10 py-28 sm:py-36">
         <Reveal>
           <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
             {profile.availability}

@@ -11,7 +11,7 @@ export default function ScrollHint() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1.6, duration: 0.8 }}
-      className="absolute bottom-8 left-6 z-10 hidden items-center gap-3 sm:flex"
+      className="absolute bottom-8 left-6 z-10 hidden items-center gap-3 sm:flex md:left-10"
     >
       <span className="relative block h-12 w-px overflow-hidden bg-line-strong">
         {!reduce && (
