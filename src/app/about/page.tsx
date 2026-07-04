@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { education, experience, profile } from "@/lib/content";
 import { ImagePlaceholder } from "@/components/study/ImagePlaceholder";
 import { MaskReveal, Reveal, Stagger, StaggerItem } from "@/components/motion";
+import Spotlight from "@/components/Spotlight";
 
 export const metadata: Metadata = {
   title: "About",
@@ -93,7 +94,8 @@ export default function AboutPage() {
           <Stagger className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2" gap={0.08}>
             {aiStack.map((t) => (
               <StaggerItem key={t.name}>
-                <div className="h-full bg-raised p-7">
+                <div className="group relative h-full bg-raised p-7">
+                  <Spotlight />
                   <div className="text-lg font-medium tracking-tight">{t.name}</div>
                   <p className="mt-2 text-sm leading-relaxed text-ink-faint">
                     {t.note}
