@@ -157,9 +157,8 @@ export default async function Home() {
                         {p.tagline}
                       </p>
                     </div>
-                    <div className="mt-8 flex items-center justify-between font-mono text-[12px] tracking-caps uppercase">
+                    <div className="mt-8 font-mono text-[12px] tracking-caps uppercase">
                       <span className="text-glow-1">{p.status}</span>
-                      <span className="text-ink-faint">{p.metric}</span>
                     </div>
                   </div>
                 </div>

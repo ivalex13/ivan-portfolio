@@ -435,10 +435,9 @@ export const products = [
   {
     name: "Sonas",
     tagline: "AI personas that think and react like real users, for interviews and usability tests.",
-    status: "Live",
+    status: "Web app",
     href: "https://aisonas.com/",
     external: true,
-    metric: "[N] teams researching",
     tint: "#3ee6a8",
     image: undefined as string | undefined, // set to override the fetched OG image, e.g. "/products/sonas.png"
     ogSource: "https://aisonas.com/", // card's visual falls back to this page's og:image
@@ -447,10 +446,9 @@ export const products = [
   {
     name: "UX Copilot",
     tagline: "AI assistant for UX work inside Figma: copy generation, personas, design feedback.",
-    status: "~2k installs",
+    status: "Figma plugin",
     href: "https://www.figma.com/community/plugin/1461484151701868163/ux-copilot-ai-assistant",
     external: true,
-    metric: "~2,000 installs",
     tint: "#5b8cff",
     image: undefined as string | undefined, // set to override the fetched OG image, e.g. "/products/ux-copilot.png"
     ogSource:
@@ -460,10 +458,9 @@ export const products = [
   {
     name: "AI Design Review",
     tagline: "Fast, practical design critique without leaving the Figma canvas.",
-    status: "Live",
+    status: "Figma plugin",
     href: "https://www.figma.com/community/plugin/1542867863199350817/ai-design-review",
     external: true,
-    metric: "Figma plugin",
     tint: "#22d3ee",
     image: undefined as string | undefined, // set to override the fetched OG image, e.g. "/products/ai-design-review.png"
     ogSource:
