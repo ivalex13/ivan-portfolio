@@ -10,6 +10,7 @@ import {
 } from "@/lib/content";
 import HeroCanvas from "@/components/HeroCanvas";
 import CaseCard from "@/components/CaseCard";
+import CompanyLogo from "@/components/CompanyLogo";
 import Marquee from "@/components/Marquee";
 import ScrollHint from "@/components/ScrollHint";
 import Magnetic from "@/components/Magnetic";
@@ -234,9 +235,14 @@ export default async function Home() {
                     {e.period}
                   </span>
                   <div>
-                    <h3 className="text-lg font-medium tracking-tight">
+                    <div className="flex items-center gap-2.5 text-ink-dim">
+                      <CompanyLogo company={e.company} className="size-4 shrink-0" />
+                      <span className="font-mono text-[12px] tracking-caps uppercase">
+                        {e.company}
+                      </span>
+                    </div>
+                    <h3 className="mt-2.5 text-lg font-medium tracking-tight">
                       {e.role}
-                      <span className="text-ink-faint"> · {e.company}</span>
                     </h3>
                     <ul className="mt-4 space-y-2.5">
                       {e.bullets.map((b, j) => (
