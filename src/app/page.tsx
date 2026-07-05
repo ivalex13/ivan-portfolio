@@ -5,7 +5,6 @@ import {
   caseStudies,
   education,
   experience,
-  principles,
   products,
   profile,
 } from "@/lib/content";
@@ -183,41 +182,12 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ─────────────── Principles ─────────────── */}
-      <section className="border-t border-line">
-        <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 sm:py-32">
-          <Reveal>
-            <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-              <span className="text-glow-2">03</span> · Principles
-            </p>
-            <h2 className="mt-4 text-4xl tracking-tight sm:text-6xl">
-              How I <span className="text-outline">lead design</span>
-            </h2>
-          </Reveal>
-          <Stagger className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-3" gap={0.12}>
-            {principles.map((p) => (
-              <StaggerItem key={p.n} className="h-full">
-                <div className="h-full bg-canvas p-8">
-                  <span className="font-mono text-[13px] text-glow-2">{p.n}</span>
-                  <h3 className="mt-5 text-xl font-medium tracking-tight">
-                    {p.title}
-                  </h3>
-                  <p className="mt-3 text-base leading-relaxed text-ink-dim">
-                    {p.text}
-                  </p>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </section>
-
       {/* ─────────────── About ─────────────── */}
       <section id="about" className="scroll-mt-20 border-t border-line">
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 sm:py-32">
           <Reveal>
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-              <span className="text-glow-2">04</span> · About
+              <span className="text-glow-2">03</span> · About
             </p>
             <h2 className="mt-4 text-4xl tracking-tight sm:text-6xl">
               Fourteen years, <span className="text-outline">every stage</span>
