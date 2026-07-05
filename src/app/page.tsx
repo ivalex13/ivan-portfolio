@@ -53,7 +53,14 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={0.8}>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <span className="mt-10 inline-flex items-center gap-2.5 font-mono text-[12px] tracking-caps uppercase text-ink-faint">
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-glow-3 opacity-60" />
+                <span className="relative inline-flex size-2 rounded-full bg-glow-3" />
+              </span>
+              {profile.availability}
+            </span>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
               <Magnetic>
                 <a
                   href="#work"
@@ -63,21 +70,6 @@ export default function Home() {
                   <span className="transition-transform group-hover:translate-y-0.5">↓</span>
                 </a>
               </Magnetic>
-              <Magnetic>
-                <a
-                  href={`mailto:${profile.email}`}
-                  className="inline-block rounded-full border border-line-strong px-6 py-3.5 text-ink transition-colors hover:border-ink"
-                >
-                  Get in touch
-                </a>
-              </Magnetic>
-              <span className="ml-1 inline-flex items-center gap-2.5 font-mono text-[12px] tracking-caps uppercase text-ink-faint">
-                <span className="relative flex size-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-glow-3 opacity-60" />
-                  <span className="relative inline-flex size-2 rounded-full bg-glow-3" />
-                </span>
-                {profile.availability}
-              </span>
             </div>
           </Reveal>
         </div>
