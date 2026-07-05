@@ -33,12 +33,12 @@ void main() {
   vec2 m = uv - uMouse;
   m.x *= uAspect;
   float d = length(m);
-  float fall = exp(-d * d * 14.0) * uEnergy;
+  float fall = exp(-d * d * 6.0) * uEnergy;
   vec2 dir = d > 0.0001 ? m / d : vec2(0.0);
 
-  // directional smear from pointer velocity + concentric liquid ripple
-  vec2 disp = uVel * fall * 0.5;
-  disp += dir * sin(d * 26.0 - uTime * 6.0) * 0.007 * fall;
+  // directional smear from pointer velocity + slow, broad liquid swell
+  vec2 disp = uVel * fall * 0.4;
+  disp += dir * sin(d * 12.0 - uTime * 2.2) * 0.006 * fall;
 
   gl_FragColor = texture2D(uTex, uv - disp);
 }`;
@@ -171,15 +171,16 @@ export default function LiquidHeadline({
 
     const frame = () => {
       t += 1 / 60;
-      cur.x += (mouse.x - cur.x) * 0.25;
-      cur.y += (mouse.y - cur.y) * 0.25;
-      vel.x += ((mouse.x - cur.x) * 6 - vel.x) * 0.12;
-      vel.y += ((mouse.y - cur.y) * 6 - vel.y) * 0.12;
-      energy += ((hovered ? 1 : 0) - energy) * 0.07;
+      // lazy, viscous follow: the distortion drags behind the pointer
+      cur.x += (mouse.x - cur.x) * 0.07;
+      cur.y += (mouse.y - cur.y) * 0.07;
+      vel.x += ((mouse.x - cur.x) * 3.5 - vel.x) * 0.05;
+      vel.y += ((mouse.y - cur.y) * 3.5 - vel.y) * 0.05;
+      energy += ((hovered ? 1 : 0) - energy) * 0.06;
 
       gl.uniform2f(U.mouse, cur.x, cur.y);
       gl.uniform2f(U.vel, vel.x, vel.y);
-      gl.uniform1f(U.time, t * 6);
+      gl.uniform1f(U.time, t);
       gl.uniform1f(U.aspect, W / Math.max(1, H));
       gl.uniform1f(U.energy, energy);
       gl.clearColor(0, 0, 0, 0);
