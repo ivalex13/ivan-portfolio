@@ -472,26 +472,6 @@ export const products = [
   },
 ];
 
-/* ───────────────────────────── Principles ───────────────────────────── */
-
-export const principles = [
-  {
-    n: "01",
-    title: "Vision first, then the wedge",
-    text: "Long-term direction and short-term shipping aren't rivals. I define where the product should land, then cut the roadmap so every release closes a real gap on the way there.",
-  },
-  {
-    n: "02",
-    title: "Evidence over opinion",
-    text: "The strongest design argument is a traced number, like the analysis that pinned ~80% of adoption blockers on one area. I build the case before I build the screens.",
-  },
-  {
-    n: "03",
-    title: "AI is a material, not a feature",
-    text: "I ship my own AI products end-to-end, so I design with a builder's understanding of what models can actually do, and where they quietly fail people.",
-  },
-];
-
 /* ───────────────────────────── About ───────────────────────────── */
 
 export const about = {
