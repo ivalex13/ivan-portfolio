@@ -1,20 +1,22 @@
 @import "tailwindcss";
 
-@theme {
-  /* ---- Palette: near-black canvas, warm ivory ink, iridescent AI glow ---- */
-  --color-canvas: #0a0a0c;
-  --color-raised: #121215;
-  --color-panel: #17171b;
-  --color-line: rgba(244, 243, 238, 0.09);
-  --color-line-strong: rgba(244, 243, 238, 0.18);
-  --color-ink: #f4f3ee;
-  --color-ink-dim: #b9b8bd;
-  --color-ink-faint: #85848c;
-  --color-glow-1: #5b8cff;
-  --color-glow-2: #22d3ee;
-  --color-glow-3: #4ade80;
+/* ---- Theme-switchable design tokens ----------------------------------
+   Utilities (bg-canvas, text-ink, …) resolve through these variables,
+   so toggling the .light class on <html> re-themes the whole site. */
 
-  /* ---- Type ---- */
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-raised: var(--raised);
+  --color-panel: var(--panel);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-dim: var(--ink-dim);
+  --color-ink-faint: var(--ink-faint);
+  --color-glow-1: var(--glow-1);
+  --color-glow-2: var(--glow-2);
+  --color-glow-3: var(--glow-3);
+
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
@@ -32,9 +34,43 @@
   }
 }
 
+/* Dark (default): near-black canvas, warm ivory ink */
+:root {
+  color-scheme: dark;
+  --canvas: #0a0a0c;
+  --raised: #121215;
+  --panel: #17171b;
+  --line: rgba(244, 243, 238, 0.09);
+  --line-strong: rgba(244, 243, 238, 0.18);
+  --ink: #f4f3ee;
+  --ink-dim: #b9b8bd;
+  --ink-faint: #85848c;
+  --glow-1: #5b8cff;
+  --glow-2: #22d3ee;
+  --glow-3: #4ade80;
+  --grain-opacity: 0.05;
+}
+
+/* Light: warm paper white, near-black ink, accents darkened for contrast */
+.light {
+  color-scheme: light;
+  --canvas: #f6f5f1;
+  --raised: #fdfdfb;
+  --panel: #ffffff;
+  --line: rgba(23, 23, 27, 0.1);
+  --line-strong: rgba(23, 23, 27, 0.24);
+  --ink: #17171b;
+  --ink-dim: #4c4b53;
+  --ink-faint: #65646c;
+  --glow-1: #3b5fe0;
+  --glow-2: #0f7f9e;
+  --glow-3: #178a46;
+  --grain-opacity: 0.03;
+}
+
 html {
   scroll-behavior: smooth;
-  background: var(--color-canvas);
+  background: var(--canvas);
 }
 
 body {
@@ -44,6 +80,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: clip;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 ::selection {
@@ -51,13 +88,7 @@ body {
   color: var(--color-canvas);
 }
 
-/* Hollow display accent: transparent fill, hairline stroke */
-.text-outline {
-  color: transparent;
-  -webkit-text-stroke: 1.5px color-mix(in oklab, var(--color-ink) 62%, transparent);
-}
-
-/* Iridescent text, reserved for AI moments */
+/* Iridescent text: reserved for AI moments */
 .text-iridescent {
   background: linear-gradient(
     100deg,
@@ -70,13 +101,19 @@ body {
   color: transparent;
 }
 
+/* Hollow display accent: transparent fill, hairline stroke */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px color-mix(in oklab, var(--color-ink) 62%, transparent);
+}
+
 /* Hairline frame used by image placeholders and cards */
 .frame {
   border: 1px solid var(--color-line);
   background:
     radial-gradient(
       120% 100% at 50% 0%,
-      rgba(139, 157, 255, 0.06) 0%,
+      color-mix(in oklab, var(--color-glow-1) 6%, transparent) 0%,
       transparent 55%
     ),
     var(--color-raised);
@@ -89,28 +126,28 @@ body {
   inset: -50%;
   z-index: 60;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: var(--grain-opacity);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* Slim, canvas-matched scrollbar */
 html {
   scrollbar-width: thin;
-  scrollbar-color: rgba(244, 243, 238, 0.22) transparent;
+  scrollbar-color: color-mix(in oklab, var(--ink) 25%, transparent) transparent;
 }
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-canvas);
+  background: var(--canvas);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(244, 243, 238, 0.18);
+  background: color-mix(in oklab, var(--ink) 20%, transparent);
   border-radius: 8px;
-  border: 3px solid var(--color-canvas);
+  border: 3px solid var(--canvas);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(244, 243, 238, 0.32);
+  background: color-mix(in oklab, var(--ink) 34%, transparent);
 }
 
 /* Keyboard focus */

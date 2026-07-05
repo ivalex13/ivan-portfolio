@@ -49,7 +49,7 @@ export function ImagePlaceholder({
               className="absolute inset-0 opacity-40"
               style={{
                 backgroundImage:
-                  "radial-gradient(rgba(244,243,238,0.14) 1px, transparent 1px)",
+                  "radial-gradient(color-mix(in oklab, var(--color-ink) 14%, transparent) 1px, transparent 1px)",
                 backgroundSize: "22px 22px",
               }}
             />

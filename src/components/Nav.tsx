@@ -10,6 +10,7 @@ import {
 } from "motion/react";
 import { useEffect, useState } from "react";
 import { profile } from "@/lib/content";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { href: "/#work", label: "Work" },
@@ -88,29 +89,35 @@ export default function Nav() {
             >
               Contact
             </a>
+            <span className="ml-1">
+              <ThemeToggle />
+            </span>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            type="button"
-            aria-expanded={open}
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-            className="relative z-[75] flex h-10 w-10 items-center justify-center sm:hidden"
-          >
-            <span className="relative block h-3 w-6">
-              <motion.span
-                animate={open ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
-                transition={{ duration: 0.3, ease: EASE }}
-                className="absolute left-0 top-0 block h-[1.5px] w-6 bg-ink"
-              />
-              <motion.span
-                animate={open ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }}
-                transition={{ duration: 0.3, ease: EASE }}
-                className="absolute bottom-0 left-0 block h-[1.5px] w-6 bg-ink"
-              />
-            </span>
-          </button>
+          {/* Mobile: theme toggle + menu button */}
+          <div className="relative z-[75] flex items-center gap-2 sm:hidden">
+            <ThemeToggle />
+            <button
+              type="button"
+              aria-expanded={open}
+              aria-label={open ? "Close menu" : "Open menu"}
+              onClick={() => setOpen((v) => !v)}
+              className="flex h-10 w-10 items-center justify-center"
+            >
+              <span className="relative block h-3 w-6">
+                <motion.span
+                  animate={open ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
+                  transition={{ duration: 0.3, ease: EASE }}
+                  className="absolute left-0 top-0 block h-[1.5px] w-6 bg-ink"
+                />
+                <motion.span
+                  animate={open ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }}
+                  transition={{ duration: 0.3, ease: EASE }}
+                  className="absolute bottom-0 left-0 block h-[1.5px] w-6 bg-ink"
+                />
+              </span>
+            </button>
+          </div>
         </nav>
       </motion.header>
 

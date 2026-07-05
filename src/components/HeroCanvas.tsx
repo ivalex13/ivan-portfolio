@@ -24,7 +24,16 @@ export default function HeroCanvas() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const mouse = { x: -9999, y: -9999 };
 
-    const COLORS = ["91,140,255", "34,211,238", "74,222,128"];
+    // read accent colors from the live theme so light/dark both work
+    const readGlowColors = () => {
+      const cs = getComputedStyle(document.documentElement);
+      return ["--glow-1", "--glow-2", "--glow-3"].map((v) => {
+        const hex = cs.getPropertyValue(v).trim();
+        const n = parseInt(hex.slice(1), 16);
+        return `${(n >> 16) & 255},${(n >> 8) & 255},${n & 255}`;
+      });
+    };
+    let COLORS = readGlowColors();
 
     type P = { x: number; y: number; vx: number; vy: number; c: string; r: number; life: number };
     let particles: P[] = [];
@@ -142,12 +151,25 @@ export default function HeroCanvas() {
     });
     observer.observe(canvas);
 
+    // re-color particles when the theme class changes
+    const themeObserver = new MutationObserver(() => {
+      COLORS = readGlowColors();
+      for (const p of particles) {
+        p.c = COLORS[(Math.random() * COLORS.length) | 0];
+      }
+    });
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
     window.addEventListener("resize", resize);
     window.addEventListener("pointermove", onMove);
     document.addEventListener("pointerleave", onLeave);
 
     return () => {
       observer.disconnect();
+      themeObserver.disconnect();
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", onMove);

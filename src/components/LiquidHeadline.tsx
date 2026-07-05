@@ -44,7 +44,16 @@ void main() {
   gl_FragColor = texture2D(uTex, uv - disp);
 }`;
 
-const GRADIENT = ["#5b8cff", "#22d3ee", "#4ade80"] as const;
+// read target theme values from variables (not computed styles, which may
+// be mid-transition when the theme flips)
+const readThemeColors = () => {
+  const root = getComputedStyle(document.documentElement);
+  const v = (name: string) => root.getPropertyValue(name).trim();
+  return {
+    ink: v("--ink"),
+    stops: [v("--glow-1"), v("--glow-2"), v("--glow-3")],
+  };
+};
 
 export default function LiquidHeadline({
   line1,
@@ -151,14 +160,15 @@ export default function LiquidHeadline({
       }
       ctx.textBaseline = "alphabetic";
 
+      const theme = readThemeColors();
       const baseline = (i: number) => i * lh + (lh - fs) / 2 + fs * 0.75;
-      ctx.fillStyle = "#f4f3ee";
+      ctx.fillStyle = theme.ink;
       ctx.fillText(line1, 0, baseline(0));
       const w2 = ctx.measureText(line2).width;
       const grad = ctx.createLinearGradient(0, 0, w2, 0);
-      grad.addColorStop(0, GRADIENT[0]);
-      grad.addColorStop(0.45, GRADIENT[1]);
-      grad.addColorStop(1, GRADIENT[2]);
+      grad.addColorStop(0, theme.stops[0]);
+      grad.addColorStop(0.45, theme.stops[1]);
+      grad.addColorStop(1, theme.stops[2]);
       ctx.fillStyle = grad;
       ctx.fillText(line2, 0, baseline(1));
 
@@ -253,11 +263,23 @@ export default function LiquidHeadline({
     });
     ro.observe(h2);
 
+    // repaint the texture when the theme flips
+    const themeMo = new MutationObserver(() => {
+      if (destroyed || !W) return;
+      paint();
+      start();
+    });
+    themeMo.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
     return () => {
       destroyed = true;
       cancelAnimationFrame(raf);
       clearTimeout(readyTimer);
       ro.disconnect();
+      themeMo.disconnect();
       wrap.removeEventListener("pointerenter", onEnter);
       wrap.removeEventListener("pointermove", onMove);
       wrap.removeEventListener("pointerleave", onLeave);
