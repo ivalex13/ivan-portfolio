@@ -3,6 +3,7 @@ import { profile } from "@/lib/content";
 import { Reveal } from "@/components/motion";
 import Magnetic from "@/components/Magnetic";
 import LocalTime from "@/components/LocalTime";
+import LiquidHeadline from "@/components/LiquidHeadline";
 
 export default function Footer() {
   return (
@@ -19,10 +20,11 @@ export default function Footer() {
           </p>
         </Reveal>
         <Reveal delay={0.08}>
-          <h2 className="mt-6 max-w-3xl text-5xl leading-[1.04] tracking-tight sm:text-7xl">
-            Let&rsquo;s build the products{" "}
-            <span className="text-iridescent">AI makes possible.</span>
-          </h2>
+          <LiquidHeadline
+            className="mt-6 max-w-3xl"
+            line1="Let’s build the products"
+            line2="AI makes possible."
+          />
         </Reveal>
         <Reveal delay={0.16}>
           <div className="mt-10 flex flex-wrap items-center gap-4">
