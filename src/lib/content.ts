@@ -21,7 +21,7 @@ export const profile = {
   links: {
     linkedin: "https://www.linkedin.com/in/ivalex/",
     resume: "https://drive.google.com/file/d/1ChjIg8PgQZ3s9LIXSxerN3th2rNt6_oj/view?usp=sharing",
-    sonas: "https://sonas.app", // [confirm URL]
+    sonas: "https://aisonas.com/",
     uxcopilot:
       "https://www.figma.com/community/plugin/1461484151701868163/ux-copilot-ai-assistant",
   },
@@ -436,12 +436,12 @@ export const products = [
     name: "Sonas",
     tagline: "AI personas that think and react like real users, for interviews and usability tests.",
     status: "Live",
-    href: "/work/sonas",
-    external: false,
+    href: "https://aisonas.com/",
+    external: true,
     metric: "[N] teams researching",
     tint: "#3ee6a8",
     image: undefined as string | undefined, // set to override the fetched OG image, e.g. "/products/sonas.png"
-    ogSource: "https://sonas.app", // card's visual falls back to this page's og:image
+    ogSource: "https://aisonas.com/", // card's visual falls back to this page's og:image
     imageAlt: "Sonas interface",
   },
   {
