@@ -22,7 +22,8 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/ivalex/",
     resume: "https://drive.google.com/file/d/1ChjIg8PgQZ3s9LIXSxerN3th2rNt6_oj/view?usp=sharing",
     sonas: "https://sonas.app", // [confirm URL]
-    uxcopilot: "https://www.figma.com/community", // [confirm plugin URL]
+    uxcopilot:
+      "https://www.figma.com/community/plugin/1461484151701868163/ux-copilot-ai-assistant",
   },
 };
 
@@ -439,29 +440,34 @@ export const products = [
     external: false,
     metric: "[N] teams researching",
     tint: "#3ee6a8",
-    image: undefined as string | undefined, // e.g. "/products/sonas.png" in /public
+    image: undefined as string | undefined, // set to override the fetched OG image, e.g. "/products/sonas.png"
+    ogSource: "https://sonas.app", // card's visual falls back to this page's og:image
     imageAlt: "Sonas interface",
   },
   {
     name: "UX Copilot",
     tagline: "AI assistant for UX work inside Figma: copy generation, personas, design feedback.",
     status: "~2k installs",
-    href: "https://www.figma.com/community", // [confirm plugin URL]
+    href: "https://www.figma.com/community/plugin/1461484151701868163/ux-copilot-ai-assistant",
     external: true,
     metric: "~2,000 installs",
     tint: "#5b8cff",
-    image: undefined as string | undefined, // e.g. "/products/ux-copilot.png"
+    image: undefined as string | undefined, // set to override the fetched OG image, e.g. "/products/ux-copilot.png"
+    ogSource:
+      "https://www.figma.com/community/plugin/1461484151701868163/ux-copilot-ai-assistant",
     imageAlt: "UX Copilot plugin in Figma",
   },
   {
     name: "AI Design Review",
     tagline: "Fast, practical design critique without leaving the Figma canvas.",
     status: "Live",
-    href: "https://www.figma.com/community", // [confirm plugin URL]
+    href: "https://www.figma.com/community/plugin/1542867863199350817/ai-design-review",
     external: true,
     metric: "Figma plugin",
     tint: "#22d3ee",
-    image: undefined as string | undefined, // e.g. "/products/ai-design-review.png"
+    image: undefined as string | undefined, // set to override the fetched OG image, e.g. "/products/ai-design-review.png"
+    ogSource:
+      "https://www.figma.com/community/plugin/1542867863199350817/ai-design-review",
     imageAlt: "AI Design Review plugin in Figma",
   },
 ];

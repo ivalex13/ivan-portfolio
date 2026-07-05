@@ -19,8 +19,15 @@ import { ImagePlaceholder } from "@/components/study/ImagePlaceholder";
 import WarpPortrait from "@/components/WarpPortrait";
 import LiquidHeadline from "@/components/LiquidHeadline";
 import { MaskReveal, Reveal, Stagger, StaggerItem } from "@/components/motion";
+import { getOgImage } from "@/lib/og";
 
-export default function Home() {
+export default async function Home() {
+  // Product visuals: a manually dropped image wins, otherwise the card shows
+  // the OG image of the product's page (fetched server-side, cached daily).
+  const productImages = await Promise.all(
+    products.map((p) => p.image ?? getOgImage(p.ogSource)),
+  );
+
   return (
     <>
       {/* ─────────────── Hero ─────────────── */}
@@ -121,15 +128,14 @@ export default function Home() {
           </Reveal>
 
           <Stagger className="mt-14 grid gap-6 md:grid-cols-3" gap={0.1}>
-            {products.map((p) => {
+            {products.map((p, i) => {
               const inner = (
                 <div className="frame group relative flex h-full flex-col rounded-2xl p-4 transition-colors duration-300 hover:border-line-strong">
                   <Spotlight />
-                  {/* Product visual: drop a graphic matching the product's branding */}
                   <div className="overflow-hidden rounded-xl">
                     <div className="transition-transform duration-700 ease-out group-hover:scale-[1.03]">
                       <ImagePlaceholder
-                        src={p.image}
+                        src={productImages[i]}
                         alt={p.imageAlt}
                         aspect="video"
                         tint={p.tint}
