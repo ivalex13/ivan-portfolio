@@ -16,6 +16,7 @@ import ScrollHint from "@/components/ScrollHint";
 import Magnetic from "@/components/Magnetic";
 import Spotlight from "@/components/Spotlight";
 import { ImagePlaceholder } from "@/components/study/ImagePlaceholder";
+import WarpPortrait from "@/components/WarpPortrait";
 import { MaskReveal, Reveal, Stagger, StaggerItem } from "@/components/motion";
 
 export default function Home() {
@@ -243,12 +244,15 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.1}>
               <div className="w-full max-w-xs">
-                <ImagePlaceholder
-                  src={about.portrait}
-                  alt="Portrait of Ivan Aleksić"
-                  aspect="tall"
-                  note={about.portraitNote}
-                />
+                {about.portrait ? (
+                  <WarpPortrait src={about.portrait} alt="Portrait of Ivan Aleksić" />
+                ) : (
+                  <ImagePlaceholder
+                    alt="Portrait of Ivan Aleksić"
+                    aspect="tall"
+                    note={about.portraitNote}
+                  />
+                )}
               </div>
             </Reveal>
           </div>
