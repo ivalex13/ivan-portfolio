@@ -446,7 +446,7 @@ export const products = [
     name: "UX Copilot",
     tagline: "AI assistant for UX work inside Figma: copy generation, personas, design feedback.",
     status: "~2k installs",
-    href: "https://www.figma.com/community", // [confirm plugin URL]
+    href: "https://www.figma.com/community/plugin/1461484151701868163",
     external: true,
     metric: "~2,000 installs",
     tint: "#5b8cff",
