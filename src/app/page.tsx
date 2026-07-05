@@ -17,6 +17,7 @@ import Magnetic from "@/components/Magnetic";
 import Spotlight from "@/components/Spotlight";
 import { ImagePlaceholder } from "@/components/study/ImagePlaceholder";
 import WarpPortrait from "@/components/WarpPortrait";
+import LiquidHeadline from "@/components/LiquidHeadline";
 import { MaskReveal, Reveal, Stagger, StaggerItem } from "@/components/motion";
 
 export default function Home() {
@@ -36,14 +37,14 @@ export default function Home() {
             </p>
           </MaskReveal>
 
-          <h1 className="mt-8 text-[clamp(3rem,9.2vw,6rem)] leading-[0.98] tracking-tight">
-            <MaskReveal delay={0.25}>{profile.headline.lead}</MaskReveal>
-            <MaskReveal delay={0.4}>
-              <span className="text-iridescent">
-                {profile.headline.accent}
-              </span>
-            </MaskReveal>
-          </h1>
+          <LiquidHeadline
+            as="h1"
+            className="mt-8"
+            textClassName="text-[clamp(3rem,9.2vw,6rem)] leading-[0.98] tracking-tight"
+            line1={profile.headline.lead}
+            line2={profile.headline.accent}
+            maskDelays={[0.25, 0.4]}
+          />
 
           <Reveal delay={0.65}>
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-dim">

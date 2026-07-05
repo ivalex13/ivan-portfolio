@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { MaskReveal } from "@/components/motion";
 
 /**
  * Liquid hover headline. The two text lines are drawn into a canvas texture
@@ -49,10 +50,17 @@ export default function LiquidHeadline({
   line1,
   line2,
   className,
+  textClassName = "text-5xl leading-[1.04] tracking-tight sm:text-7xl",
+  as: Tag = "h2",
+  maskDelays,
 }: {
   line1: string;
   line2: string;
   className?: string;
+  textClassName?: string;
+  as?: "h1" | "h2";
+  /** entrance MaskReveal delays per line; canvas activates after they finish */
+  maskDelays?: [number, number];
 }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const h2Ref = useRef<HTMLHeadingElement>(null);
@@ -231,7 +239,12 @@ export default function LiquidHeadline({
       wrap.addEventListener("pointermove", onMove);
       wrap.addEventListener("pointerleave", onLeave);
     };
-    document.fonts.ready.then(ready);
+    // wait out any entrance animation before swapping to canvas
+    const entranceMs = maskDelays ? maskDelays[1] * 1000 + 1400 : 0;
+    let readyTimer = 0;
+    document.fonts.ready.then(() => {
+      readyTimer = window.setTimeout(ready, entranceMs);
+    });
 
     const ro = new ResizeObserver(() => {
       if (destroyed) return;
@@ -243,31 +256,42 @@ export default function LiquidHeadline({
     return () => {
       destroyed = true;
       cancelAnimationFrame(raf);
+      clearTimeout(readyTimer);
       ro.disconnect();
       wrap.removeEventListener("pointerenter", onEnter);
       wrap.removeEventListener("pointermove", onMove);
       wrap.removeEventListener("pointerleave", onLeave);
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
-  }, [line1, line2]);
+  }, [line1, line2, maskDelays]);
+
+  const span1 = (
+    <span className={`lg:block lg:whitespace-nowrap ${active ? "lg:opacity-0" : ""}`}>
+      {line1}
+    </span>
+  );
+  const span2 = (
+    <span
+      className={`text-iridescent lg:block lg:whitespace-nowrap ${active ? "lg:opacity-0" : ""}`}
+    >
+      {line2}
+    </span>
+  );
 
   return (
     <div ref={wrapRef} className={`relative ${className ?? ""}`}>
-      <h2
-        ref={h2Ref}
-        className="text-5xl leading-[1.04] tracking-tight sm:text-7xl"
-      >
-        <span
-          className={`lg:block lg:whitespace-nowrap ${active ? "lg:opacity-0" : ""}`}
-        >
-          {line1}
-        </span>{" "}
-        <span
-          className={`text-iridescent lg:block lg:whitespace-nowrap ${active ? "lg:opacity-0" : ""}`}
-        >
-          {line2}
-        </span>
-      </h2>
+      <Tag ref={h2Ref} className={textClassName}>
+        {maskDelays ? (
+          <>
+            <MaskReveal delay={maskDelays[0]}>{span1}</MaskReveal>
+            <MaskReveal delay={maskDelays[1]}>{span2}</MaskReveal>
+          </>
+        ) : (
+          <>
+            {span1} {span2}
+          </>
+        )}
+      </Tag>
       <canvas
         ref={glCanvasRef}
         aria-hidden
