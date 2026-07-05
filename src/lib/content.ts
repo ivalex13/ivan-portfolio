@@ -457,7 +457,7 @@ export const products = [
     name: "AI Design Review",
     tagline: "Fast, practical design critique without leaving the Figma canvas.",
     status: "Live",
-    href: "https://www.figma.com/community", // [confirm plugin URL]
+    href: "https://www.figma.com/community/plugin/1542867863199350817/ai-design-review",
     external: true,
     metric: "Figma plugin",
     tint: "#22d3ee",
