@@ -9,6 +9,17 @@ const META_TAG =
   /<meta[^>]+(?:property|name)=["'](?:og:image(?::secure_url)?|twitter:image(?::src)?)["'][^>]*>/gi;
 const CONTENT = /content=["']([^"']+)["']/i;
 
+// Meta content arrives HTML-entity-encoded; Figma even encodes slashes (&#47;)
+function decodeEntities(s: string): string {
+  return s
+    .replace(/&#(\d+);/g, (_, n: string) => String.fromCharCode(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, n: string) =>
+      String.fromCharCode(parseInt(n, 16)),
+    )
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"');
+}
+
 export async function getOgImage(url: string): Promise<string | undefined> {
   try {
     const res = await fetch(url, {
@@ -26,7 +37,7 @@ export async function getOgImage(url: string): Promise<string | undefined> {
     for (const tag of html.match(META_TAG) ?? []) {
       const content = tag.match(CONTENT)?.[1];
       if (content) {
-        return new URL(content.replace(/&amp;/g, "&"), url).toString();
+        return new URL(decodeEntities(content), url).toString();
       }
     }
     return undefined;
