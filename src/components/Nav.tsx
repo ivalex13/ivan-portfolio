@@ -83,12 +83,12 @@ export default function Nav() {
                 {l.label}
               </Link>
             ))}
-            <a
-              href={`mailto:${profile.email}`}
+            <Link
+              href="/#contact"
               className="ml-2 rounded-full border border-line-strong px-4 py-1.5 text-sm text-ink transition-all hover:border-ink hover:bg-ink hover:text-canvas"
             >
               Contact
-            </a>
+            </Link>
             <span className="ml-1">
               <ThemeToggle />
             </span>
@@ -133,7 +133,7 @@ export default function Nav() {
           >
             <nav aria-label="Mobile">
               <ul className="space-y-2">
-                {[...links, { href: `mailto:${profile.email}`, label: "Contact" }].map(
+                {[...links, { href: "/#contact", label: "Contact" }].map(
                   (l, i) => (
                     <motion.li
                       key={l.label}
@@ -142,23 +142,13 @@ export default function Nav() {
                       exit={{ opacity: 0, y: 12 }}
                       transition={{ duration: 0.5, delay: 0.06 * i + 0.1, ease: EASE }}
                     >
-                      {l.href.startsWith("mailto:") ? (
-                        <a
-                          href={l.href}
-                          className="block py-2 text-5xl tracking-tight text-ink"
-                          onClick={() => setOpen(false)}
-                        >
-                          {l.label}
-                        </a>
-                      ) : (
-                        <Link
-                          href={l.href}
-                          className="block py-2 text-5xl tracking-tight text-ink"
-                          onClick={() => setOpen(false)}
-                        >
-                          {l.label}
-                        </Link>
-                      )}
+                      <Link
+                        href={l.href}
+                        className="block py-2 text-5xl tracking-tight text-ink"
+                        onClick={() => setOpen(false)}
+                      >
+                        {l.label}
+                      </Link>
                     </motion.li>
                   )
                 )}

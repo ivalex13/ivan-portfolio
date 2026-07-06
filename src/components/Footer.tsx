@@ -38,6 +38,12 @@ export default function Footer() {
               </a>
             </Magnetic>
             <a
+              href={`tel:${profile.phone}`}
+              className="rounded-full border border-line-strong px-6 py-3.5 text-base text-ink transition-colors hover:border-ink"
+            >
+              {profile.phone}
+            </a>
+            <a
               href={profile.links.linkedin}
               target="_blank"
               rel="noreferrer"
