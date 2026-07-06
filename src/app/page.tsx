@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   about,
@@ -8,7 +9,6 @@ import {
   products,
   profile,
 } from "@/lib/content";
-import HeroCanvas from "@/components/HeroCanvas";
 import CaseCard from "@/components/CaseCard";
 import CompanyLogo from "@/components/CompanyLogo";
 import Marquee from "@/components/Marquee";
@@ -32,16 +32,36 @@ export default async function Home() {
     <>
       {/* ─────────────── Hero ─────────────── */}
       <section className="relative flex min-h-svh flex-col justify-center overflow-hidden">
-        <HeroCanvas />
+        {/* quiet ambient washes; static on purpose so the type carries the hero */}
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          <div
+            className="absolute -top-[15%] right-[-12%] size-[70vh] rounded-full opacity-[0.09] blur-[120px]"
+            style={{ background: "radial-gradient(closest-side, var(--glow-1), transparent 72%)" }}
+          />
+          <div
+            className="absolute bottom-[-28%] left-[-14%] size-[60vh] rounded-full opacity-[0.06] blur-[120px]"
+            style={{ background: "radial-gradient(closest-side, var(--glow-3), transparent 72%)" }}
+          />
+        </div>
         <ScrollHint />
         {/* bottom fade into content */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-canvas" />
 
         <div className="relative mx-auto w-full max-w-6xl px-6 md:px-10 pb-24 pt-36">
           <MaskReveal delay={0.1}>
-            <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-              {profile.role}
-            </p>
+            <div className="flex items-center gap-3.5">
+              <Image
+                src="/portrait.jpg"
+                alt="Ivan Aleksić"
+                width={80}
+                height={80}
+                priority
+                className="size-9 rounded-full object-cover"
+              />
+              <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
+                {profile.role}
+              </p>
+            </div>
           </MaskReveal>
 
           <LiquidHeadline
@@ -57,6 +77,16 @@ export default async function Home() {
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-dim">
               {profile.sub}
             </p>
+            <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-3 text-ink-dim">
+              {profile.companies.map((c) => (
+                <span key={c} className="inline-flex items-center gap-2.5">
+                  <CompanyLogo company={c} className="size-[17px] shrink-0" />
+                  <span className="font-mono text-[12px] tracking-caps uppercase">
+                    {c}
+                  </span>
+                </span>
+              ))}
+            </div>
           </Reveal>
 
           <Reveal delay={0.8}>

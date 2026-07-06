@@ -18,6 +18,7 @@ export const profile = {
     accent: "people actually adopt.",
   },
   sub: "Fourteen years designing and scaling SaaS, from founding designer at Instapage (0 → $16M ARR) to AI-assisted enterprise tools at Zendesk. On the side, I build and ship my own AI products.",
+  companies: ["Zendesk", "Instapage"], // logomarks shown in the hero (must exist in CompanyLogo.tsx)
   availability: "Open to Senior / Lead AI Product Design roles",
   links: {
     linkedin: "https://www.linkedin.com/in/ivalex/",
