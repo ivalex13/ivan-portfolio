@@ -56,7 +56,7 @@ export default async function Home() {
                 width={80}
                 height={80}
                 priority
-                className="size-9 rounded-full border border-line-strong object-cover"
+                className="size-9 rounded-full object-cover"
               />
               <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
                 {profile.role}
