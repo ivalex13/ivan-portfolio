@@ -1,8 +1,9 @@
 /**
- * Inline monochrome company logomarks for the experience section.
- * Marks inherit the surrounding text color (currentColor) so they adapt
- * to both themes. Keyed by the `company` field in content.ts — companies
- * without a mark here simply render nothing.
+ * Inline monochrome company logomarks for the experience section and
+ * case study cards. Marks inherit the surrounding text color
+ * (currentColor) so they adapt to both themes. Keyed by the `company`
+ * field in content.ts — companies without a mark here simply render
+ * nothing.
  */
 
 const marks: Record<
@@ -33,6 +34,10 @@ const marks: Record<
     ],
   },
 };
+
+export function hasCompanyMark(company: string) {
+  return company.toLowerCase() in marks;
+}
 
 export default function CompanyLogo({
   company,
