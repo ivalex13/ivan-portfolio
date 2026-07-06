@@ -67,7 +67,9 @@ export type Block =
 
 export type CaseStudy = {
   slug: string;
-  kicker: string; // e.g. "Zendesk · 2024–2026"
+  company: string; // shown on the home-page card, e.g. "Zendesk"
+  logo?: string; // company logo for the card, e.g. "/logos/zendesk.svg" in /public
+  kicker: string; // e.g. "Zendesk · 2024–2026" (used on the study page)
   title: string;
   accent: string; // emphasized part of the title
   tint: string; // accent hue for this project's visuals (any CSS color)
@@ -85,6 +87,7 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "zendesk-ai-scheduling",
+    company: "Zendesk",
     kicker: "Zendesk · 2024 – 2026",
     title: "Rethinking enterprise scheduling",
     accent: "with AI decision-support",
@@ -199,6 +202,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "instapage-ai-content",
+    company: "Instapage",
     kicker: "Instapage · 2023 – 2024",
     title: "4× adoption:",
     accent: "redesigning GPT-4 content generation",
@@ -282,6 +286,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "sonas",
+    company: "Sonas",
     kicker: "Founder & designer · 2024 – now",
     title: "Sonas:",
     accent: "AI personas that think like real users",
@@ -360,6 +365,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "instapage-founding",
+    company: "Instapage",
     kicker: "Instapage · 2011 – 2024",
     title: "Founding designer:",
     accent: "0 → $16M ARR",

@@ -5,13 +5,7 @@ import { motion } from "motion/react";
 import type { CaseStudy } from "@/lib/content";
 import { ImagePlaceholder } from "@/components/study/ImagePlaceholder";
 
-export default function CaseCard({
-  study,
-  index,
-}: {
-  study: CaseStudy;
-  index: number;
-}) {
+export default function CaseCard({ study }: { study: CaseStudy }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -26,12 +20,28 @@ export default function CaseCard({
         <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           {/* Text */}
           <div>
-            <div className="flex items-baseline gap-4">
-              <span className="font-mono text-[13px] text-ink-faint">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+            <div className="flex items-center gap-2.5">
+              {study.logo ? (
+                <img
+                  src={study.logo}
+                  alt=""
+                  className="h-6 w-auto"
+                  loading="lazy"
+                />
+              ) : (
+                <span
+                  aria-hidden
+                  className="grid size-6 place-items-center rounded-md text-[12px] font-medium"
+                  style={{
+                    backgroundColor: `color-mix(in srgb, ${study.tint} 16%, transparent)`,
+                    color: study.tint,
+                  }}
+                >
+                  {study.company.charAt(0)}
+                </span>
+              )}
               <span className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-                {study.kicker}
+                {study.company}
               </span>
             </div>
 
@@ -43,25 +53,6 @@ export default function CaseCard({
             <p className="mt-4 max-w-md text-base leading-relaxed text-ink-dim">
               {study.hook}
             </p>
-
-            <div className="mt-10 flex items-center justify-between">
-              <div className="flex items-baseline gap-3">
-                <span className="text-2xl font-medium tracking-tight text-ink tabular-nums">
-                  {study.metric.value}
-                </span>
-                <span className="max-w-[260px] text-[13px] leading-snug text-ink-faint">
-                  {study.metric.label}
-                </span>
-              </div>
-              <span
-                aria-hidden
-                className="grid size-11 shrink-0 place-items-center rounded-full border border-line-strong text-lg transition-all duration-300 group-hover:border-ink group-hover:bg-ink group-hover:text-canvas"
-              >
-                <span className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  ↗
-                </span>
-              </span>
-            </div>
           </div>
 
           {/* Visual */}
