@@ -88,6 +88,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "zendesk-ai-scheduling",
     company: "Zendesk",
+    logo: "/logos/zendesk.svg",
     kicker: "Zendesk · 2024 – 2026",
     title: "Rethinking enterprise scheduling",
     accent: "with AI decision-support",

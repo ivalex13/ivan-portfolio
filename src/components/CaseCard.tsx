@@ -22,11 +22,19 @@ export default function CaseCard({ study }: { study: CaseStudy }) {
           <div>
             <div className="flex items-center gap-2.5">
               {study.logo ? (
-                <img
-                  src={study.logo}
-                  alt=""
-                  className="h-6 w-auto"
-                  loading="lazy"
+                <span
+                  aria-hidden
+                  className="size-5 bg-current text-ink"
+                  style={{
+                    maskImage: `url(${study.logo})`,
+                    maskRepeat: "no-repeat",
+                    maskPosition: "center",
+                    maskSize: "contain",
+                    WebkitMaskImage: `url(${study.logo})`,
+                    WebkitMaskRepeat: "no-repeat",
+                    WebkitMaskPosition: "center",
+                    WebkitMaskSize: "contain",
+                  }}
                 />
               ) : (
                 <span
