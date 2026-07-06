@@ -103,8 +103,8 @@ export default function Home() {
           </Reveal>
 
           <div className="mt-14 space-y-6">
-            {caseStudies.map((study, i) => (
-              <CaseCard key={study.slug} study={study} index={i} />
+            {caseStudies.map((study) => (
+              <CaseCard key={study.slug} study={study} />
             ))}
           </div>
         </div>
