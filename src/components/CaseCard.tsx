@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import type { CaseStudy } from "@/lib/content";
+import CompanyLogo, { hasCompanyMark } from "@/components/CompanyLogo";
 import { ImagePlaceholder } from "@/components/study/ImagePlaceholder";
 
 export default function CaseCard({ study }: { study: CaseStudy }) {
@@ -21,20 +22,10 @@ export default function CaseCard({ study }: { study: CaseStudy }) {
           {/* Text */}
           <div>
             <div className="flex items-center gap-2.5">
-              {study.logo ? (
-                <span
-                  aria-hidden
-                  className="size-5 bg-current text-ink"
-                  style={{
-                    maskImage: `url(${study.logo})`,
-                    maskRepeat: "no-repeat",
-                    maskPosition: "center",
-                    maskSize: "contain",
-                    WebkitMaskImage: `url(${study.logo})`,
-                    WebkitMaskRepeat: "no-repeat",
-                    WebkitMaskPosition: "center",
-                    WebkitMaskSize: "contain",
-                  }}
+              {hasCompanyMark(study.company) ? (
+                <CompanyLogo
+                  company={study.company}
+                  className="size-5 shrink-0 text-ink"
                 />
               ) : (
                 <span

@@ -67,8 +67,7 @@ export type Block =
 
 export type CaseStudy = {
   slug: string;
-  company: string; // shown on the home-page card, e.g. "Zendesk"
-  logo?: string; // company logo for the card, e.g. "/logos/zendesk.svg" in /public
+  company: string; // shown on the home-page card; logomark comes from CompanyLogo.tsx
   kicker: string; // e.g. "Zendesk · 2024–2026" (used on the study page)
   title: string;
   accent: string; // emphasized part of the title
@@ -88,7 +87,6 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "zendesk-ai-scheduling",
     company: "Zendesk",
-    logo: "/logos/zendesk.svg",
     kicker: "Zendesk · 2024 – 2026",
     title: "Rethinking enterprise scheduling",
     accent: "with AI decision-support",
