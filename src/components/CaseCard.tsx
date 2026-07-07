@@ -18,7 +18,7 @@ export default function CaseCard({ study }: { study: CaseStudy }) {
         href={`/work/${study.slug}`}
         className="group block rounded-2xl frame p-6 transition-colors duration-300 hover:border-line-strong sm:p-8"
       >
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+        <div className="grid gap-8">
           {/* Text */}
           <div>
             <div className="flex items-center gap-2.5">
@@ -49,7 +49,7 @@ export default function CaseCard({ study }: { study: CaseStudy }) {
               <span className="text-ink-faint">{study.accent}</span>
             </h3>
 
-            <p className="mt-4 max-w-md text-base leading-relaxed text-ink-dim">
+            <p className="mt-4 text-base leading-relaxed text-ink-dim">
               {study.hook}
             </p>
           </div>
