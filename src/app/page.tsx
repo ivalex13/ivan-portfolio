@@ -213,7 +213,7 @@ export default async function Home() {
       </section>
 
       {/* ─────────────── About ─────────────── */}
-      <section id="about" className="section-dark scroll-mt-20">
+      <section id="about" className="section-dark scroll-mt-20 border-t border-line">
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 sm:py-32">
           <Reveal>
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
