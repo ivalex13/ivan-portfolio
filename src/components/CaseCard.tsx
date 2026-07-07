@@ -49,7 +49,7 @@ export default function CaseCard({ study }: { study: CaseStudy }) {
               <span className="text-ink-faint">{study.accent}</span>
             </h3>
 
-            <p className="mt-4 max-w-md text-base leading-relaxed text-ink-dim">
+            <p className="mt-4 text-base leading-relaxed text-ink-dim">
               {study.hook}
             </p>
           </div>
