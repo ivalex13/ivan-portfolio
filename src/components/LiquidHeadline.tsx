@@ -44,8 +44,7 @@ void main() {
   gl_FragColor = texture2D(uTex, uv - disp);
 }`;
 
-// read target theme values from variables (not computed styles, which may
-// be mid-transition when the theme flips)
+// read the ink + gradient colors from the design-token variables
 const readThemeColors = () => {
   const root = getComputedStyle(document.documentElement);
   const v = (name: string) => root.getPropertyValue(name).trim();
@@ -263,23 +262,11 @@ export default function LiquidHeadline({
     });
     ro.observe(h2);
 
-    // repaint the texture when the theme flips
-    const themeMo = new MutationObserver(() => {
-      if (destroyed || !W) return;
-      paint();
-      start();
-    });
-    themeMo.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
     return () => {
       destroyed = true;
       cancelAnimationFrame(raf);
       clearTimeout(readyTimer);
       ro.disconnect();
-      themeMo.disconnect();
       wrap.removeEventListener("pointerenter", onEnter);
       wrap.removeEventListener("pointermove", onMove);
       wrap.removeEventListener("pointerleave", onLeave);

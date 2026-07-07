@@ -13,15 +13,15 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#0a0a0c",
+          background: "#0a0912",
         }}
       >
         <svg width="120" height="120" viewBox="0 0 64 64">
           <defs>
             <linearGradient id="g" x1="0" y1="0" x2="64" y2="64">
-              <stop offset="0" stopColor="#5b8cff" />
-              <stop offset="0.5" stopColor="#22d3ee" />
-              <stop offset="1" stopColor="#4ade80" />
+              <stop offset="0" stopColor="#7c8cff" />
+              <stop offset="0.5" stopColor="#a78bfa" />
+              <stop offset="1" stopColor="#e879f9" />
             </linearGradient>
           </defs>
           <path

@@ -92,7 +92,7 @@ export const caseStudies: CaseStudy[] = [
     kicker: "Zendesk · 2024 – 2026",
     title: "Rethinking enterprise scheduling",
     accent: "with AI decision-support",
-    tint: "#5b8cff",
+    tint: "#7c8cff",
     summary:
       "Leading the design response after ~80% of WFM's top adoption blockers traced back to scheduling, defining a long-term AI-assisted vision and shipping the wedge toward it.",
     hook: "The vision and first shipped steps for AI-assisted scheduling at enterprise scale.",
@@ -207,7 +207,7 @@ export const caseStudies: CaseStudy[] = [
     kicker: "Instapage · 2023 – 2024",
     title: "4× adoption:",
     accent: "redesigning GPT-4 content generation",
-    tint: "#22d3ee",
+    tint: "#a78bfa",
     summary:
       "The AI feature existed. People just didn't use it. Rebuilding the workflow around the user's moment of need lifted adoption 4×.",
     hook: "The redesign that took GPT-4 content generation from ignored to indispensable.",
@@ -291,7 +291,7 @@ export const caseStudies: CaseStudy[] = [
     kicker: "Instapage · 2011 – 2024",
     title: "Founding designer:",
     accent: "0 → $16M ARR",
-    tint: "#4ade80",
+    tint: "#e879f9",
     summary:
       "Thirteen years, one company, every stage: first design hire to Principal. The long arc: landing-page builder from scratch, a design team from 1 to 10+, and a product from zero to tens of thousands of customers.",
     hook: "Thirteen years at one company, from first design hire to Principal.",
@@ -366,7 +366,7 @@ export const products = [
     status: "Web app",
     href: "https://aisonas.com/",
     external: true,
-    tint: "#3ee6a8",
+    tint: "#f0abfc",
     image: undefined as string | undefined, // set to override the fetched OG image, e.g. "/products/sonas.png"
     ogSource: "https://aisonas.com/", // card's visual falls back to this page's og:image
     imageAlt: "Sonas interface",
@@ -377,7 +377,7 @@ export const products = [
     status: "Figma plugin",
     href: "https://www.figma.com/community/plugin/1461484151701868163/ux-copilot-ai-assistant",
     external: true,
-    tint: "#5b8cff",
+    tint: "#7c8cff",
     image: undefined as string | undefined, // set to override the fetched OG image, e.g. "/products/ux-copilot.png"
     ogSource:
       "https://www.figma.com/community/plugin/1461484151701868163/ux-copilot-ai-assistant",
@@ -389,7 +389,7 @@ export const products = [
     status: "Figma plugin",
     href: "https://www.figma.com/community/plugin/1542867863199350817/ai-design-review",
     external: true,
-    tint: "#22d3ee",
+    tint: "#a78bfa",
     image: undefined as string | undefined, // set to override the fetched OG image, e.g. "/products/ai-design-review.png"
     ogSource:
       "https://www.figma.com/community/plugin/1542867863199350817/ai-design-review",

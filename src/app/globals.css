@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
-/* ---- Theme-switchable design tokens ----------------------------------
-   Utilities (bg-canvas, text-ink, …) resolve through these variables,
-   so toggling the .light class on <html> re-themes the whole site. */
+/* ---- Design tokens ----------------------------------------------------
+   Utilities (bg-canvas, text-ink, …) resolve through these variables.
+   The site is dark by default; individual bands re-scope the same
+   variables (.theme-light, .theme-accent) so every component re-themes
+   per section without touching markup. */
 
 @theme inline {
   --color-canvas: var(--canvas);
@@ -16,6 +18,7 @@
   --color-glow-1: var(--glow-1);
   --color-glow-2: var(--glow-2);
   --color-glow-3: var(--glow-3);
+  --color-ok: var(--ok);
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -34,38 +37,85 @@
   }
 }
 
-/* Dark (default): near-black canvas, warm ivory ink */
+/* Base (dark): violet-cast near-black canvas, cool ivory ink */
 :root {
   color-scheme: dark;
-  --canvas: #0a0a0c;
-  --raised: #121215;
-  --panel: #17171b;
-  --line: rgba(244, 243, 238, 0.09);
-  --line-strong: rgba(244, 243, 238, 0.18);
-  --ink: #f4f3ee;
-  --ink-dim: #b9b8bd;
-  --ink-faint: #85848c;
-  --glow-1: #5b8cff;
-  --glow-2: #22d3ee;
-  --glow-3: #4ade80;
+  --canvas: #0a0912;
+  --raised: #12101c;
+  --panel: #171425;
+  --line: rgba(242, 240, 250, 0.09);
+  --line-strong: rgba(242, 240, 250, 0.18);
+  --ink: #f3f1f9;
+  --ink-dim: #b7b3c6;
+  --ink-faint: #847f97;
+  --glow-1: #7c8cff;
+  --glow-2: #a78bfa;
+  --glow-3: #e879f9;
+  --ok: #4ade80;
   --grain-opacity: 0.05;
 }
 
-/* Light: warm paper white, near-black ink, accents darkened for contrast */
-.light {
+/* ---- Section bands ---------------------------------------------------- */
+
+/* Dark gradient wash shared by the hero and everything below the AI
+   products band (about + contact) */
+.section-dark {
+  background:
+    radial-gradient(
+      100% 80% at 82% 0%,
+      color-mix(in oklab, var(--glow-1) 13%, transparent) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      80% 70% at 4% 100%,
+      color-mix(in oklab, var(--glow-3) 8%, transparent) 0%,
+      transparent 58%
+    ),
+    var(--canvas);
+}
+
+/* Light: warm paper white for the case-studies band, accents darkened
+   for contrast */
+.theme-light {
   color-scheme: light;
-  --canvas: #f6f5f1;
-  --raised: #fdfdfb;
+  --canvas: #f7f6f3;
+  --raised: #ffffff;
   --panel: #ffffff;
-  --line: rgba(23, 23, 27, 0.1);
-  --line-strong: rgba(23, 23, 27, 0.24);
-  --ink: #17171b;
-  --ink-dim: #4c4b53;
-  --ink-faint: #65646c;
-  --glow-1: #3b5fe0;
-  --glow-2: #0f7f9e;
-  --glow-3: #178a46;
-  --grain-opacity: 0.03;
+  --line: rgba(21, 17, 32, 0.1);
+  --line-strong: rgba(21, 17, 32, 0.24);
+  --ink: #16121f;
+  --ink-dim: #4c4757;
+  --ink-faint: #6d6880;
+  --glow-1: #4c5fe4;
+  --glow-2: #7c3aed;
+  --glow-3: #c026d3;
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+/* Deep purple gradient for the AI products band, accents lightened
+   for contrast */
+.theme-accent {
+  color-scheme: dark;
+  --canvas: #150e2e;
+  --raised: #1d1544;
+  --panel: #241b52;
+  --line: rgba(233, 227, 255, 0.13);
+  --line-strong: rgba(233, 227, 255, 0.28);
+  --ink: #f4f1ff;
+  --ink-dim: #c9c2e6;
+  --ink-faint: #9c93c2;
+  --glow-1: #97a5ff;
+  --glow-2: #c4b5fd;
+  --glow-3: #f0abfc;
+  background:
+    radial-gradient(
+      90% 70% at 50% 0%,
+      color-mix(in oklab, #6d28d9 40%, transparent) 0%,
+      transparent 62%
+    ),
+    linear-gradient(180deg, #140d29 0%, #1d1243 55%, #150e2e 100%);
+  color: var(--ink);
 }
 
 html {
@@ -74,27 +124,26 @@ html {
 }
 
 body {
-  background: var(--color-canvas);
-  color: var(--color-ink);
+  background: var(--canvas);
+  color: var(--ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: clip;
-  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--color-glow-2) 60%, transparent);
-  color: var(--color-canvas);
+  background: color-mix(in oklab, var(--glow-2) 60%, transparent);
+  color: var(--canvas);
 }
 
 /* Iridescent text: reserved for AI moments */
 .text-iridescent {
   background: linear-gradient(
     100deg,
-    var(--color-glow-1) 0%,
-    var(--color-glow-2) 45%,
-    var(--color-glow-3) 100%
+    var(--glow-1) 0%,
+    var(--glow-2) 45%,
+    var(--glow-3) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -104,19 +153,19 @@ body {
 /* Hollow display accent: transparent fill, hairline stroke */
 .text-outline {
   color: transparent;
-  -webkit-text-stroke: 1.5px color-mix(in oklab, var(--color-ink) 62%, transparent);
+  -webkit-text-stroke: 1.5px color-mix(in oklab, var(--ink) 62%, transparent);
 }
 
 /* Hairline frame used by image placeholders and cards */
 .frame {
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--line);
   background:
     radial-gradient(
       120% 100% at 50% 0%,
-      color-mix(in oklab, var(--color-glow-1) 6%, transparent) 0%,
+      color-mix(in oklab, var(--glow-1) 6%, transparent) 0%,
       transparent 55%
     ),
-    var(--color-raised);
+    var(--raised);
 }
 
 /* Subtle film grain over the whole site */
@@ -152,7 +201,7 @@ html {
 
 /* Keyboard focus */
 :focus-visible {
-  outline: 2px solid var(--color-glow-1);
+  outline: 2px solid var(--glow-1);
   outline-offset: 3px;
   border-radius: 2px;
 }
