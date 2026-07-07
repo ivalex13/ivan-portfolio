@@ -18,7 +18,7 @@ export default function CaseCard({ study }: { study: CaseStudy }) {
         href={`/work/${study.slug}`}
         className="group block rounded-2xl frame p-6 transition-colors duration-300 hover:border-line-strong sm:p-8"
       >
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+        <div className="grid gap-8">
           {/* Text */}
           <div>
             <div className="flex items-center gap-2.5">
