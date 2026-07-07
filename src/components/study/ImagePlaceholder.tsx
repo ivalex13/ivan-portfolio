@@ -49,7 +49,7 @@ export function ImagePlaceholder({
               className="absolute inset-0 opacity-40"
               style={{
                 backgroundImage:
-                  "radial-gradient(color-mix(in oklab, var(--color-ink) 14%, transparent) 1px, transparent 1px)",
+                  "radial-gradient(color-mix(in oklab, var(--ink) 14%, transparent) 1px, transparent 1px)",
                 backgroundSize: "22px 22px",
               }}
             />
@@ -60,7 +60,7 @@ export function ImagePlaceholder({
               style={{
                 background: tint
                   ? `linear-gradient(100deg, ${tint}, transparent 85%)`
-                  : "linear-gradient(100deg, var(--color-glow-1), var(--color-glow-2), var(--color-glow-3))",
+                  : "linear-gradient(100deg, var(--glow-1), var(--glow-2), var(--glow-3))",
               }}
             />
             <div className="absolute inset-0 grid place-items-center p-6">

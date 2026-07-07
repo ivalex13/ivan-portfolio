@@ -68,14 +68,66 @@
   --grain-opacity: 0.03;
 }
 
+/* ---- Section palettes --------------------------------------------------
+   Utilities resolve through the token variables, so re-scoping them on a
+   section wrapper re-themes everything inside it. This breaks the page out
+   of a single uninterrupted background in both themes. */
+
+/* Tonal shift: lifted warm-dark in dark mode, deeper oat paper in light */
+.section-alt {
+  --canvas: #14131a;
+  --raised: #1b1a21;
+  --panel: #201f27;
+  background: var(--canvas);
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+.light .section-alt {
+  --canvas: #eae7dd;
+  --raised: #f4f2ea;
+  --panel: #faf9f3;
+}
+
+/* Inverted island: ivory section in dark mode, ink section in light mode */
+.section-flip {
+  color-scheme: light;
+  --canvas: #f4f3ee;
+  --raised: #fdfdfb;
+  --panel: #ffffff;
+  --line: rgba(23, 23, 27, 0.12);
+  --line-strong: rgba(23, 23, 27, 0.26);
+  --ink: #131316;
+  --ink-dim: #47464e;
+  --ink-faint: #63626b;
+  --glow-1: #3b5fe0;
+  --glow-2: #0f7f9e;
+  --glow-3: #178a46;
+  background: var(--canvas);
+  color: var(--ink);
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+.light .section-flip {
+  color-scheme: dark;
+  --canvas: #141317;
+  --raised: #1c1b21;
+  --panel: #212026;
+  --line: rgba(244, 243, 238, 0.1);
+  --line-strong: rgba(244, 243, 238, 0.22);
+  --ink: #f4f3ee;
+  --ink-dim: #b9b8bd;
+  --ink-faint: #85848c;
+  --glow-1: #5b8cff;
+  --glow-2: #22d3ee;
+  --glow-3: #4ade80;
+}
+
 html {
   scroll-behavior: smooth;
   background: var(--canvas);
 }
 
 body {
-  background: var(--color-canvas);
-  color: var(--color-ink);
+  background: var(--canvas);
+  color: var(--ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -84,17 +136,17 @@ body {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--color-glow-2) 60%, transparent);
-  color: var(--color-canvas);
+  background: color-mix(in oklab, var(--glow-2) 60%, transparent);
+  color: var(--canvas);
 }
 
 /* Iridescent text: reserved for AI moments */
 .text-iridescent {
   background: linear-gradient(
     100deg,
-    var(--color-glow-1) 0%,
-    var(--color-glow-2) 45%,
-    var(--color-glow-3) 100%
+    var(--glow-1) 0%,
+    var(--glow-2) 45%,
+    var(--glow-3) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -104,19 +156,19 @@ body {
 /* Hollow display accent: transparent fill, hairline stroke */
 .text-outline {
   color: transparent;
-  -webkit-text-stroke: 1.5px color-mix(in oklab, var(--color-ink) 62%, transparent);
+  -webkit-text-stroke: 1.5px color-mix(in oklab, var(--ink) 62%, transparent);
 }
 
 /* Hairline frame used by image placeholders and cards */
 .frame {
-  border: 1px solid var(--color-line);
+  border: 1px solid var(--line);
   background:
     radial-gradient(
       120% 100% at 50% 0%,
-      color-mix(in oklab, var(--color-glow-1) 6%, transparent) 0%,
+      color-mix(in oklab, var(--glow-1) 6%, transparent) 0%,
       transparent 55%
     ),
-    var(--color-raised);
+    var(--raised);
 }
 
 /* Subtle film grain over the whole site */
@@ -152,7 +204,7 @@ html {
 
 /* Keyboard focus */
 :focus-visible {
-  outline: 2px solid var(--color-glow-1);
+  outline: 2px solid var(--glow-1);
   outline-offset: 3px;
   border-radius: 2px;
 }

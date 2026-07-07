@@ -9,11 +9,8 @@ import {
   products,
   profile,
 } from "@/lib/content";
-import HeroCanvas from "@/components/HeroCanvas";
 import CaseCard from "@/components/CaseCard";
 import Marquee from "@/components/Marquee";
-import ScrollHint from "@/components/ScrollHint";
-import Magnetic from "@/components/Magnetic";
 import Spotlight from "@/components/Spotlight";
 import { ImagePlaceholder } from "@/components/study/ImagePlaceholder";
 import WarpPortrait from "@/components/WarpPortrait";
@@ -23,61 +20,47 @@ import { MaskReveal, Reveal, Stagger, StaggerItem } from "@/components/motion";
 export default function Home() {
   return (
     <>
-      {/* ─────────────── Hero ─────────────── */}
-      <section className="relative flex min-h-svh flex-col justify-center overflow-hidden">
-        <HeroCanvas />
-        <ScrollHint />
-        {/* bottom fade into content */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-canvas" />
-
-        <div className="relative mx-auto w-full max-w-6xl px-6 md:px-10 pb-24 pt-36">
+      {/* ─────────────── Masthead ───────────────
+          Condensed, editorial: name the work, then get out of the way so the
+          case studies start near the fold. */}
+      <section className="relative">
+        <div className="mx-auto w-full max-w-6xl px-6 md:px-10 pb-14 pt-32 sm:pb-16 sm:pt-40">
           <MaskReveal delay={0.1}>
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-              {profile.role}
+              {profile.role} · Belgrade
             </p>
           </MaskReveal>
 
           <LiquidHeadline
             as="h1"
-            className="mt-8"
-            textClassName="text-[clamp(3rem,9.2vw,6rem)] leading-[0.98] tracking-tight"
+            className="mt-6"
+            textClassName="text-[clamp(2.7rem,7vw,4.75rem)] leading-[1.02] tracking-tight"
             line1={profile.headline.lead}
             line2={profile.headline.accent}
-            maskDelays={[0.25, 0.4]}
+            maskDelays={[0.2, 0.32]}
           />
 
-          <Reveal delay={0.65}>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-dim">
-              {profile.sub}
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.8}>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Magnetic>
-                <a
-                  href="#work"
-                  className="group inline-flex items-center gap-3 rounded-full bg-ink px-7 py-3.5 font-medium text-canvas"
-                >
-                  View selected work
-                  <span className="transition-transform group-hover:translate-y-0.5">↓</span>
-                </a>
-              </Magnetic>
-              <Magnetic>
+          <Reveal delay={0.5}>
+            <div className="mt-10 flex flex-wrap items-end justify-between gap-x-12 gap-y-6 border-t border-line pt-7">
+              <p className="max-w-xl text-base leading-relaxed text-ink-dim sm:text-lg">
+                {profile.sub}
+              </p>
+              <div className="flex flex-col items-start gap-3">
+                <span className="inline-flex items-center gap-2.5 font-mono text-[12px] tracking-caps uppercase text-ink-faint">
+                  <span className="relative flex size-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-glow-3 opacity-60" />
+                    <span className="relative inline-flex size-2 rounded-full bg-glow-3" />
+                  </span>
+                  {profile.availability}
+                </span>
                 <a
                   href={`mailto:${profile.email}`}
-                  className="inline-block rounded-full border border-line-strong px-6 py-3.5 text-ink transition-colors hover:border-ink"
+                  className="group inline-flex items-center gap-2 text-ink underline decoration-line-strong underline-offset-4 transition-colors hover:decoration-ink"
                 >
                   Get in touch
+                  <span className="transition-transform group-hover:translate-x-0.5">→</span>
                 </a>
-              </Magnetic>
-              <span className="ml-1 inline-flex items-center gap-2.5 font-mono text-[12px] tracking-caps uppercase text-ink-faint">
-                <span className="relative flex size-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-glow-3 opacity-60" />
-                  <span className="relative inline-flex size-2 rounded-full bg-glow-3" />
-                </span>
-                {profile.availability}
-              </span>
+              </div>
             </div>
           </Reveal>
         </div>
@@ -87,7 +70,7 @@ export default function Home() {
 
       {/* ─────────────── Selected work ─────────────── */}
       <section id="work" className="scroll-mt-20">
-        <div className="mx-auto max-w-6xl px-6 md:px-10 pb-24 pt-24 sm:pt-32">
+        <div className="mx-auto max-w-6xl px-6 md:px-10 pb-24 pt-16 sm:pt-20">
           <Reveal>
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
               <span className="text-glow-2">01</span> · Case studies
@@ -111,7 +94,7 @@ export default function Home() {
       </section>
 
       {/* ─────────────── AI products ─────────────── */}
-      <section id="products" className="scroll-mt-20 border-t border-line">
+      <section id="products" className="section-alt scroll-mt-20">
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 sm:py-32">
           <Reveal>
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
@@ -186,7 +169,7 @@ export default function Home() {
       </section>
 
       {/* ─────────────── Principles ─────────────── */}
-      <section className="border-t border-line">
+      <section className="section-flip">
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 sm:py-32">
           <Reveal>
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
@@ -215,7 +198,7 @@ export default function Home() {
       </section>
 
       {/* ─────────────── About ─────────────── */}
-      <section id="about" className="scroll-mt-20 border-t border-line">
+      <section id="about" className="scroll-mt-20">
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 sm:py-32">
           <Reveal>
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
