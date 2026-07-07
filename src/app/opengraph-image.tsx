@@ -25,8 +25,8 @@ export default async function OgImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 72,
-          background: "#0a0a0c",
-          color: "#f4f3ee",
+          background: "#0a0912",
+          color: "#f3f1f9",
           fontFamily: "Geist",
         }}
       >
@@ -44,9 +44,9 @@ export default async function OgImage() {
           <svg width="56" height="56" viewBox="0 0 64 64">
             <defs>
               <linearGradient id="g" x1="0" y1="0" x2="64" y2="64">
-                <stop offset="0" stopColor="#5b8cff" />
-                <stop offset="0.5" stopColor="#22d3ee" />
-                <stop offset="1" stopColor="#4ade80" />
+                <stop offset="0" stopColor="#7c8cff" />
+                <stop offset="0.5" stopColor="#a78bfa" />
+                <stop offset="1" stopColor="#e879f9" />
               </linearGradient>
             </defs>
             <path
@@ -74,7 +74,7 @@ export default async function OgImage() {
               letterSpacing: -3,
               fontWeight: 500,
               backgroundImage:
-                "linear-gradient(100deg, #5b8cff 0%, #22d3ee 45%, #4ade80 100%)",
+                "linear-gradient(100deg, #7c8cff 0%, #a78bfa 45%, #e879f9 100%)",
               backgroundClip: "text",
               color: "transparent",
             }}

@@ -7,7 +7,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0c",
+  themeColor: "#0a0912",
 };
 
 export const metadata: Metadata = {
@@ -47,19 +47,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="grain">
-        {/* set theme class before first paint to avoid a flash */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              "(function(){try{var t=localStorage.getItem('theme');var l=t?t==='light':window.matchMedia('(prefers-color-scheme: light)').matches;var d=document.documentElement;if(l){d.classList.add('light');var m=document.querySelector('meta[name=\"theme-color\"]');m&&m.setAttribute('content','#f6f5f1');}}catch(e){}})();",
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}

@@ -7,14 +7,14 @@ import LiquidHeadline from "@/components/LiquidHeadline";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="relative border-t border-line">
+    <footer id="contact" className="section-dark relative border-t border-line">
       {/* Contact CTA */}
       <div className="mx-auto max-w-6xl px-6 md:px-10 py-28 sm:py-36">
         <Reveal>
           <p className="inline-flex items-center gap-2.5 font-mono text-[13px] tracking-caps uppercase text-ink-faint">
             <span className="relative flex size-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-glow-3 opacity-60" />
-              <span className="relative inline-flex size-2 rounded-full bg-glow-3" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ok opacity-60" />
+              <span className="relative inline-flex size-2 rounded-full bg-ok" />
             </span>
             {profile.availability}
           </p>

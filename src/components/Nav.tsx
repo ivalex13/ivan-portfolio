@@ -10,7 +10,6 @@ import {
 } from "motion/react";
 import { useEffect, useState } from "react";
 import { profile } from "@/lib/content";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { href: "/#work", label: "Work" },
@@ -89,14 +88,10 @@ export default function Nav() {
             >
               Contact
             </Link>
-            <span className="ml-1">
-              <ThemeToggle />
-            </span>
           </div>
 
-          {/* Mobile: theme toggle + menu button */}
+          {/* Mobile: menu button */}
           <div className="relative z-[75] flex items-center gap-2 sm:hidden">
-            <ThemeToggle />
             <button
               type="button"
               aria-expanded={open}
