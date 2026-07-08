@@ -1,8 +1,6 @@
-import Link from "next/link";
 import { profile } from "@/lib/content";
 import { Reveal } from "@/components/motion";
 import Magnetic from "@/components/Magnetic";
-import LocalTime from "@/components/LocalTime";
 
 export default function Footer() {
   return (
@@ -53,18 +51,6 @@ export default function Footer() {
             </a>
           </div>
         </Reveal>
-      </div>
-
-      {/* Bottom bar */}
-      <div className="border-t border-line">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-6 font-mono text-[12px] tracking-caps uppercase text-ink-faint">
-          <span>© {new Date().getFullYear()} Ivan Aleksić</span>
-          <span className="tabular-nums"><LocalTime /></span>
-          <div className="flex gap-5">
-            <Link href="/#work" className="transition-colors hover:text-ink">Work</Link>
-            <Link href="/#about" className="transition-colors hover:text-ink">About</Link>
-          </div>
-        </div>
       </div>
     </footer>
   );
