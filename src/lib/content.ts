@@ -91,12 +91,12 @@ export const caseStudies: CaseStudy[] = [
     slug: "zendesk-ai-scheduling",
     company: "Zendesk",
     kicker: "Zendesk · 2024 – 2026",
-    title: "Rethinking enterprise scheduling",
-    accent: "with AI decision-support",
+    title: "One event definition",
+    accent: "that keeps every system in sync",
     tint: "#7c8cff",
     summary:
       "Leading the design response after ~80% of WFM's top adoption blockers traced back to scheduling, defining a long-term AI-assisted vision and shipping the wedge toward it.",
-    hook: "The vision and first shipped steps for AI-assisted scheduling at enterprise scale.",
+    hook: "Designing Zendesk WFM's native Events feature: replacing manual, error-prone workarounds across ten product touchpoints with a single guided flow.",
     tags: ["Enterprise SaaS", "AI decision-support", "Design vision", "Workforce management"],
     metric: { value: "~700", label: "enterprise accounts, up to 1,000 agents each" },
     embed:
