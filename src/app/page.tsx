@@ -145,11 +145,11 @@ export default async function Home() {
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
               <span className="text-glow-2">02</span> · Built &amp; shipped
             </p>
-            <h2 className="mt-4 max-w-2xl text-4xl tracking-tight sm:text-6xl">
+            <h2 className="mt-4 text-4xl tracking-tight sm:text-6xl">
               Not just designing AI:{" "}
               <span className="text-outline">shipping it</span>
             </h2>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-dim">
+            <p className="mt-5 max-w-3xl text-lg leading-relaxed text-ink-dim">
               Products I design, build, and operate end-to-end. They keep my
               understanding of AI practical, not theoretical: model behavior,
               prompt design, latency, trust.
