@@ -79,16 +79,6 @@ export default async function Home() {
               <p className="mt-8 max-w-5xl text-lg leading-relaxed text-ink-dim">
                 {profile.sub}
               </p>
-              <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-3 text-ink-dim">
-                {profile.companies.map((c) => (
-                  <span key={c} className="inline-flex items-center gap-2.5">
-                    <CompanyLogo company={c} className="size-[17px] shrink-0" />
-                    <span className="font-mono text-[12px] tracking-caps uppercase">
-                      {c}
-                    </span>
-                  </span>
-                ))}
-              </div>
             </Reveal>
 
             <Reveal delay={0.8}>
