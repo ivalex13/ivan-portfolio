@@ -460,8 +460,3 @@ export const experience = [
     ],
   },
 ];
-
-export const education = [
-  { name: "Reforge · Mastering Product Management", year: "2022" },
-  { name: "Reforge · Retention + Engagement", year: "2018" },
-];

@@ -4,7 +4,6 @@ import {
   about,
   capabilities,
   caseStudies,
-  education,
   experience,
   products,
   profile,
@@ -293,18 +292,6 @@ export default async function Home() {
               </StaggerItem>
             ))}
           </Stagger>
-
-          {/* Education */}
-          <Reveal>
-            <p className="mt-12 border-t border-line pt-8 font-mono text-[12px] tracking-caps uppercase text-ink-faint">
-              Education
-              {education.map((e) => (
-                <span key={e.name} className="ml-5 text-ink-dim">
-                  {e.name} ({e.year})
-                </span>
-              ))}
-            </p>
-          </Reveal>
         </div>
       </section>
     </>
