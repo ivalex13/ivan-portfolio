@@ -12,7 +12,7 @@ export const profile = {
   name: "Ivan Aleksić",
   role: "AI Product Designer",
   email: "ivanaleksic@gmail.com",
-  phone: "+381462946347",
+  phone: "+381642946347",
   headline: {
     lead: "I design AI products",
     accent: "people actually adopt.",
