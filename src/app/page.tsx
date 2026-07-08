@@ -156,12 +156,12 @@ export default async function Home() {
             </p>
           </Reveal>
 
-          <Stagger className="mt-14 grid gap-6 md:grid-cols-3" gap={0.1}>
+          <Stagger className="mt-14 grid gap-6" gap={0.1}>
             {products.map((p, i) => {
               const inner = (
-                <div className="frame group relative flex h-full flex-col rounded-2xl p-4 transition-colors duration-300 hover:border-line-strong">
+                <div className="frame group relative flex h-full flex-col gap-0 rounded-2xl p-4 transition-colors duration-300 hover:border-line-strong md:flex-row md:gap-8">
                   <Spotlight />
-                  <div className="overflow-hidden rounded-xl">
+                  <div className="overflow-hidden rounded-xl md:order-2 md:w-1/2 md:shrink-0">
                     <div className="transition-transform duration-700 ease-out group-hover:scale-[1.03]">
                       <ImagePlaceholder
                         src={productImages[i]}
@@ -172,7 +172,7 @@ export default async function Home() {
                       />
                     </div>
                   </div>
-                  <div className="flex flex-1 flex-col justify-between p-3 pt-5">
+                  <div className="flex flex-1 flex-col justify-between p-3 pt-5 md:order-1 md:pt-3">
                     <div>
                       <div className="flex items-center justify-between">
                         <h3 className="text-2xl tracking-tight">{p.name}</h3>
