@@ -13,8 +13,8 @@ import { profile } from "@/lib/content";
 
 const links = [
   { href: "/#work", label: "Work" },
-  { href: "/#about", label: "About" },
   { href: "/#products", label: "AI Products" },
+  { href: "/#about", label: "About" },
 ];
 
 const EASE = [0.22, 1, 0.36, 1] as const;
