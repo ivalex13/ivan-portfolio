@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   about,
-  capabilities,
   caseStudies,
   experience,
   products,
@@ -10,7 +9,6 @@ import {
 } from "@/lib/content";
 import CaseCard from "@/components/CaseCard";
 import CompanyLogo from "@/components/CompanyLogo";
-import Marquee from "@/components/Marquee";
 import ScrollHint from "@/components/ScrollHint";
 import Magnetic from "@/components/Magnetic";
 import Spotlight from "@/components/Spotlight";
@@ -72,7 +70,7 @@ export default async function Home() {
             />
 
             <Reveal delay={0.65}>
-              <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-dim">
+              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-dim">
                 {profile.sub}
               </p>
               <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-3 text-ink-dim">
@@ -109,8 +107,6 @@ export default async function Home() {
             </Reveal>
           </div>
         </section>
-
-        <Marquee items={capabilities} />
       </div>
 
       {/* ─────────────── Selected work ─────────────── */}
@@ -120,13 +116,10 @@ export default async function Home() {
             <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
               <span className="text-glow-2">01</span> · Case studies
             </p>
-            <div className="mt-4 flex items-end justify-between">
+            <div className="mt-4">
               <h2 className="text-4xl tracking-tight sm:text-6xl">
                 Selected <span className="text-outline">work</span>
               </h2>
-              <span className="hidden font-mono text-[13px] tracking-caps uppercase text-ink-faint sm:block">
-                {caseStudies.length} case studies
-              </span>
             </div>
           </Reveal>
 
@@ -174,15 +167,7 @@ export default async function Home() {
                   </div>
                   <div className="flex flex-1 flex-col justify-between p-3 pt-5 md:order-1 md:pt-3">
                     <div>
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-2xl tracking-tight">{p.name}</h3>
-                        <span
-                          aria-hidden
-                          className="text-lg text-ink-faint transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-ink"
-                        >
-                          ↗
-                        </span>
-                      </div>
+                      <h3 className="text-2xl tracking-tight">{p.name}</h3>
                       <p className="mt-3 text-base leading-relaxed text-ink-dim">
                         {p.tagline}
                       </p>
