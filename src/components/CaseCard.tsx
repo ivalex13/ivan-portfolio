@@ -56,15 +56,24 @@ export default function CaseCard({ study }: { study: CaseStudy }) {
 
           {/* Visual */}
           <div className="overflow-hidden rounded-xl">
-            <div className="transition-transform duration-700 ease-out group-hover:scale-[1.025]">
-              <ImagePlaceholder
-                alt={`${study.title} ${study.accent}`}
-                aspect="video"
-                note="Cover visual: hero shot of this case study"
-                compact
-                tint={study.tint}
+            {study.embed ? (
+              <iframe
+                src={study.embed}
+                title={`${study.title} ${study.accent}`}
+                className="aspect-video w-full rounded-xl border border-black/10"
+                allowFullScreen
               />
-            </div>
+            ) : (
+              <div className="transition-transform duration-700 ease-out group-hover:scale-[1.025]">
+                <ImagePlaceholder
+                  alt={`${study.title} ${study.accent}`}
+                  aspect="video"
+                  note="Cover visual: hero shot of this case study"
+                  compact
+                  tint={study.tint}
+                />
+              </div>
+            )}
           </div>
         </div>
       </Link>

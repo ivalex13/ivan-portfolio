@@ -78,6 +78,7 @@ export type CaseStudy = {
   hook: string; // one calm sentence on the home-page card
   tags: string[]; // kept for future use; not rendered on cards
   metric: { value: string; label: string }; // headline metric on the card
+  embed?: string; // iframe URL rendered on the home-page card instead of the image
   meta: { label: string; value: string }[];
   heroStats: { value: string; label: string }[];
   tldr: { problem: string; role: string; outcome: string };
@@ -98,6 +99,8 @@ export const caseStudies: CaseStudy[] = [
     hook: "The vision and first shipped steps for AI-assisted scheduling at enterprise scale.",
     tags: ["Enterprise SaaS", "AI decision-support", "Design vision", "Workforce management"],
     metric: { value: "~700", label: "enterprise accounts, up to 1,000 agents each" },
+    embed:
+      "https://embed.figma.com/slides/omJZcf8VzSJHfC4LgitAzC/Events-presentation?node-id=0-1&embed-host=share",
     meta: [
       { label: "Role", value: "Senior Product Designer · design lead, scheduling area" },
       { label: "Timeline", value: "July 2024 – April 2026" },
