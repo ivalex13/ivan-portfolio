@@ -224,7 +224,7 @@ export default async function Home() {
           </Reveal>
 
           {/* Bio + portrait */}
-          <div className="mt-14 grid gap-14 lg:grid-cols-[1.2fr_1fr]">
+          <div className="mt-14 grid gap-14 lg:grid-cols-[minmax(0,1fr)_20rem]">
             <Reveal>
               <div className="space-y-6 text-lg leading-[1.75] text-ink-dim">
                 {about.paragraphs.map((p, i) => (
