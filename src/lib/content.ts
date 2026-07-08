@@ -78,6 +78,7 @@ export type CaseStudy = {
   hook: string; // one calm sentence on the home-page card
   tags: string[]; // kept for future use; not rendered on cards
   metric: { value: string; label: string }; // headline metric on the card
+  embed?: string; // iframe URL rendered on the home-page card instead of the image
   meta: { label: string; value: string }[];
   heroStats: { value: string; label: string }[];
   tldr: { problem: string; role: string; outcome: string };
@@ -90,14 +91,16 @@ export const caseStudies: CaseStudy[] = [
     slug: "zendesk-ai-scheduling",
     company: "Zendesk",
     kicker: "Zendesk · 2024 – 2026",
-    title: "Rethinking enterprise scheduling",
-    accent: "with AI decision-support",
+    title: "One event definition",
+    accent: "that keeps every system in sync",
     tint: "#7c8cff",
     summary:
       "Leading the design response after ~80% of WFM's top adoption blockers traced back to scheduling, defining a long-term AI-assisted vision and shipping the wedge toward it.",
-    hook: "The vision and first shipped steps for AI-assisted scheduling at enterprise scale.",
+    hook: "Designing Zendesk WFM's native Events feature: replacing manual, error-prone workarounds across ten product touchpoints with a single guided flow.",
     tags: ["Enterprise SaaS", "AI decision-support", "Design vision", "Workforce management"],
     metric: { value: "~700", label: "enterprise accounts, up to 1,000 agents each" },
+    embed:
+      "https://embed.figma.com/deck/omJZcf8VzSJHfC4LgitAzC/Events-presentation?node-id=1-401&p=f&viewport=89%2C-3698%2C0.28&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share",
     meta: [
       { label: "Role", value: "Senior Product Designer · design lead, scheduling area" },
       { label: "Timeline", value: "July 2024 – April 2026" },
