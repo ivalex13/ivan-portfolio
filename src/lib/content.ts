@@ -100,7 +100,7 @@ export const caseStudies: CaseStudy[] = [
     tags: ["Enterprise SaaS", "AI decision-support", "Design vision", "Workforce management"],
     metric: { value: "~700", label: "enterprise accounts, up to 1,000 agents each" },
     embed:
-      "https://embed.figma.com/slides/omJZcf8VzSJHfC4LgitAzC/Events-presentation?node-id=0-1&embed-host=share",
+      "https://embed.figma.com/deck/omJZcf8VzSJHfC4LgitAzC/Events-presentation?node-id=1-401&p=f&viewport=89%2C-3698%2C0.28&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share",
     meta: [
       { label: "Role", value: "Senior Product Designer · design lead, scheduling area" },
       { label: "Timeline", value: "July 2024 – April 2026" },
