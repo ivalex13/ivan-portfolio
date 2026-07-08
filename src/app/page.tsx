@@ -52,10 +52,16 @@ export default async function Home() {
                   width={80}
                   height={80}
                   priority
-                  className="size-9 rounded-full object-cover"
+                  className="size-9 shrink-0 rounded-full object-cover"
                 />
-                <p className="font-mono text-[13px] tracking-caps uppercase text-ink-faint">
-                  {profile.role}
+                <p className="flex flex-wrap items-center gap-x-2.5 gap-y-1 font-mono text-[13px] tracking-caps uppercase text-ink-faint">
+                  <span>{profile.role}</span>
+                  <span aria-hidden className="text-ink-faint/40">·</span>
+                  <span>{profile.availability}</span>
+                  <span className="relative ml-0.5 flex size-2 shrink-0">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ok opacity-60" />
+                    <span className="relative inline-flex size-2 rounded-full bg-ok" />
+                  </span>
                 </p>
               </div>
             </MaskReveal>
@@ -86,14 +92,7 @@ export default async function Home() {
             </Reveal>
 
             <Reveal delay={0.8}>
-              <span className="mt-10 inline-flex items-center gap-2.5 font-mono text-[12px] tracking-caps uppercase text-ink-faint">
-                <span className="relative flex size-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ok opacity-60" />
-                  <span className="relative inline-flex size-2 rounded-full bg-ok" />
-                </span>
-                {profile.availability}
-              </span>
-              <div className="mt-6 flex flex-wrap items-center gap-4">
+              <div className="mt-10 flex flex-wrap items-center gap-4">
                 <Magnetic>
                   <a
                     href="#work"
