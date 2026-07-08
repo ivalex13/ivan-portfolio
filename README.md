@@ -12,7 +12,7 @@ You never need to touch a component to change copy.
 - `caseStudies`, each case study: card copy, meta grid, hero stats, TL;DR,
   and the body as a list of typed blocks (`heading`, `text`, `list`, `image`,
   `quote`, `stat-row`, `callout`)
-- `products`, `experience`, `education`
+- `products`, `experience`
 
 Text in `[brackets]` marks the spots to fill in with your own detail.
 

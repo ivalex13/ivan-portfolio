@@ -12,7 +12,7 @@ export const profile = {
   name: "Ivan Aleksić",
   role: "AI Product Designer",
   email: "ivanaleksic@gmail.com",
-  phone: "+381462946347",
+  phone: "+381642946347",
   headline: {
     lead: "I design AI products",
     accent: "people actually adopt.",
@@ -459,9 +459,4 @@ export const experience = [
       "Helped scale the product team from 1 to 10+ across design and product.",
     ],
   },
-];
-
-export const education = [
-  { name: "Reforge · Mastering Product Management", year: "2022" },
-  { name: "Reforge · Retention + Engagement", year: "2018" },
 ];
