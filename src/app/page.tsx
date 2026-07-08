@@ -70,7 +70,7 @@ export default async function Home() {
             />
 
             <Reveal delay={0.65}>
-              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-dim">
+              <p className="mt-8 max-w-3xl text-lg leading-relaxed text-ink-dim">
                 {profile.sub}
               </p>
               <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-3 text-ink-dim">
