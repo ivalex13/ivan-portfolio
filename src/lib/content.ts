@@ -98,7 +98,7 @@ const allCaseStudies: CaseStudy[] = [
     tint: "#7c8cff",
     summary:
       "Leading the design response after ~80% of WFM's top adoption blockers traced back to scheduling, defining a long-term AI-assisted vision and shipping the wedge toward it.",
-    hook: "Designing Zendesk WFM's native Events feature: replacing manual, error-prone workarounds across ten product touchpoints with a single guided flow.",
+    hook: "Replacing manual, error-prone workarounds across ten product touchpoints with a single guided flow.",
     tags: ["Enterprise SaaS", "AI decision-support", "Design vision", "Workforce management"],
     metric: { value: "~700", label: "enterprise accounts, up to 1,000 agents each" },
     embed:
