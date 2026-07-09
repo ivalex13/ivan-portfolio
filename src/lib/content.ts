@@ -83,10 +83,12 @@ export type CaseStudy = {
   heroStats: { value: string; label: string }[];
   tldr: { problem: string; role: string; outcome: string };
   locked?: boolean; // true → "NDA: details in interview" treatment
+  draft?: boolean; // true → hidden site-wide until ready to publish
   sections: Block[];
 };
 
-export const caseStudies: CaseStudy[] = [
+// Full set, including drafts. Edit content here; flip `draft` to publish.
+const allCaseStudies: CaseStudy[] = [
   {
     slug: "zendesk-ai-scheduling",
     company: "Zendesk",
@@ -96,7 +98,7 @@ export const caseStudies: CaseStudy[] = [
     tint: "#7c8cff",
     summary:
       "Leading the design response after ~80% of WFM's top adoption blockers traced back to scheduling, defining a long-term AI-assisted vision and shipping the wedge toward it.",
-    hook: "Designing Zendesk WFM's native Events feature: replacing manual, error-prone workarounds across ten product touchpoints with a single guided flow.",
+    hook: "Replacing manual, error-prone workarounds across ten product touchpoints with a single guided flow.",
     tags: ["Enterprise SaaS", "AI decision-support", "Design vision", "Workforce management"],
     metric: { value: "~700", label: "enterprise accounts, up to 1,000 agents each" },
     embed:
@@ -207,6 +209,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "instapage-ai-content",
     company: "Instapage",
+    draft: true, // hidden until the case study is ready
     kicker: "Instapage · 2023 – 2024",
     title: "4× adoption:",
     accent: "redesigning GPT-4 content generation",
@@ -291,6 +294,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "instapage-founding",
     company: "Instapage",
+    draft: true, // hidden until the case study is ready
     kicker: "Instapage · 2011 – 2024",
     title: "Founding designer:",
     accent: "0 → $16M ARR",
@@ -359,6 +363,10 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
 ];
+
+// What the site renders: published studies only. Set `draft: true` on any
+// entry above to hide it everywhere (home cards, /work routes, sitemap).
+export const caseStudies: CaseStudy[] = allCaseStudies.filter((s) => !s.draft);
 
 /* ───────────────────────────── AI products ───────────────────────────── */
 
