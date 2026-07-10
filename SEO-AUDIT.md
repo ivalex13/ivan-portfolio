@@ -1,4 +1,4 @@
-# SEO & AI Discoverability Audit — ivanaleksic.com
+# SEO & AI Discoverability Audit — ivanportfolio.com
 
 **Date:** July 2026 · **Scope:** full codebase review (`main` @ `9f3fea8`) + external footprint research.
 **Stack:** Next.js 15 (App Router, RSC), Tailwind 4, Motion, Vercel hosting + Analytics.
@@ -42,6 +42,15 @@ document combined.
 ## Implementation status (this branch)
 
 Decisions and fixes applied after review of this audit:
+
+**Domain correction:** the audit was originally written against `ivanaleksic.com` (the
+hardcoded base URL in the repo at the time); the owner confirmed the real production domain is
+**`ivanportfolio.com`**. All references in this document and every hardcoded URL in the code
+(`metadataBase`, canonical, robots.txt sitemap pointer, sitemap base, JSON-LD, llms.txt) have
+been updated. Off-page note: the exact-match query for `ivanportfolio.com` also returns no
+direct result for the site, so the "not yet established in the index" finding (§1.1) stands.
+Entity note: since the domain no longer contains the name "Aleksić", the JSON-LD `sameAs`
+cluster and profile backlinks (§4.2, §5) matter even more for tying the site to the person.
 
 **Implemented (no content/UI changes):**
 - Case-study detail pages unpublished for now (`pageDraft` flag): the site is intentionally a
@@ -114,12 +123,12 @@ getting shared with tracking parameters.
 
 **Fix:** In `layout.tsx` add `alternates: { canonical: "/" }`; in `work/[slug]/page.tsx`
 `generateMetadata`, add `alternates: { canonical: `/work/${slug}` }`. Both resolve against
-`metadataBase`. Also verify the Vercel domain config 308-redirects `www.ivanaleksic.com` and
-`ivan-portfolio*.vercel.app` → `ivanaleksic.com`.
+`metadataBase`. Also verify the Vercel domain config 308-redirects `www.ivanportfolio.com` and
+`ivan-portfolio*.vercel.app` → `ivanportfolio.com`.
 
 #### 🟠 MEDIUM — Site not (yet) established in the index
 
-**What:** A search for `"ivanaleksic.com"` returns domain-tools listings only — the site itself
+**What:** A search for `"ivanportfolio.com"` returns domain-tools listings only — the site itself
 doesn't surface. There is no evidence of Search Console/Bing Webmaster registration in the repo.
 
 **Why it matters:** New domains sit in a cold-start limbo; without explicit submission and a few
@@ -392,14 +401,14 @@ Strengthen the Person entity in `layout.tsx`:
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://ivanaleksic.com/#ivan",
+  "@id": "https://ivanportfolio.com/#ivan",
   "name": "Ivan Aleksić",
   "alternateName": "Ivan Aleksic",
   "jobTitle": "AI Product Designer",
   "description": "AI product designer with 14 years in SaaS; founding designer at Instapage, senior product designer at Zendesk; builder of Sonas, UX Copilot and AI Design Review.",
   "disambiguatingDescription": "Product designer (not the University of Belgrade professor or the footballer of the same name)",
-  "image": "https://ivanaleksic.com/portrait.jpg",
-  "url": "https://ivanaleksic.com",
+  "image": "https://ivanportfolio.com/portrait.jpg",
+  "url": "https://ivanportfolio.com",
   "email": "mailto:ivanaleksic@gmail.com",
   "address": { "@type": "PostalAddress", "addressLocality": "Belgrade", "addressCountry": "RS" },
   "sameAs": [
@@ -417,7 +426,7 @@ Strengthen the Person entity in `layout.tsx`:
 
 The `sameAs` cluster is the single strongest entity-disambiguation signal for both Google's
 Knowledge Graph and LLM retrieval — every profile you control should also link back to
-ivanaleksic.com (bidirectional confirmation).
+ivanportfolio.com (bidirectional confirmation).
 
 ### 4.3 Missing structured data — 🟠 MEDIUM
 
@@ -463,12 +472,12 @@ profile (ivalex13), and one strong earned-media piece (the Startit interview, in
 
 #### 🟠 MEDIUM–HIGH impact, low effort — claim the links you already control
 
-1. **LinkedIn**: set website field → ivanaleksic.com; align display name with the site.
+1. **LinkedIn**: set website field → ivanportfolio.com; align display name with the site.
 2. **Dribbble**: add the site URL; re-activate if dormant.
 3. **Figma Community**: the UX Copilot and AI Design Review plugin pages + your Figma profile
-   should link to ivanaleksic.com — these are high-authority figma.com pages *about your own
+   should link to ivanportfolio.com — these are high-authority figma.com pages *about your own
    products* and currently (as far as detectable) send you nothing.
-4. **aisonas.com**: add a visible "Built by Ivan Aleksić" footer link → ivanaleksic.com, with
+4. **aisonas.com**: add a visible "Built by Ivan Aleksić" footer link → ivanportfolio.com, with
    matching Person schema on that site. Cross-domain entity confirmation between your own
    properties is cheap and powerful.
 5. **Startit interview**: ask for the profile link to be updated/added; link to the article

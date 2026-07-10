@@ -20,6 +20,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://ivanaleksic.com/sitemap.xml",
+    sitemap: "https://ivanportfolio.com/sitemap.xml",
   };
 }

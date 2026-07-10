@@ -11,7 +11,7 @@ export const viewport: Viewport = {
   themeColor: "#0a0912",
 };
 
-const BASE = "https://ivanaleksic.com";
+const BASE = "https://ivanportfolio.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { caseStudyPages } from "@/lib/content";
 
-const BASE = "https://ivanaleksic.com";
+const BASE = "https://ivanportfolio.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Evaluated at build time; each deploy stamps a fresh, truthful date.
