@@ -84,6 +84,7 @@ export type CaseStudy = {
   tldr: { problem: string; role: string; outcome: string };
   locked?: boolean; // true → "NDA: details in interview" treatment
   draft?: boolean; // true → hidden site-wide until ready to publish
+  pageDraft?: boolean; // true → /work page + sitemap entry hidden until the copy is ready (home card still renders)
   sections: Block[];
 };
 
@@ -92,6 +93,7 @@ const allCaseStudies: CaseStudy[] = [
   {
     slug: "zendesk-ai-scheduling",
     company: "Zendesk",
+    pageDraft: true, // detail page hidden while its copy still has [placeholders]; the embed card carries the story
     kicker: "Zendesk · 2024 – 2026",
     title: "One event definition",
     accent: "that keeps every system in sync",
@@ -367,6 +369,12 @@ const allCaseStudies: CaseStudy[] = [
 // What the site renders: published studies only. Set `draft: true` on any
 // entry above to hide it everywhere (home cards, /work routes, sitemap).
 export const caseStudies: CaseStudy[] = allCaseStudies.filter((s) => !s.draft);
+
+// Studies with a live /work/[slug] page (and sitemap entry). Set
+// `pageDraft: true` to keep a study's home card while its page is unfinished.
+export const caseStudyPages: CaseStudy[] = caseStudies.filter(
+  (s) => !s.pageDraft,
+);
 
 /* ───────────────────────────── AI products ───────────────────────────── */
 

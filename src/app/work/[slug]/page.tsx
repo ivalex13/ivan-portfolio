@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { caseStudies } from "@/lib/content";
+import { caseStudyPages } from "@/lib/content";
 import StudyBlocks from "@/components/study/StudyBlocks";
 import StudyNav from "@/components/study/StudyNav";
 import { ImagePlaceholder } from "@/components/study/ImagePlaceholder";
 import { MaskReveal, Reveal } from "@/components/motion";
 
 export function generateStaticParams() {
-  return caseStudies.map((s) => ({ slug: s.slug }));
+  return caseStudyPages.map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({
@@ -17,11 +17,12 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const study = caseStudies.find((s) => s.slug === slug);
+  const study = caseStudyPages.find((s) => s.slug === slug);
   if (!study) return {};
   return {
     title: `${study.title} ${study.accent}`,
     description: study.summary,
+    alternates: { canonical: `/work/${slug}` },
   };
 }
 
@@ -31,10 +32,10 @@ export default async function CaseStudyPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const index = caseStudies.findIndex((s) => s.slug === slug);
+  const index = caseStudyPages.findIndex((s) => s.slug === slug);
   if (index === -1) notFound();
-  const study = caseStudies[index];
-  const next = caseStudies[(index + 1) % caseStudies.length];
+  const study = caseStudyPages[index];
+  const next = caseStudyPages[(index + 1) % caseStudyPages.length];
 
   const sections = study.sections.filter(
     (b): b is Extract<typeof b, { type: "heading" }> => b.type === "heading"

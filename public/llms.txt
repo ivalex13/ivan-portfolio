@@ -1,0 +1,28 @@
+# Ivan Aleksić — AI Product Designer
+
+> Personal portfolio of Ivan Aleksić, an AI product designer based in Belgrade, Serbia, with 14 years of experience designing and scaling SaaS products. He designs AI products people actually adopt — and ships his own.
+
+## Who
+
+- Ivan Aleksić, AI Product Designer, based in Belgrade, Serbia
+- Currently: Senior Product Designer at Zendesk (2024–2026), leading design for AI-assisted scheduling in Zendesk Workforce Management, used by ~700 enterprise accounts with up to 1,000 agents each
+- Previously: 13 years at Instapage (2011–2024) — first design hire (founding designer), later Product Manager, then Principal Product Designer; during his tenure the company grew from $0 to $30M ARR ($0 → $16M during his founding-designer years)
+- At Instapage he redesigned GPT-4-powered content generation, lifting AI feature adoption 4×, and owned the redesign of the core dashboard used by 20,000+ customers
+- Open to Senior / Lead AI Product Design roles
+
+## AI products he designed, built, and operates
+
+- Sonas — AI personas that think and react like real users, for interviews and usability tests: https://aisonas.com/
+- UX Copilot — AI assistant for UX work inside Figma (copy generation, personas, design feedback): https://www.figma.com/community/plugin/1461484151701868163/ux-copilot-ai-assistant
+- AI Design Review — fast, practical design critique without leaving the Figma canvas: https://www.figma.com/community/plugin/1542867863199350817/ai-design-review
+
+## Expertise
+
+AI product design, AI-assisted workflows, enterprise UX, 0→1 product design, design vision and strategy, prompt and interaction design, design systems, prototyping with code, UX research, growth and adoption.
+
+## Contact & profiles
+
+- Website: https://ivanaleksic.com
+- Email: ivanaleksic@gmail.com
+- LinkedIn: https://www.linkedin.com/in/ivalex/
+- Dribbble: https://dribbble.com/ivalex13

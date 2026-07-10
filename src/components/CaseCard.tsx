@@ -55,6 +55,7 @@ export default function CaseCard({ study }: { study: CaseStudy }) {
             src={study.embed}
             title={`${study.title} ${study.accent}`}
             className="aspect-video w-full rounded-xl border border-black/10"
+            loading="lazy"
             allowFullScreen
           />
         ) : (
@@ -79,7 +80,7 @@ export default function CaseCard({ study }: { study: CaseStudy }) {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
     >
-      {study.embed ? (
+      {study.embed || study.pageDraft ? (
         <div className={cardClass}>{inner}</div>
       ) : (
         <Link href={`/work/${study.slug}`} className={cardClass}>

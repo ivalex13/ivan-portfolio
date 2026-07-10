@@ -39,6 +39,34 @@ document combined.
 
 ---
 
+## Implementation status (this branch)
+
+Decisions and fixes applied after review of this audit:
+
+**Implemented (no content/UI changes):**
+- Case-study detail pages unpublished for now (`pageDraft` flag): the site is intentionally a
+  one-pager until study copy is finished. This removes the orphaned-page issue (§1.1) and takes
+  the placeholder copy (§2.3) out of the public site — the home-page embed card is unchanged.
+- Canonical URLs on the home page and (future) study pages (§1.1).
+- Person JSON-LD expanded into an `@graph`: `@id`, `image`, Belgrade address,
+  `disambiguatingDescription`, fuller `sameAs`, plus `WebSite`, `ProfilePage`, and
+  `SoftwareApplication` entries for Sonas / UX Copilot / AI Design Review (§4.2, §4.3).
+- Explicit AI-crawler allowances in robots.txt (§1.2).
+- `lastModified` in the sitemap (§1.1).
+- `loading="lazy"` on the Figma embed iframe (§1.3).
+- `public/llms.txt` with a factual site summary (§4.4).
+
+**Clarified — not a defect:** the ARR figures (§2.3) are both correct: **$0 → $16M** during the
+founding-designer years specifically; **$0 → $30M** across the full 13-year Instapage tenure.
+Recommendation downgraded: optionally make the timeframe explicit next to each figure so readers
+and LLMs don't have to infer it.
+
+**Remaining (needs owner action / content work):** Search Console + Bing Webmaster registration,
+backlinks from LinkedIn/Dribbble/Figma/aisonas.com, finishing and publishing the case studies,
+real imagery, on-domain resume, FAQ, and the long-term content roadmap (§6).
+
+---
+
 ## 1. Technical SEO
 
 ### 1.1 Crawlability & indexing
@@ -248,16 +276,17 @@ AI summaries, conversion).
 a longer scaffold. Then add a safety net: a build-time check (or a filter in `content.ts`) that
 fails/strips any published study containing `[` placeholder markers.
 
-#### 🔴 HIGH — Contradictory ARR figures
+#### ✅ RESOLVED (clarified) — ARR figures
 
-`profile.sub` says Instapage grew "**0 → $30M ARR**"; the meta description, `stats`, the
-founding-designer study, and the OG description all say "**$0 → $16M**". One of these is wrong.
+`profile.sub` says Instapage grew "**0 → $30M ARR**"; the meta description, `stats`, and the
+founding-designer study say "**$0 → $16M**". **Clarification from the owner: both are correct** —
+$16M is the growth during the founding-designer role specifically; $30M is where the company
+got to across the full 13-year tenure.
 
-**Why it matters:** LLMs cross-reference claims *within* a page and across pages; a
-contradiction on your headline metric degrades confidence in everything else, and different AI
-answers will quote different numbers. Recruiters notice too.
-
-**Impact:** High for trust, trivial to fix. Pick one number and use it everywhere.
+**Residual recommendation (low):** LLMs cross-reference claims within a page, and two different
+numbers for "Instapage ARR" without an explicit timeframe still invite misquoting. Where space
+allows, qualify each figure ("$0 → $16M during my founding-designer years", "$30M by the end of
+my tenure") so the distinction is machine-readable, not inferred.
 
 #### 🟡 LOW — Unused content
 
